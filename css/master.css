@@ -4,3 +4,36 @@ body{
   padding: 0px;
   font-family: Helvetica;
 }
+
+header{
+  width: 100%;
+  float: left;
+  height: 100vh;
+  background-image: url(../images/bg_1.jpg);
+  background-repeat: no-repeat;
+}
+
+header .logo{
+  width: 16%;
+  float: left;
+  background: #fff;
+  padding: 0.25% 2%;
+}
+
+.logo img{
+  width: 20%;
+}
+
+header .nav-section{
+  width: 76%;
+  float: left;
+  padding-left: 2%;
+  padding-right: 2%;
+  background: #fff;
+}
+
+.nav-section ul{
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+}
