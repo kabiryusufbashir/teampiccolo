@@ -24,6 +24,11 @@
           </ul>
         </nav>
       </div>
+      <div class="slogan">
+        <h1>Team Piccolo Global Enterprises</h1>
+        <h3>"Never let a Customer leave without putting a smile on his face"</h3>
+        <h4><i>Kabir Yusuf Bashir C.E.O Team Piccolo</i></h4>
+      </div>
     </header>
     <main></main>
     <footer></footer>

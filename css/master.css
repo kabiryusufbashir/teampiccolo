@@ -37,3 +37,12 @@ header .nav-section{
   justify-content: space-between;
   list-style-type: none;
 }
+
+.slogan{
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  float: left;
+  margin-top: 10%;
+  font-size: 110%;
+}
