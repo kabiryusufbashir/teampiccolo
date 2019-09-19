@@ -77,6 +77,12 @@ header .nav-section{
   text-align: justify;
 }
 
+.col-full{
+  width: 100%;
+  float: left;
+  background: #333;
+}
+
 .col-quarter{
   width: 21%;
   float: left;
@@ -91,6 +97,8 @@ header .nav-section{
 #about-team-piccolo{
   width: 100%;
   float: left;
+  color: #fff;
+  text-align: center;
 }
 
 .col-fill{
@@ -102,11 +110,10 @@ header .nav-section{
   width: 46%;
   float: left;
   background: #333;
-  min-height: 250px;
-  color: #fff;
   padding: 2%;
 }
 
 .col-fill img{
-  width: 100%;
+  width: 96%;
+  padding: 2% 2%;
 }
