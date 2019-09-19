@@ -30,7 +30,8 @@
         <h4><i>Kabir Yusuf Bashir C.E.O Team Piccolo</i></h4>
       </div>
     </header>
-    <main></main>
+    <main>
+    </main>
     <footer></footer>
   </body>
 </html>

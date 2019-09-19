@@ -43,6 +43,20 @@ header .nav-section{
   color: #fff;
   text-align: center;
   float: left;
-  margin-top: 10%;
   font-size: 110%;
+  animation: slogan 2s linear 1 reverse;
+  position: relative;
+  top: 20%;
+}
+
+@keyframes slogan {
+  0%{
+    top: 20%;
+  }
+  50%{
+    top: 35%;
+  }
+  100%{
+    top: 20%;
+  }
 }
