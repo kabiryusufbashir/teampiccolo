@@ -68,6 +68,15 @@ header .nav-section{
   margin-top: 2%;
 }
 
+#our-services ul{
+  list-style-type: circle;
+}
+
+#our-services li{
+  padding: 1% 0px;
+  text-align: justify;
+}
+
 .col-quarter{
   width: 21%;
   float: left;

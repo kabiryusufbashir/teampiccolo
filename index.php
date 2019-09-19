@@ -34,15 +34,44 @@
       <section id="our-services">
         <div class="col-quarter">
           <img src="./images/web-design.png" alt="Web Design Image">
+          <h3>Web Development</h3>
+          <article>
+            <ul>
+              <li>Web Design</li>
+              <li>Web Hosting</li>
+              <li>Web Development Training</li>
+            </ul>
+          </article>
         </div>
         <div class="col-quarter">
           <img src="./images/networking.png" alt="Web Design Image">
+          <h3>Hardware and Networking</h3>
+          <article>
+            <ul>
+              <li>Installation of Operating System Software</li>
+              <li>System Familiarisation</li>
+              <li>Assembly and Dis-assembly of Computers</li>
+              <li>Servicing of Computer Peripheries</li>
+              <li>Troubleshooting and Fault Diagnostics</li>
+            </ul>
+          </article>
         </div>
         <div class="col-quarter">
           <img src="./images/graphics.png" alt="Web Design Image">
+          <h3>Graphic Design</h3>
         </div>
         <div class="col-quarter">
           <img src="./images/writing.png" alt="Web Design Image">
+          <h3>Academic Writing</h3>
+          <article>
+            <ul>
+              <li>How best to write your PG thesis and dissertation</li>
+              <li>Writing article and conference paper</li>
+              <li>Understanding your research data and statistics</li>
+              <li>Understanding and reducing plagiarism (use of turnitin, plagiarism checker)</li>
+              <li>Mastering and accessing referencing manager software such as EndNote, Mendale</li>
+            </ul>
+          </article>
         </div>
       </section>
     </main>
