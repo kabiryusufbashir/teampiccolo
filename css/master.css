@@ -86,3 +86,27 @@ header .nav-section{
 .col-quarter img{
   width: 70%;
 }
+
+
+#about-team-piccolo{
+  width: 100%;
+  float: left;
+}
+
+.col-fill{
+  width: 50%;
+  float: left;
+}
+
+.col-extra{
+  width: 46%;
+  float: left;
+  background: #333;
+  min-height: 250px;
+  color: #fff;
+  padding: 2%;
+}
+
+.col-fill img{
+  width: 100%;
+}

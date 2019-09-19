@@ -83,6 +83,16 @@
           </article>
         </div>
       </section>
+      <section id="about-team-piccolo">
+        <div class="col-fill">
+          <img src="./images/ceo.jpg" alt="Kabir Yusuf Bashir CEO Team Piccolo">
+        </div>
+        <div class="col-extra">
+          <p>Team Piccolo Global Enterprises is registered with Corporate Affairs Commission (C.A.C) under COMPANIES AND ALLIED MATTERS ACT 1990 on the 25th day of November, 2016 with a Business Number (B.N) 2462226</p>
+          <p>Over the years, Team Piccolo Global Enterprises has grown to a major ICT solution and Academic Writing provider in Nigeria and Africa, with major projects realized in different parts of the country and region</p>
+          <p>As a wholly indigenous and dynamic ICT, service provider/systems integrator, Team Piccolo Global Enterprises employs over 20 professionals from different field, many of whom are well-trained and certified experts (Engineers/Academicians). We assist different organizations and individuals achieve their objectives through the state-of-the-art solutions we provide. We are passionate about supporting persons attaining their goal. We growing our business and driving operational excellence while making a positive impact on our community</p>
+        </div>
+      </section>
     </main>
     <footer></footer>
   </body>
