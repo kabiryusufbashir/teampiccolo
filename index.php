@@ -31,6 +31,20 @@
       </div>
     </header>
     <main>
+      <section id="our-services">
+        <div class="col-quarter">
+          <img src="./images/web-design.png" alt="Web Design Image">
+        </div>
+        <div class="col-quarter">
+          <img src="./images/networking.png" alt="Web Design Image">
+        </div>
+        <div class="col-quarter">
+          <img src="./images/graphics.png" alt="Web Design Image">
+        </div>
+        <div class="col-quarter">
+          <img src="./images/writing.png" alt="Web Design Image">
+        </div>
+      </section>
     </main>
     <footer></footer>
   </body>
