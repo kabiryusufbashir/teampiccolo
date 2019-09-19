@@ -59,6 +59,15 @@
         <div class="col-quarter">
           <img src="./images/graphics.png" alt="Web Design Image">
           <h3>Graphic Design</h3>
+          <article>
+            <ul>
+              <li>Logo</li>
+              <li>Flyer</li>
+              <li>Banner</li>
+              <li>Company Branding</li>
+              <li>And lots more</li>
+            </ul>
+          </article>
         </div>
         <div class="col-quarter">
           <img src="./images/writing.png" alt="Web Design Image">
