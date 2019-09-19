@@ -60,3 +60,20 @@ header .nav-section{
     top: 20%;
   }
 }
+
+#our-services{
+  width: 100%;
+  float: left;
+  text-align: center;
+  margin-top: 2%;
+}
+
+.col-quarter{
+  width: 21%;
+  float: left;
+  margin: 0px 2%;
+}
+
+.col-quarter img{
+  width: 70%;
+}
