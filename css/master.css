@@ -13,15 +13,22 @@ header{
   background-repeat: no-repeat;
 }
 
+.header-content{
+  background: #fff;
+  width: 100%;
+  float: left;
+}
+
 header .logo{
   width: 16%;
   float: left;
-  background: #fff;
-  padding: 0.25% 2%;
+  padding-left: 2%;
+  padding-right: 2%;
 }
 
 .logo img{
   width: 20%;
+  padding-top: 2%;
 }
 
 header .nav-section{
@@ -29,7 +36,6 @@ header .nav-section{
   float: left;
   padding-left: 2%;
   padding-right: 2%;
-  background: #fff;
 }
 
 .nav-section ul{

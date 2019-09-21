@@ -9,18 +9,20 @@
   </head>
   <body>
     <header>
-      <div class="logo">
-        <img src="./images/logo.png" alt="Team Piccolo Global Enterprises Logo">
-      </div>
-      <div class="nav-section">
-        <nav>
-          <ul>
-            <li>Home</li>
-            <li>Our Team</li>
-            <li>Web Development Class</li>
-            <li>Contact Us</li>
-          </ul>
-        </nav>
+      <div class="header-content">
+        <div class="logo">
+          <img src="./images/logo.png" alt="Team Piccolo Global Enterprises Logo">
+        </div>
+        <div class="nav-section">
+          <nav>
+            <ul>
+              <li>Home</li>
+              <li>Our Team</li>
+              <li>Web Development Class</li>
+              <li>Contact Us</li>
+            </ul>
+          </nav>
+        </div>
       </div>
       <div class="slogan">
         <h1>Team Piccolo Global Enterprises</h1>
