@@ -142,7 +142,7 @@
       </p>
       <div class="contact-links">
         <a
-          href="https://web.facebook.com/sunusiyusuf93"
+          href="https://web.facebook.com/Teampiccolo/"
           target="_blank"
           class="btn contact-details"
           ><i class="fab fa-facebook-square"></i> Facebook</a
@@ -155,7 +155,7 @@
           ><i class="fab fa-github"></i> GitHub</a
         >
         <a
-          href="#"
+          href="https://twitter.com/Piccolo_OEnterp/"
           target="_blank"
           class="btn contact-details"
           ><i class="fab fa-twitter"></i> Twitter</a
