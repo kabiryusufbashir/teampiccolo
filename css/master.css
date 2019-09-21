@@ -43,6 +43,7 @@ header .toggle-btn{
   float: left;
   margin-right: 2%;
   margin-top: 0.5%;
+  display: none;
 }
 
 .toggle-btn img{
@@ -177,5 +178,47 @@ footer a{
 @media screen and  (max-width: 760px){
   .col-fill, .col-extra, .col-quarter, .col-one-fifth{
     width: 96%;
+  }
+
+  header .logo{
+    width: 96%;
+    text-align: center;
+    border-bottom: 2px solid #01a9ef;
+  }
+
+  .logo img{
+    width: 20%;
+
+  }
+
+  header .nav-section{
+    width: 96%;
+    background: #333;
+    color: #fff;
+    float: left;
+    display: none;
+  }
+
+  .nav-section ul{
+    display: block;
+  }
+
+  .nav-section ul li{
+    padding: 2% 0px;
+  }
+
+  header .toggle-btn{
+    display: inline;
+    width: 98%;
+    margin-bottom: 2%;
+    margin-top: 1%;
+  }
+
+  .toggle-btn img{
+    width: 10%;
+  }
+
+  .slogan{
+    font-size: 90%;
   }
 }
