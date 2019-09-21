@@ -5,6 +5,7 @@
     <title>Team Piccolo Global Enterprises</title>
     <link rel="icon" href="./images/favicon.ico">
     <link rel="stylesheet" href="./css/master.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"
   </head>
   <body>
     <header>
@@ -54,14 +55,16 @@
         </div>
       </section>
       <section id="our-services">
+        <h2>Our Services</h2>
         <div class="col-quarter">
           <img src="./images/web-design.png" alt="Web Design Image">
-          <h3>Web Development</h3>
+          <h3>Web &amp; Mobile Development</h3>
           <article>
             <ul>
               <li>Web Design</li>
               <li>Web Hosting</li>
               <li>Web Development Training</li>
+              <li>Android Application</li>
             </ul>
           </article>
         </div>
@@ -109,24 +112,55 @@
         <h2>Our Clients</h2>
         <div class="col-one-fifth">
           <img src="./images/alkab.png" alt="Alkab Bashir Investment Website">
+          <h4>Alkab Bashir Investment Ltd</h4>
         </div>
         <div class="col-one-fifth">
           <img src="./images/gats.ico" alt="Global Avaition and Transport Services Website">
+          <h4>Global Aviation and Transport Services</h4>
         </div>
         <div class="col-one-fifth">
           <img src="./images/kicoe.ico" alt="Kashim Ibrahim College of Education Website">
+          <h4>Kashim Ibrahim College of Education Maiduguri</h4>
         </div>
         <div class="col-one-fifth">
           <img src="./images/mwt.ico" alt="Ministry of Works and Transport Maiduguri Website">
+          <h4>Ministry of Works and Transport Borno State</h4>
         </div>
         <div class="col-one-fifth">
           <img src="./images/thepyramid.png" alt="The Pyramid Newspaper Website">
+          <h4>The Pyramid Newspaper</h4>
         </div>
         <div class="col-one-fifth">
-          <img src="./images/zfj.png" alt="The Pyramid Newspaper Website">
+          <img src="./images/zfj.png" alt="Hon Adamu Alhaji Lawal Website">
+          <h4>Hon. Adamu Alhaji Lawal</h4>
         </div>
       </section>
     </main>
-    <footer></footer>
+    <footer>
+       <p>
+         Team Piccolo Global Enterprises Copyright &copy; <?php echo date('Y');?> All Rights Reserved
+      </p>
+      <div class="contact-links">
+        <a
+          href="https://web.facebook.com/sunusiyusuf93"
+          target="_blank"
+          class="btn contact-details"
+          ><i class="fab fa-facebook-square"></i> Facebook</a
+        >
+        <a
+          id="profile-link"
+          href="#"
+          target="_blank"
+          class="btn contact-details"
+          ><i class="fab fa-github"></i> GitHub</a
+        >
+        <a
+          href="#"
+          target="_blank"
+          class="btn contact-details"
+          ><i class="fab fa-twitter"></i> Twitter</a
+        >
+      </div>
+    </footer>
   </body>
 </html>

@@ -69,7 +69,7 @@ header .nav-section{
 }
 
 #our-services ul{
-  list-style-type: circle;
+  list-style-type: inherit;
 }
 
 #our-services li{
@@ -134,4 +134,22 @@ header .nav-section{
 
 .col-one-fifth img{
   width: 80%;
+}
+
+footer{
+  width: 100%;
+  text-align: center;
+  padding: 1% 0px;
+  float: left;
+  color: #333;
+}
+
+footer a{
+  text-decoration: none;
+  font-size: 24px;
+  color: #333;
+}
+
+.fab, .fas{
+  font-size: 28px;
 }
