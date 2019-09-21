@@ -17,10 +17,10 @@
         <div class="nav-section">
           <nav>
             <ul>
-              <li>Home</li>
-              <li>Our Team</li>
-              <li>Web Development Class</li>
-              <li>Contact Us</li>
+              <li><a href="./index.php">Home</a></li>
+              <li><a href="./our-team/index.php">Our Team</a></li>
+              <li><a href="./e-learning/index.php">Web Development Class</a></li>
+              <li><a href="./contact-us/index.php">Contact Us</a></li>
             </ul>
           </nav>
         </div>
