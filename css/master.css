@@ -159,3 +159,9 @@ footer a{
 .fab, .fas{
   font-size: 28px;
 }
+
+@media screen and  (max-width: 760px){
+  .col-fill, .col-extra, .col-quarter, .col-one-fifth{
+    width: 96%;
+  }
+}
