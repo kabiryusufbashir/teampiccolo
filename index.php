@@ -108,13 +108,10 @@
       <section id="client">
         <h2>Our Clients</h2>
         <div class="col-one-fifth">
-          <img src="./images/alkab.ico" alt="Alkab Bashir Investment Website">
+          <img src="./images/alkab.png" alt="Alkab Bashir Investment Website">
         </div>
         <div class="col-one-fifth">
-          <img src="./images/gams.ico" alt="Alkab Bashir Investment Website">
-        </div>
-        <div class="col-one-fifth">
-          <img src="./images/gats.ico" alt="Alkab Bashir Investment Website">
+          <img src="./images/gats.ico" alt="Global Avaition and Transport Services Website">
         </div>
         <div class="col-one-fifth">
           <img src="./images/kicoe.ico" alt="Kashim Ibrahim College of Education Website">
@@ -123,7 +120,10 @@
           <img src="./images/mwt.ico" alt="Ministry of Works and Transport Maiduguri Website">
         </div>
         <div class="col-one-fifth">
-          <img src="./images/thepyramid.ico" alt="The Pyramid Newspaper Website">
+          <img src="./images/thepyramid.png" alt="The Pyramid Newspaper Website">
+        </div>
+        <div class="col-one-fifth">
+          <img src="./images/zfj.png" alt="The Pyramid Newspaper Website">
         </div>
       </section>
     </main>
