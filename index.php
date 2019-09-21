@@ -16,9 +16,6 @@
         <nav>
           <ul>
             <li>Home</li>
-            <li>About Us</li>
-            <li>Services</li>
-            <li>Portfolio</li>
             <li>Our Team</li>
             <li>Web Development Class</li>
             <li>Contact Us</li>
