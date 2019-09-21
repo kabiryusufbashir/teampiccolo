@@ -53,7 +53,7 @@
           </div>
           <div class="col-fill">
             <img src="./images/cto.jpg" alt="Abba Jime Mustapha CTO Team Piccolo">
-            <p>Abba Jime Mustapha CTO Team Piccolo Global Enterprises</p>
+            <p>Abba Mustapha Jime CTO Team Piccolo Global Enterprises</p>
           </div>
         </div>
       </section>
