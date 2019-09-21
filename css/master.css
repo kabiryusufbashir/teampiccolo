@@ -117,3 +117,21 @@ header .nav-section{
   width: 96%;
   padding: 2% 2%;
 }
+
+#client{
+  width: 100%;
+  float: left;
+  text-align: center;
+  background: #333;
+  color: #fff;
+}
+
+.col-one-fifth{
+  width: 12.66%;
+  float: left;
+  margin: 0px 2%;
+}
+
+.col-one-fifth img{
+  width: 80%;
+}

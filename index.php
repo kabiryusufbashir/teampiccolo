@@ -105,7 +105,7 @@
           </article>
         </div>
       </section>
-      <section class="client">
+      <section id="client">
         <h2>Our Clients</h2>
         <div class="col-one-fifth">
           <img src="./images/alkab.ico" alt="Alkab Bashir Investment Website">
@@ -117,13 +117,13 @@
           <img src="./images/gats.ico" alt="Alkab Bashir Investment Website">
         </div>
         <div class="col-one-fifth">
-          <img src="./images/kico.ico" alt="Alkab Bashir Investment Website">
+          <img src="./images/kicoe.ico" alt="Kashim Ibrahim College of Education Website">
         </div>
         <div class="col-one-fifth">
-          <img src="./images/mwt.ico" alt="Alkab Bashir Investment Website">
+          <img src="./images/mwt.ico" alt="Ministry of Works and Transport Maiduguri Website">
         </div>
         <div class="col-one-fifth">
-          <img src="./images/thepyramid.ico" alt="Alkab Bashir Investment Website">
+          <img src="./images/thepyramid.ico" alt="The Pyramid Newspaper Website">
         </div>
       </section>
     </main>
