@@ -221,4 +221,9 @@ footer a{
   .slogan{
     font-size: 90%;
   }
+
+  .contact-links a{
+    display: block;
+    padding: 1% 0px;
+  }
 }
