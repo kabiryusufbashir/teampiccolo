@@ -32,10 +32,24 @@ header .logo{
 }
 
 header .nav-section{
-  width: 66%;
+  width: 56%;
   float: left;
   padding-left: 2%;
   padding-right: 2%;
+}
+
+header .toggle-btn{
+  width: 8%;
+  float: left;
+  margin-right: 2%;
+  margin-top: 0.5%;
+  display: none;
+}
+
+.toggle-btn img{
+  width: 30%;
+  float: right;
+  border-radius: 5px;
 }
 
 .nav-section ul{
@@ -43,6 +57,7 @@ header .nav-section{
   justify-content: space-between;
   list-style-type: none;
 }
+
 
 .slogan{
   width: 100%;

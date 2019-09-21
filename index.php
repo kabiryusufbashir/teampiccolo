@@ -24,6 +24,9 @@
             </ul>
           </nav>
         </div>
+        <div class="toggle-btn">
+          <img src="./images/toggle_btn.png" alt="Toggle button">
+        </div>
       </div>
       <div class="slogan">
         <h1>Team Piccolo Global Enterprises</h1>
