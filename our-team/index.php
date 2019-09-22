@@ -3,7 +3,7 @@
 <html lang="en" dir="ltr">
   <?php head('../'); ?>
   <body>
-    <?php headerSection('../', 'A Customer', 'A Customer is the Foundation of a Business', 'Abba Mustapha Jime C.T.O Team Piccolo'); ?>
+    <?php headerSection('../', 'A Customer', 'A Customer is the Foundation of a Business', 'Abba Mustapha Jime', 'C.T.O Team Piccolo'); ?>
     <main>
       <div class="col-full bg-white">
         <h2><center>Meet Team Piccolo</center></h2>

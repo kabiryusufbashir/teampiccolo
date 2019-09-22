@@ -11,7 +11,7 @@
     </head>';
   }
 
-  function headerSection($path, $sloganHeading, $sloganTitle, $sloganAuthor){
+  function headerSection($path, $sloganHeading, $sloganTitle, $sloganAuthor, $sloganRank){
     echo
     '<header>
       <div class="header-content">
@@ -34,8 +34,9 @@
       </div>
       <div class="slogan">
         <h1>'.$sloganHeading.'</h1>
-        <h3>"'.$sloganTitle.'"</h3>
-        <h4><i>'.$sloganAuthor.'</i></h4>
+        <h2>"'.$sloganTitle.'"</h2>
+        <h3>'.$sloganAuthor.'</h3>
+        <h4><i>'.$sloganRank.'</i></h4>
       </div>
     </header>';
   }
