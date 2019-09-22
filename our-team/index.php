@@ -39,17 +39,32 @@
         <div class="col-one-third">
           <img src="../images/umar.png" alt="Umar Grema Photo">
           <p>
-            <h3>Abba Jime Mustapha</h3>
-            <i>Network Engineer</i>
+            <h3>Umar Grema</h3>
+            <i>Web Developer/Photographer</i>
           </p>
           <p>
-            An Information Technologist with extensive experience in the field of Information Technology with an abundance of transferable skills.
+            Umar Grema is a Maiduguri born and based IT expert, photographer, academia, web developer and one of the core founders of Team Piccolo Global Enterprises.
           </p>
           <p>
-            Abba Jime Mustapha possess self-discipline and the ability to work with the minimum of supervision highly professional, ethical and discreet; demonstrates strong analytical and problem-solving competencies with the ability to make well thought out decisions;
+            Over the past years, he has worked in a wide variety of professional capacities in both public and private sectors.
           </p>
           <p>
-            Detail-oriented, efficient and organized professional with experience in ICT sectors; innovative in the design and execution of projects; effective in multi-tasking; excellent written and verbal communication skills.
+            He earned his BSc in 2015 with Shobhit University Meerut India through Synergies Institute Accra, Ghana.
+          </p>
+          <p>
+            He has been a mentor with Andela Learning Community, IT officer with Future Prowess Foundation and a facilitator woth consult Kashim Ibrahim College of Education Borno State.
+          </p>
+          <p>
+            Mr Grema is currently working with Borno Women Development Initiative (BOWDI) a National NGO that nurtures developed and resilent communities of resourceful, independent, educated women, girls and boys with good vision and services to reduce poverty and secual/gender based violence.
+          </p>
+          <p>
+            He also works with Computer Engineering department of Ramat Polytechnic Maiduguri.
+          </p>
+          <p>
+            He is currently pursuing his masters in International Relations with the University of Maiduguri.
+          </p>
+          <p>
+            He has published couple of Journals and have received Academic awards and recognition by many National firms.
           </p>
         </div>
       </div>
