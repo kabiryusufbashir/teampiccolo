@@ -219,6 +219,11 @@ footer a{
   color: #ddd;
 }
 
+form{
+  width: 94%;
+  margin: 2% 3%;
+}
+
 @media screen and  (max-width: 2560px) and (min-width: 1440px){
   header{
     height: 48vh;
