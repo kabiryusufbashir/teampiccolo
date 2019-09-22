@@ -19,6 +19,27 @@
           <p>
             Kabir Yusuf Bashir specialized in Programming, Web programming to be precise. I have developed a lot of application like Hospital Management System, Examination Management System, Election Management System, Car Rental System, Newspaper Management System, Social Network (Membership Site), Memorization Tester (Quran) and currently working on School Management System.
           </p>
+          <div class="contact-links">
+            <a
+              href="https://web.facebook.com/sunusiyusuf93/"
+              target="_blank"
+              class="btn contact-details"
+              ><i class="fab fa-facebook-square"></i></a
+            >
+            <a
+              id="profile-link"
+              href="https://github.com/kabiryusufbashir/"
+              target="_blank"
+              class="btn contact-details"
+              ><i class="fab fa-github"></i></a
+            >
+            <a
+              href="https://twitter.com/kabiryusufbash/"
+              target="_blank"
+              class="btn contact-details"
+              ><i class="fab fa-twitter"></i></a
+            >
+          </div>
         </div>
         <div class="col-one-third">
           <img src="../images/abba.png" alt="Abba Jime Mustapha Photo">
@@ -65,6 +86,29 @@
           </p>
           <p>
             He has published couple of Journals and have received Academic awards and recognition by many National firms.
+          </p>
+          <p>
+            <div class="contact-links">
+              <a
+                href="https://web.facebook.com/Teampiccolo/"
+                target="_blank"
+                class="btn contact-details"
+                ><i class="fab fa-facebook-square"></i></a
+              >
+              <a
+                id="profile-link"
+                href="#"
+                target="_blank"
+                class="btn contact-details"
+                ><i class="fab fa-github"></i></a
+              >
+              <a
+                href="https://twitter.com/Piccolo_OEnterp/"
+                target="_blank"
+                class="btn contact-details"
+                ><i class="fab fa-twitter"></i></a
+              >
+            </div>
           </p>
         </div>
       </div>
