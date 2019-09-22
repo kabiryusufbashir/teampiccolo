@@ -106,6 +106,7 @@ li a{
   width: 100%;
   float: left;
   background: #333;
+  color: #fff;
 }
 
 .col-quarter{
@@ -117,7 +118,6 @@ li a{
 .col-quarter img{
   width: 70%;
 }
-
 
 #about-team-piccolo{
   width: 100%;
@@ -141,6 +141,16 @@ li a{
 .col-fill img{
   width: 96%;
   padding: 2% 2%;
+}
+
+.col-one-third{
+  width: 29.33%;
+  float: left;
+  margin: 1% 2%;
+}
+
+.col-one-third img{
+  width: 90%;
 }
 
 #client{
@@ -186,7 +196,7 @@ footer a{
 }
 
 @media screen and  (max-width: 768px){
-  .col-fill, .col-extra, .col-quarter, .col-one-fifth{
+  .col-fill, .col-extra, .col-one-third, .col-quarter, .col-one-fifth{
     width: 96%;
   }
 
