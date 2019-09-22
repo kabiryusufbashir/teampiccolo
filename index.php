@@ -3,7 +3,7 @@
 <html lang="en" dir="ltr">
   <?php head('./'); ?>
   <body>
-    <?php headerSection('./'); ?>
+    <?php headerSection('./', 'Team Piccolo Global Enterprises', 'Never let a Customer leave without putting a smile on his face', 'Kabir Yusuf Bashir C.E.O Team Piccolo'); ?>
     <main>
       <section id="about-team-piccolo">
         <div class="col-full">

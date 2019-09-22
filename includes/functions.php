@@ -11,7 +11,7 @@
     </head>';
   }
 
-  function headerSection($path){
+  function headerSection($path, $sloganHeading, $sloganTitle, $sloganAuthor){
     echo
     '<header>
       <div class="header-content">
@@ -33,9 +33,9 @@
         </div>
       </div>
       <div class="slogan">
-        <h1>Team Piccolo Global Enterprises</h1>
-        <h3>"Never let a Customer leave without putting a smile on his face"</h3>
-        <h4><i>Kabir Yusuf Bashir C.E.O Team Piccolo</i></h4>
+        <h1>'.$sloganHeading.'</h1>
+        <h3>"'.$sloganTitle.'"</h3>
+        <h4><i>'.$sloganAuthor.'</i></h4>
       </div>
     </header>';
   }

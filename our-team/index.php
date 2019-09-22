@@ -3,7 +3,7 @@
 <html lang="en" dir="ltr">
   <?php head('../'); ?>
   <body>
-    <?php headerSection('../'); ?>
+    <?php headerSection('../', 'A Customer', 'A Customer is the Foundation of a Business', 'Abba Mustapha Jime C.T.O Team Piccolo'); ?>
     <main>
       <div class="col-full bg-white">
         <h2><center>Meet Team Piccolo</center></h2>
@@ -14,10 +14,10 @@
             <i>Web Developer</i>
           </p>
           <p>
-            Kabir Yusuf Bashir from the family of Bashir Ibrahim Dan-Iya Kano, born on the 27th of July 1993 in Minjibir Local Government Kano State, Nigeria. I attended Wonderful Nursery and Primary School Garki, Abuja. I then moved to Community Nursery and Primary School Asokoro, Abuja. After completing my Primary School education, I then moved to Command Day Secondary School Maitama, where I completed my Secondary School education. Towards ending the year of 2012, I moved to Accra Ghana for my Bachelor Degree program where I studied Information Technology (I.T).
+            Kabir Yusuf Bashir from the family of Bashir Ibrahim Dan-Iya Kano, born on the 27th of July 1993 in Minjibir Local Government Kano State, Nigeria. Kabir Yusuf Bashir attended Wonderful Nursery and Primary School Garki, Abuja. Malam Yusuf then moved to Community Nursery and Primary School Asokoro, Abuja. After completing his Primary School education, Malam Yusuf then moved to Command Day Secondary School Maitama, where he completed his Secondary School education. Towards ending the year of 2012, Malam Yusuf moved to Accra Ghana for his Bachelor Degree program where Malam Yusuf studied Information Technology (I.T).
           </p>
           <p>
-            Kabir Yusuf Bashir specialized in Programming, Web programming to be precise. I have developed a lot of application like Hospital Management System, Examination Management System, Election Management System, Car Rental System, Newspaper Management System, Social Network (Membership Site), Memorization Tester (Quran) and currently working on School Management System.
+            Malam Yusuf specialized in Programming, Web programming to be precise. Malam Yusuf have developed a lot of Web Applications like Hospital Management System, Examination Management System, Election Management System, Car Rental System, Newspaper Management System, Social Network (Membership Site), Memorization Tester (Quran) and currently working on School Management System.
           </p>
           <div class="contact-links">
             <a
@@ -45,7 +45,7 @@
           <img src="../images/abba.png" alt="Abba Jime Mustapha Photo">
           <p>
             <h3>Abba Jime Mustapha</h3>
-            <i>Network Engineer</i>
+            <i>IT Specialist</i>
           </p>
           <p>
             An Information Technologist with extensive experience in the field of Information Technology with an abundance of transferable skills.
