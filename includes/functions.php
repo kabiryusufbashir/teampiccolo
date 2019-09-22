@@ -40,9 +40,9 @@
     </header>';
   }
 
-  function footer($path){
+  function footer($path, $background){
     echo '
-    <footer>
+    <footer class="'.$background.'">
        <p>
          Team Piccolo Global Enterprises Copyright &copy; '.date('Y').' All Rights Reserved
       </p>
@@ -51,20 +51,20 @@
           href="https://web.facebook.com/Teampiccolo/"
           target="_blank"
           class="btn contact-details"
-          ><i class="fab fa-facebook-square"></i> Facebook</a
+          ><i class="fab fa-facebook-square"></i></a
         >
         <a
           id="profile-link"
           href="#"
           target="_blank"
           class="btn contact-details"
-          ><i class="fab fa-github"></i> GitHub</a
+          ><i class="fab fa-github"></i>/a
         >
         <a
           href="https://twitter.com/Piccolo_OEnterp/"
           target="_blank"
           class="btn contact-details"
-          ><i class="fab fa-twitter"></i> Twitter</a
+          ><i class="fab fa-twitter"></i></a
         >
       </div>
     </footer>

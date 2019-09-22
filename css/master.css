@@ -198,6 +198,16 @@ footer a{
   font-size: 28px;
 }
 
+.bg-white{
+  background: #fff;
+  color: #333;
+}
+
+.bg-grey{
+  background: #333;
+  color: #fff;
+}
+
 @media screen and  (max-width: 2560px) and (min-width: 1440px){
   header{
     height: 48vh;

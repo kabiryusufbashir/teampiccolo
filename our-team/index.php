@@ -5,7 +5,7 @@
   <body>
     <?php headerSection('../'); ?>
     <main>
-      <div class="col-full">
+      <div class="col-full bg-white">
         <h2><center>Meet Team Piccolo</center></h2>
         <div class="col-one-third">
           <img src="../images/yusuf.png" alt="Kabir Yusuf Bashir Picture">
@@ -134,7 +134,7 @@
         </div>
       </div>
     </main>
-    <?php footer('../'); ?>
+    <?php footer('../', 'bg-grey'); ?>
     <?php linkJs('../'); ?>
   </body>
 </html>

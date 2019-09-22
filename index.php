@@ -1,9 +1,9 @@
 <?php include './includes/functions.php'; ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <?php head('.'); ?>
+  <?php head('./'); ?>
   <body>
-    <?php headerSection('.'); ?>
+    <?php headerSection('./'); ?>
     <main>
       <section id="about-team-piccolo">
         <div class="col-full">
@@ -109,7 +109,7 @@
         </div>
       </section>
     </main>
-    <?php footer('.'); ?>
-    <?php linkJs('.'); ?>
+    <?php footer('./', 'bg-white'); ?>
+    <?php linkJs('./'); ?>
   </body>
 </html>
