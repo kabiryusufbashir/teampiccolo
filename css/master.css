@@ -194,6 +194,9 @@ footer a{
   color: #1da0f2;
 }
 
+.fa-github{
+}
+
 .fab, .fas{
   font-size: 28px;
 }
@@ -203,9 +206,17 @@ footer a{
   color: #333;
 }
 
+.bg-white .fa-github{
+  color: #333;
+}
+
 .bg-grey{
   background: #333;
   color: #fff;
+}
+
+.bg-grey .fa-github{
+  color: #ddd;
 }
 
 @media screen and  (max-width: 2560px) and (min-width: 1440px){
@@ -268,5 +279,9 @@ footer a{
   .contact-links a{
     display: block;
     padding: 1% 0px;
+  }
+
+  .bg-white a{
+    display: inline;
   }
 }

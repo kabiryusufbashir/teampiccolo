@@ -58,7 +58,7 @@
           href="#"
           target="_blank"
           class="btn contact-details"
-          ><i class="fab fa-github"></i>/a
+          ><i class="fab fa-github"></i></a
         >
         <a
           href="https://twitter.com/Piccolo_OEnterp/"
