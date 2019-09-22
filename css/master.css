@@ -9,7 +9,7 @@ header{
   width: 100%;
   float: left;
   height: 100vh;
-  background-image: url(../images/bg_1.jpg);
+  background-image: url(../images/bg_2.jpg);
   background-repeat: no-repeat;
 }
 
@@ -58,6 +58,10 @@ header .toggle-btn{
   list-style-type: none;
 }
 
+li a{
+  text-decoration: none;;
+  color: #333;
+}
 
 .slogan{
   width: 100%;
@@ -175,7 +179,13 @@ footer a{
   font-size: 28px;
 }
 
-@media screen and  (max-width: 760px){
+@media screen and  (max-width: 2560px) and (min-width: 1440px){
+  header{
+    height: 48vh;
+  }
+}
+
+@media screen and  (max-width: 768px){
   .col-fill, .col-extra, .col-quarter, .col-one-fifth{
     width: 96%;
   }
@@ -205,6 +215,10 @@ footer a{
 
   .nav-section ul li{
     padding: 2% 0px;
+  }
+
+  li a{
+    color: #fff;
   }
 
   header .toggle-btn{
