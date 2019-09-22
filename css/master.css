@@ -124,11 +124,14 @@ li a{
   float: left;
   color: #fff;
   text-align: center;
+  border-bottom: 2px solid #333;
 }
 
 .col-fill{
   width: 50%;
   float: left;
+  background: #fff;
+  color: #333;
 }
 
 .col-extra{
@@ -254,7 +257,11 @@ form textarea{
 }
 
 @media screen and  (max-width: 768px){
-  .col-fill, .col-extra, .col-one-third, .col-quarter, .col-one-fifth{
+  .col-fill{
+    width: 100%;
+  }
+
+  .col-extra, .col-one-third, .col-quarter, .col-one-fifth{
     width: 96%;
   }
 
