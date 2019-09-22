@@ -11,15 +11,70 @@
     </head>';
   }
 
-  function nav($path){
+  function headerSection($path){
     echo
-    '<nav>
-      <ul>
-        <li><a href="'.$path.'/index.php">Home</a></li>
-        <li><a href="'.$path.'/our-team/index.php">Our Team</a></li>
-        <li><a href="'.$path.'/e-learning/index.php">Web Development Class</a></li>
-        <li><a href="'.$path.'/contact-us/index.php">Contact Us</a></li>
-      </ul>
-    </nav>';
+    '<header>
+      <div class="header-content">
+        <div class="logo">
+          <img src="'.$path.'/images/logo.png" alt="Team Piccolo Global Enterprises Logo">
+        </div>
+        <div class="nav-section">
+          <nav>
+            <ul>
+              <li><a href="'.$path.'/index.php">Home</a></li>
+              <li><a href="'.$path.'/our-team/index.php">Our Team</a></li>
+              <li><a href="'.$path.'/e-learning/index.php">Web Development Class</a></li>
+              <li><a href="'.$path.'/contact-us/index.php">Contact Us</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="toggle-btn">
+          <img src="'.$path.'/images/toggle_btn.png" alt="Toggle button">
+        </div>
+      </div>
+      <div class="slogan">
+        <h1>Team Piccolo Global Enterprises</h1>
+        <h3>"Never let a Customer leave without putting a smile on his face"</h3>
+        <h4><i>Kabir Yusuf Bashir C.E.O Team Piccolo</i></h4>
+      </div>
+    </header>';
+  }
+
+  function footer($path){
+    echo '
+    <footer>
+       <p>
+         Team Piccolo Global Enterprises Copyright &copy; '.date('Y').' All Rights Reserved
+      </p>
+      <div class="contact-links">
+        <a
+          href="https://web.facebook.com/Teampiccolo/"
+          target="_blank"
+          class="btn contact-details"
+          ><i class="fab fa-facebook-square"></i> Facebook</a
+        >
+        <a
+          id="profile-link"
+          href="#"
+          target="_blank"
+          class="btn contact-details"
+          ><i class="fab fa-github"></i> GitHub</a
+        >
+        <a
+          href="https://twitter.com/Piccolo_OEnterp/"
+          target="_blank"
+          class="btn contact-details"
+          ><i class="fab fa-twitter"></i> Twitter</a
+        >
+      </div>
+    </footer>
+    ';
+  }
+
+  function linkJs($path){
+    echo '
+    <script type="text/javascript" src="'.$path.'/js/jquery.js"></script>
+    <script type="text/javascript" src="'.$path.'/js/script.js"></script>
+    ';
   }
 ?>

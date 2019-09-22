@@ -1,32 +1,9 @@
-<?php
-  include './includes/functions.php';
-?>
+<?php include './includes/functions.php'; ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <?php
-      head('.');
-  ?>
+  <?php head('.'); ?>
   <body>
-    <header>
-      <div class="header-content">
-        <div class="logo">
-          <img src="./images/logo.png" alt="Team Piccolo Global Enterprises Logo">
-        </div>
-        <div class="nav-section">
-          <?php
-            nav('.');
-          ?>
-        </div>
-        <div class="toggle-btn">
-          <img src="./images/toggle_btn.png" alt="Toggle button">
-        </div>
-      </div>
-      <div class="slogan">
-        <h1>Team Piccolo Global Enterprises</h1>
-        <h3>"Never let a Customer leave without putting a smile on his face"</h3>
-        <h4><i>Kabir Yusuf Bashir C.E.O Team Piccolo</i></h4>
-      </div>
-    </header>
+    <?php headerSection('.'); ?>
     <main>
       <section id="about-team-piccolo">
         <div class="col-full">
@@ -132,33 +109,7 @@
         </div>
       </section>
     </main>
-    <footer>
-       <p>
-         Team Piccolo Global Enterprises Copyright &copy; <?php echo date('Y');?> All Rights Reserved
-      </p>
-      <div class="contact-links">
-        <a
-          href="https://web.facebook.com/Teampiccolo/"
-          target="_blank"
-          class="btn contact-details"
-          ><i class="fab fa-facebook-square"></i> Facebook</a
-        >
-        <a
-          id="profile-link"
-          href="#"
-          target="_blank"
-          class="btn contact-details"
-          ><i class="fab fa-github"></i> GitHub</a
-        >
-        <a
-          href="https://twitter.com/Piccolo_OEnterp/"
-          target="_blank"
-          class="btn contact-details"
-          ><i class="fab fa-twitter"></i> Twitter</a
-        >
-      </div>
-    </footer>
-    <script type="text/javascript" src="./js/jquery.js"></script>
-    <script type="text/javascript" src="./js/script.js"></script>
+    <?php footer('.'); ?>
+    <?php linkJs('.'); ?>
   </body>
 </html>
