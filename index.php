@@ -1,13 +1,11 @@
+<?php
+  include './includes/functions.php';
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Team Piccolo Global Enterprises</title>
-    <link rel="icon" href="./images/favicon.ico">
-    <link rel="stylesheet" href="./css/master.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
+  <?php
+      head('.');
+  ?>
   <body>
     <header>
       <div class="header-content">
@@ -15,14 +13,9 @@
           <img src="./images/logo.png" alt="Team Piccolo Global Enterprises Logo">
         </div>
         <div class="nav-section">
-          <nav>
-            <ul>
-              <li><a href="./index.php">Home</a></li>
-              <li><a href="./our-team/index.php">Our Team</a></li>
-              <li><a href="./e-learning/index.php">Web Development Class</a></li>
-              <li><a href="./contact-us/index.php">Contact Us</a></li>
-            </ul>
-          </nav>
+          <?php
+            nav('.');
+          ?>
         </div>
         <div class="toggle-btn">
           <img src="./images/toggle_btn.png" alt="Toggle button">
