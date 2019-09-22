@@ -186,6 +186,14 @@ footer a{
   color: #333;
 }
 
+.fa-facebook-square{
+  color: #4a6eaa;
+}
+
+.fa-twitter{
+  color: #1da0f2;
+}
+
 .fab, .fas{
   font-size: 28px;
 }

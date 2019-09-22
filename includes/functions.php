@@ -21,10 +21,10 @@
         <div class="nav-section">
           <nav>
             <ul>
-              <li><a href="'.$path.'/index.php">Home</a></li>
-              <li><a href="'.$path.'/our-team/index.php">Our Team</a></li>
-              <li><a href="'.$path.'/e-learning/index.php">Web Development Class</a></li>
-              <li><a href="'.$path.'/contact-us/index.php">Contact Us</a></li>
+              <li><a href="'.$path.'index.php">Home</a></li>
+              <li><a href="'.$path.'our-team/index.php">Our Team</a></li>
+              <li><a href="'.$path.'e-learning/index.php">Web Development Class</a></li>
+              <li><a href="'.$path.'contact-us/index.php">Contact Us</a></li>
             </ul>
           </nav>
         </div>

@@ -56,6 +56,27 @@
           <p>
             Detail-oriented, efficient and organized professional with experience in ICT sectors; innovative in the design and execution of projects; effective in multi-tasking; excellent written and verbal communication skills.
           </p>
+          <div class="contact-links">
+            <a
+              href="https://web.facebook.com/abba.jime/"
+              target="_blank"
+              class="btn contact-details"
+              ><i class="fab fa-facebook-square"></i></a
+            >
+            <a
+              id="profile-link"
+              href="#"
+              target="_blank"
+              class="btn contact-details"
+              ><i class="fab fa-github"></i></a
+            >
+            <a
+              href="https://twitter.com/abbajime/"
+              target="_blank"
+              class="btn contact-details"
+              ><i class="fab fa-twitter"></i></a
+            >
+          </div>
         </div>
         <div class="col-one-third">
           <img src="../images/umar.png" alt="Umar Grema Photo">
@@ -103,7 +124,7 @@
                 ><i class="fab fa-github"></i></a
               >
               <a
-                href="https://twitter.com/Piccolo_OEnterp/"
+                href="https://twitter.com/Umargrema1/"
                 target="_blank"
                 class="btn contact-details"
                 ><i class="fab fa-twitter"></i></a
