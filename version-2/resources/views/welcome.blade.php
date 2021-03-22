@@ -8,3 +8,7 @@
 @section('page-title')
     Home | Team Piccolo Global Enterprises
 @endsection
+
+@section('body-content')
+    This Is the body!
+@endsection

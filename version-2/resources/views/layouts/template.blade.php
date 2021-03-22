@@ -5,13 +5,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         @yield('page-meta')
         <title>@yield('page-title')</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
         <link href="{{ asset('images/favicon.ico') }}" rel="icon">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     </head>
     <body>
         <!-- Navigation Bar -->
-        <div class="flex justify-between lg:grid grid-cols-5 gap-3 bg-white py-4 shadow lg:px-8 px-4 items-center fixed w-full">
+        <div class="z-40 flex justify-between lg:grid grid-cols-5 gap-3 bg-white py-4 shadow lg:px-8 px-4 items-center fixed w-full">
             <div class="lg:col-span-1">
                 <img class="w-12" src="{{ asset('images/logo.png') }}" alt="Team Piccolo Logo">
             </div>
@@ -34,7 +36,7 @@
             </div>
         </div>
         <!-- Mobile Nav -->
-        <div id="nav" class="hidden h-screen w-full bg-white pt-6 fixed">
+        <div id="nav" class="z-30 hidden h-screen w-full bg-white pt-6 fixed">
             <div class="pb-4 shadow">
                 <svg id="close" class="ml-auto mr-6 w-10 h-10 cursor-pointer" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
             </div>
@@ -108,8 +110,22 @@
             </div>
         </div>
         <!-- header  -->
-        <div>
+        <div class="relative z-0">
             <img class="object-cover w-full h-screen" src="{{ asset('images/bg_2.jpg') }}" alt="Team Piccolo Header">
+            <div class="lg:grid grid-cols-2 gap-6 w-full flex justify-between px-4 leading-snug absolute top-40 lg:top-48 text-white text-5xl items-center">
+                <div id="slogan" class="text-center">
+                    Have <br>
+                    An Idea?<br>
+                    Talk to Us Now
+                    <img class="w-32 mx-auto" src="{{ asset('images/thinking.png') }}" alt="Thinking">
+                </div>
+                <div id="slogan" class="hidden lg:block text-center">
+                    <img class="w-32 mx-auto" src="{{ asset('images/design-thinking.png') }}" alt="Inspiration">
+                    Best <br>
+                    Software Solutions,<br>
+                    I.C.T training & Consultation
+                </div>
+            </div>
         </div>
         @yield('body-content')
         <script src="{{ asset('js/main.js') }}"></script>
