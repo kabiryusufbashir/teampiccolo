@@ -38,17 +38,29 @@
         </div>
     </div>
     <!-- Partners -->
-    <div class="my-6 shadow-lg py-6">
+    <div class="my-6 shadow py-6">
         <div class="lg:mx-32 px-4 text-4xl">
-            Our Partners
+            <span class="border-b-4 border-blue-400">Our Partners</span>
         </div>
-        <div class="lg:grid grid-cols-6 gap-8 lg:mx-32 px-4 py-6">
-            <div>One</div>
-            <div>Two</div>
-            <div>Three</div>
-            <div>Four</div>
-            <div>Five</div>
-            <div>Six</div>
+        <div class="grid grid-cols-2 lg:grid lg:grid-cols-6 gap-8 lg:mx-32 px-4 py-6">
+            <div>
+                <img class="w-36" src="{{ asset('images/thepyramid.png') }}" alt="Pyramid Newspaper">
+            </div>
+            <div>
+                <img class="w-36" src="{{ asset('images/bowdi.png') }}" alt="Borno Women Development Initiative">
+            </div>
+            <div>
+                <img class="w-36" src="{{ asset('images/zaufoundation.png') }}" alt="Zaufanjinba Foundation">
+            </div>
+            <div>
+                <img class="w-36" src="{{ asset('images/kahioja.png') }}" alt="Kahioja Store">
+            </div>
+            <div>
+                <img class="w-36" src="{{ asset('images/amecad.png') }}" alt="Ameccad Trainining Institute">
+            </div>
+            <div>
+                <img class="w-36" src="{{ asset('images/swat.png') }}" alt="Swat Foundation">
+            </div>
         </div>
     </div>
 @endsection
