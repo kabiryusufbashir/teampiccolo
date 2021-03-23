@@ -13,7 +13,7 @@
     </head>
     <body>
         <!-- Navigation Bar -->
-        <div class="z-40 flex justify-between lg:grid grid-cols-5 gap-3 bg-white py-4 shadow lg:px-8 px-4 items-center fixed w-full">
+        <div class="z-40 flex justify-between lg:grid grid-cols-5 gap-3 bg-white py-4 shadow lg:px-32 px-4 items-center fixed w-full">
             <div class="lg:col-span-1">
                 <img class="w-12" src="{{ asset('images/logo.png') }}" alt="Team Piccolo Logo">
             </div>
@@ -117,10 +117,10 @@
                     Have <br>
                     An Idea?<br>
                     Talk to Us Now
-                    <img class="w-32 mx-auto" src="{{ asset('images/thinking.png') }}" alt="Thinking">
+                    <img class="w-32 mx-auto slogan-logo" src="{{ asset('images/thinking.png') }}" alt="Thinking">
                 </div>
                 <div id="slogan" class="hidden lg:block text-center">
-                    <img class="w-32 mx-auto" src="{{ asset('images/design-thinking.png') }}" alt="Inspiration">
+                    <img class="w-32 mx-auto slogan-logo" src="{{ asset('images/design-thinking.png') }}" alt="Inspiration">
                     Best <br>
                     Software Solutions,<br>
                     I.C.T training & Consultation
