@@ -63,4 +63,24 @@
             </div>
         </div>
     </div>
+    <!-- Products -->
+    <div class="my-6 py-6">
+        <div class="lg:mx-32 px-4 text-4xl">
+            <span class="border-b-4 border-blue-400">Products</span>
+        </div>
+        <div class="grid grid-cols-1 lg:grid lg:grid-cols-3 gap-8 lg:mx-32 px-4 py-6">
+            <div class="text-center">
+                <img class="w-36 mx-auto" src="{{ asset('images/kamus.jpg') }}" alt="Kamus Dictionary">
+                <span class="text-xl">Kamus Dictionary</span>
+            </div>
+            <div class="text-center">
+                <img class="w-36 mx-auto" src="{{ asset('images/sms.jpg') }}" alt="School Management System">
+                <span class="text-xl">School Management System</span>
+            </div>
+            <div class="text-center">
+                <img class="w-36 mx-auto" src="{{ asset('images/hms.jpg') }}" alt="Hospital Management System">
+                <span class="text-xl">Hospital Management System</span>
+            </div>
+        </div>
+    </div>
 @endsection
