@@ -8,6 +8,14 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
         <link href="{{ asset('images/favicon.ico') }}" rel="icon">
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+        <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Roboto&display=swap" rel="stylesheet">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     </head>
