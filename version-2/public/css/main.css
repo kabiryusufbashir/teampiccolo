@@ -1,3 +1,11 @@
+[data-component="slideshow"] .slide {
+    display: none;
+}
+
+[data-component="slideshow"] .slide.active {
+    display: block;
+}
+
 #slogan{
     font-family: 'Montserrat', sans-serif;
 }

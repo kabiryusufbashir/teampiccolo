@@ -38,36 +38,50 @@
         </div>
     </div>
     <!-- Products -->
-    <div class="my-6 py-6 shadow-lg">
-        <div class="lg:mx-32 px-4 text-4xl">
-            <span class="border-b-4 border-blue-400">Products</span>
-        </div>
-        <div class="grid grid-cols-1 lg:grid lg:grid-cols-3 gap-8 lg:mx-32 px-4 py-6">
-            <div class="text-center">
-                <img class="w-36 mx-auto" src="{{ asset('images/kamus.jpg') }}" alt="Kamus Dictionary">
-                <span class="text-xl">Kamus Dictionary</span>
+    <div class="bg-blue-500 text-white">
+        <div class="my-6 py-10">
+            <div class="lg:mx-32 px-4 text-4xl">
+                <span class="border-b-4 border-white">Products</span>
             </div>
-            <div class="text-center">
-                <img class="w-36 mx-auto" src="{{ asset('images/sms.jpg') }}" alt="School Management System">
-                <span class="text-xl">School Management System</span>
-            </div>
-            <div class="text-center">
-                <img class="w-36 mx-auto" src="{{ asset('images/hms.jpg') }}" alt="Hospital Management System">
-                <span class="text-xl">Hospital Management System</span>
+            <div class="grid grid-cols-1 lg:grid lg:grid-cols-3 gap-8 lg:mx-32 px-4 py-6">
+                <div class="text-center">
+                    <img class="w-36 mx-auto" src="{{ asset('images/kamus.jpg') }}" alt="Kamus Dictionary">
+                    <span class="text-xl">Kamus Dictionary</span>
+                </div>
+                <div class="text-center">
+                    <img class="w-36 mx-auto" src="{{ asset('images/sms.jpg') }}" alt="School Management System">
+                    <span class="text-xl">School Management System</span>
+                </div>
+                <div class="text-center">
+                    <img class="w-36 mx-auto" src="{{ asset('images/hms.jpg') }}" alt="Hospital Management System">
+                    <span class="text-xl">Hospital Management System</span>
+                </div>
             </div>
         </div>
     </div>
     <!-- Testimonial  -->
-    <div class="bg-blue-500">
-        <div class="my-6 shadow py-6 text-white">
+    <div class="bg-white shadow-lg">
+        <div class="my-6 py-6 text-black">
             <div class="lg:mx-32 px-4 text-4xl">
-                <span class="border-b-4 border-white">Testimonials</span>
+                <span class="border-b-4 border-blue-400">Testimonials</span>
             </div>
-            <div class="carousel">
-                <div class="img-container" id="img">
-                    <img class="w-36 mx-auto" src="{{ asset('images/thepyramid.png') }}" alt="Pyramid Newspaper">
-                    <img class="w-36 mx-auto" src="{{ asset('images/thepyramid.png') }}" alt="Pyramid Newspaper">
-                    <img class="w-36 mx-auto" src="{{ asset('images/thepyramid.png') }}" alt="Pyramid Newspaper">
+            <div class="lg:mx-32 px-4 py-6" id="slideshow-example" data-component="slideshow">
+                <div role="list" class="text-center">
+                    <div class="slide">
+                        <img class="w-56 mx-auto" src="{{ asset('images/awwal.png') }}" alt="Engr Awwal">
+                        <h3 class="text-2xl font-medium pt-4">Engr. Auwal Abubakar Uthman</h3>
+                        <h4 class="text-lg">Director Engineering/Centre Manager Amec Cad Training Institute</h3>
+                    </div>
+                    <div class="slide">
+                        <img class="w-56 mx-auto" src="{{ asset('images/ismail.png') }}" alt="Ismail Kahioja">
+                        <h3 class="text-2xl font-medium pt-4">Mr. Ismail Abdulmalik</h3>
+                        <h4 class="text-lg">CTO Kahioja</h3>
+                    </div>
+                    <div class="slide">
+                        <img class="w-56 mx-auto" src="{{ asset('images/abdul.png') }}" alt="Abdul S">
+                        <h3 class="text-2xl font-medium pt-4">Abdul Bashir</h3>
+                        <h4 class="text-lg">Founder and CEO Kamusdictionary</h3>
+                    </div>
                 </div>
             </div>
         </div>
