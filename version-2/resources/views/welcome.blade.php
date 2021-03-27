@@ -70,24 +70,27 @@
                     <div class="slide">
                         <img class="w-56 mx-auto" src="{{ asset('images/awwal.png') }}" alt="Engr Awwal">
                         <h3 class="text-2xl font-medium pt-4">Engr. Auwal Abubakar Uthman</h3>
-                        <h4 class="text-lg">Director Engineering/Centre Manager Amec Cad Training Institute</h3>
+                        <h4 class="text-ms italic">Director Engineering/Centre Manager Amec Cad Training Institute</h3>
+                        <p class="mx-auto text-2xl py-4">"Partnering with Team Piccolo as our I.C.T courses Instructor has been a great benefit to Amec Cad Training Institute. They did an amazing job designing our website, project was delivered on time and on budget."</p>
                     </div>
                     <div class="slide">
                         <img class="w-56 mx-auto" src="{{ asset('images/ismail.png') }}" alt="Ismail Kahioja">
                         <h3 class="text-2xl font-medium pt-4">Mr. Ismail Abdulmalik</h3>
-                        <h4 class="text-lg">CTO Kahioja</h3>
+                        <h4 class="text-ms italic">CTO Kahioja</h3>
+                        <p class="mx-auto text-2xl py-4">"Leveraging Team Piccolo as our Software solution provider has been a great achievement for us at Kahioja. Team piccolo was able to implement our Logistics module on Kahioja within a short timeframe."</p>
                     </div>
                     <div class="slide">
                         <img class="w-56 mx-auto" src="{{ asset('images/abdul.png') }}" alt="Abdul S">
                         <h3 class="text-2xl font-medium pt-4">Abdul Bashir</h3>
-                        <h4 class="text-lg">Founder and CEO Kamusdictionary</h3>
+                        <h4 class="text-ms italic">Founder and CEO Kamusdictionary</h3>
+                        <p class="mx-auto text-2xl py-4">"Kamusdictionary wouldn't have been developed without Team Piccolo. Team Piccolo is a company with principles and always delivered on time and on budget."</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Partners -->
-    <div class="my-6 shadow py-6">
+    <div class="my-6 py-6">
         <div class="lg:mx-32 px-4 text-4xl">
             <span class="border-b-4 border-blue-400">Our Partners</span>
         </div>

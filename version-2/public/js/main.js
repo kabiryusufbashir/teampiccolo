@@ -24,7 +24,7 @@ var slideshows = document.querySelectorAll('[data-component="slideshow"]');
 
         var slides = document.querySelectorAll(`#${slideshow.id} [role="list"] .slide`); // Get an array of slides
 
-        var index = 0, time = 10000;
+        var index = 0, time = 5000;
         slides[index].classList.add('active');  
 
         setInterval( () => {
