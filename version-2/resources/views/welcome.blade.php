@@ -38,7 +38,7 @@
         </div>
     </div>
     <!-- Products -->
-    <div class="bg-blue-500 text-white">
+    <div class="bg-blue-600 text-white">
         <div class="my-6 py-10">
             <div class="lg:mx-32 px-4 text-4xl">
                 <span class="border-b-4 border-white">Products</span>
@@ -63,7 +63,7 @@
     <div class="bg-white shadow-lg">
         <div class="my-6 py-6 text-black">
             <div class="lg:mx-32 px-4 text-4xl">
-                <span class="border-b-4 border-blue-400">Testimonials</span>
+                <span class="border-b-4 border-blue-600">Testimonials</span>
             </div>
             <div class="lg:mx-32 px-4 py-6" id="slideshow-example" data-component="slideshow">
                 <div role="list" class="text-center">
@@ -92,7 +92,7 @@
     <!-- Partners -->
     <div class="my-6 py-6">
         <div class="lg:mx-32 px-4 text-4xl">
-            <span class="border-b-4 border-blue-400">Our Partners</span>
+            <span class="border-b-4 border-blue-600">Our Partners</span>
         </div>
         <div class="grid grid-cols-2 lg:grid lg:grid-cols-6 gap-8 lg:mx-32 px-4 py-6">
             <div>
@@ -115,5 +115,4 @@
             </div>
         </div>
     </div>
-    
 @endsection
