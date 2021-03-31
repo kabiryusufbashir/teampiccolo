@@ -17,6 +17,7 @@
         <!-- Navigation Bar -->
         <div class="z-40 flex justify-between lg:grid grid-cols-5 gap-3 bg-blue-600 py-4 shadow lg:px-32 px-4 items-center fixed w-full">
             <div class="lg:col-span-1">
+                <span class="text-center">@include('layouts.messages')</span>
                 <img class="w-12" src="{{ asset('images/logo.png') }}" alt="Team Piccolo Logo">
             </div>
             <div class="lg:col-span-3 hidden lg:block">
@@ -187,9 +188,10 @@
                     </div>
                     <div class="col-span-2 my-auto">
                         <span class="text-2xl">Subscribe to our newsletter</span>
-                        <form action="#" class="text-black flex items-center">
-                            <input name="subsribeNewsLetter" class="px-5 border border-gray-300 h-12 rounded-tl-lg rounded-bl-lg my-2 text-lg focus:outline-none w-full" type="text" name="newsLetter" id="newsLetter" placeholder="Subscribe to Our Newsletter">
-                            <input class="bg-green-600 py-2 px-4 text-white rounded-tr-lg rounded-br-lg uppercase h-12 focus:outline-none" type="submit" value="Subscribe">
+                        <form action="{{ route('news-letter') }}" class="text-black flex items-center" method="POST">
+                            @csrf
+                            <input class="px-5 border border-gray-300 h-12 rounded-tl-lg rounded-bl-lg my-2 text-lg focus:outline-none w-full" type="email" name="emails" id="newsLetter" placeholder="Subscribe to Our Newsletter">
+                            <button class="bg-green-600 py-2 px-4 text-white rounded-tr-lg rounded-br-lg uppercase h-12 focus:outline-none" type="submit">Subscribe</button>
                         </form>
                     </div>
                 </div>

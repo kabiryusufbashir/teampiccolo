@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\NewsletterController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,4 +19,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::post('/subcribe-newsletter', [NewsletterController::class, 'store'])->name('news-letter');
