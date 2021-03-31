@@ -188,7 +188,7 @@
                     <div class="col-span-2 my-auto">
                         <span class="text-2xl">Subscribe to our newsletter</span>
                         <form action="#" class="text-black flex items-center">
-                            <input class="px-5 border border-gray-300 h-12 rounded-tl-lg rounded-bl-lg my-2 text-lg focus:outline-none w-full" type="text" name="newsLetter" id="newsLetter" placeholder="Subscribe to Our Newsletter">
+                            <input name="subsribeNewsLetter" class="px-5 border border-gray-300 h-12 rounded-tl-lg rounded-bl-lg my-2 text-lg focus:outline-none w-full" type="text" name="newsLetter" id="newsLetter" placeholder="Subscribe to Our Newsletter">
                             <input class="bg-green-600 py-2 px-4 text-white rounded-tr-lg rounded-br-lg uppercase h-12 focus:outline-none" type="submit" value="Subscribe">
                         </form>
                     </div>
