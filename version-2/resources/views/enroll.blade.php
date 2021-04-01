@@ -19,37 +19,37 @@
             <form action="{{route('register')}}" method="POST">
                 @csrf
                 <div>
-                    <input required type="text" name="name" value="{{old('name')}}" placeholder="Full Name" class="px-5 w-full border border-gray-400 h-12 rounded-lg my-2 text-lg focus:outline-none @error('email') border-red-500 @enderror">
+                    <input required type="text" name="name" value="{{old('name')}}" placeholder="Full Name" class="input-box @error('email') border-red-500 @enderror">
                     @error('name')
                         {{$message}}
                     @enderror
                 </div>
                 <div>
-                    <input required type="email" name="email" value="{{old('email')}}" placeholder="Email Address" class="px-5 w-full border border-gray-400 h-12 rounded-lg my-2 text-lg focus:outline-none @error('name') border-red-500 @enderror">
+                    <input required type="email" name="email" value="{{old('email')}}" placeholder="Email Address" class="input-box @error('name') border-red-500 @enderror">
                     @error('email')
                         {{$message}}
                     @enderror
                 </div>
                 <div>
-                    <input required type="text" name="phone_number" value="{{old('phone_number')}}" placeholder="Phone No" class="px-5 w-full border border-gray-400 h-12 rounded-lg my-2 text-lg focus:outline-none @error('phone_number') border-red-500 @enderror">
+                    <input required type="text" name="phone_number" value="{{old('phone_number')}}" placeholder="Phone No" class="input-box @error('phone_number') border-red-500 @enderror">
                     @error('phone_number')
                         {{$message}}
                     @enderror
                 </div>
                 <div>
-                    <input required type="password" name="password" placeholder="Password" class="px-5 w-full border border-gray-400 h-12 rounded-lg my-2 text-lg focus:outline-none @error('password') border-red-500 @enderror">
+                    <input required type="password" name="password" placeholder="Password" class="input-box @error('password') border-red-500 @enderror">
                     @error('password')
                         {{$message}}
                     @enderror
                 </div>
                 <div>
-                    <input required type="password" name="password_confirmation" placeholder="Confirm Password" class="px-5 w-full border border-gray-400 h-12 rounded-lg my-2 text-lg focus:outline-none @error('password_confirmation') border-red-500 @enderror">
+                    <input required type="password" name="password_confirmation" placeholder="Confirm Password" class="input-box @error('password_confirmation') border-red-500 @enderror">
                     @error('password_confirmation')
                         {{$message}}
                     @enderror
                 </div>
                 <div class="text-center mt-6">
-                    <button class="bg-green-600 py-2 text-white rounded-full uppercase w-full h-12 focus:outline-none">Create Account</button>
+                    <button class="btn-submit">Create Account</button>
                 </div>
             </form>
         </div>
