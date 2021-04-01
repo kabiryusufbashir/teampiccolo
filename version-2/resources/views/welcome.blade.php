@@ -9,6 +9,26 @@
     Home | Team Piccolo Global Enterprises
 @endsection
 
+@section('header')
+<div class="relative z-0">
+    <img class="object-cover w-full h-screen" src="{{ asset('images/bg_2.jpg') }}" alt="Team Piccolo Header">
+    <div class="lg:grid grid-cols-2 gap-6 w-full flex justify-between px-4 leading-snug absolute top-40 lg:top-48 text-white text-5xl items-center">
+        <div id="slogan" class="text-center">
+            Have <br>
+            An Idea?<br>
+            Talk to Us Now
+            <img class="w-32 mx-auto slogan-logo" src="{{ asset('images/thinking.png') }}" alt="Thinking">
+        </div>
+        <div id="slogan" class="hidden lg:block text-center">
+            <img class="w-32 mx-auto slogan-logo" src="{{ asset('images/design-thinking.png') }}" alt="Inspiration">
+            Best <br>
+            Software Solutions,<br>
+            I.C.T training & Consultation
+        </div>
+    </div>
+</div>
+@endsection
+
 @section('body-content')
     <!-- Services  -->
     <div class="lg:grid grid-cols-3 gap-8 lg:mx-32 px-4 text-center my-6">

@@ -18,11 +18,13 @@
         <div class="z-40 flex justify-between lg:grid grid-cols-5 gap-3 bg-blue-600 py-4 shadow lg:px-32 px-4 items-center fixed w-full">
             <div class="lg:col-span-1">
                 <span class="text-center">@include('layouts.messages')</span>
-                <img class="w-12" src="{{ asset('images/logo.png') }}" alt="Team Piccolo Logo">
+                <a href="{{ route('home') }}" class="text-white flex">
+                    <img class="w-12" src="{{ asset('images/logo.png') }}" alt="Team Piccolo Logo">
+                </a>
             </div>
             <div class="lg:col-span-3 hidden lg:block">
                 <nav class="lg:flex justify-between list-none text-white">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="{{ route('home') }}">Home</a></li>
                     <li><a href="#">Courses</a></li>
                     <li><a href="#">About Us</a></li>
                     <li><a href="#">Publications</a></li>
@@ -31,8 +33,10 @@
                 </nav>
             </div>
             <div class="flex justify-end items-center lg:col-span-1 text-white">
-                <span>Enrol Now</span>
-                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path></svg>
+                <a href="{{ route('enroll') }}" class="text-white flex">
+                    <span>Enroll Now</span>
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path></svg>
+                </a>
             </div>
             <div id="menu" class="lg:hidden cursor-pointer">
                 <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
@@ -113,23 +117,7 @@
             </div>
         </div>
         <!-- header  -->
-        <div class="relative z-0">
-            <img class="object-cover w-full h-screen" src="{{ asset('images/bg_2.jpg') }}" alt="Team Piccolo Header">
-            <div class="lg:grid grid-cols-2 gap-6 w-full flex justify-between px-4 leading-snug absolute top-40 lg:top-48 text-white text-5xl items-center">
-                <div id="slogan" class="text-center">
-                    Have <br>
-                    An Idea?<br>
-                    Talk to Us Now
-                    <img class="w-32 mx-auto slogan-logo" src="{{ asset('images/thinking.png') }}" alt="Thinking">
-                </div>
-                <div id="slogan" class="hidden lg:block text-center">
-                    <img class="w-32 mx-auto slogan-logo" src="{{ asset('images/design-thinking.png') }}" alt="Inspiration">
-                    Best <br>
-                    Software Solutions,<br>
-                    I.C.T training & Consultation
-                </div>
-            </div>
-        </div>
+        @yield('header')
         @yield('body-content')
         <!-- footer  -->
         <div class="bg-blue-600">

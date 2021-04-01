@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\NewsletterController;
+use App\Http\Controllers\EnrollController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,9 @@ use App\Http\Controllers\NewsletterController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
+
+Route::get('/enroll', [EnrollController::class, 'index'])->name('enroll');
+Route::post('/register', [EnrollController::class, 'create'])->name('register');
 
 Route::post('/subcribe-newsletter', [NewsletterController::class, 'store'])->name('news-letter');
