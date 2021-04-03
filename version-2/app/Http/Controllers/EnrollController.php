@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class EnrollController extends Controller
 {
     public function index(){
-        return view('enroll');
+        return view('auth.enroll');
     }
 
     protected function create(Request $request)
