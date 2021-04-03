@@ -16,6 +16,9 @@
             <img class="w-full object-cover mx-auto w-full h-screen" src="{{ asset('images/enroll.jpg') }}" alt="Enrollment">
         </div>
         <div class="text-center px-8 my-auto">
+            <div class="lg:mx-32 px-4 text-3xl mb-8">
+                <span class="border-b-4 border-green-600 tracking-wider">Create an Account</span>
+            </div>
             <form action="{{route('register')}}" method="POST">
                 @csrf
                 <div>
