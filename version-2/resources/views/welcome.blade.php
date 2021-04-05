@@ -81,7 +81,7 @@
     </div>
     <!-- Testimonial  -->
     <div class="bg-white shadow-lg">
-        <div class="my-6 py-6 text-black">
+        <div class="my-6 py-6 text-gray-600">
             <div class="lg:mx-32 px-4 text-4xl">
                 <span class="border-b-4 border-blue-600">Testimonials</span>
             </div>
