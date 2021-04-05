@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Twilio\Rest\Client;
+
+use App\Models\User;
 
 class EnrollController extends Controller
 {
