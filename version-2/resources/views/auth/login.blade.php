@@ -11,11 +11,9 @@
 
 @section('header')
 <div class="relative z-0 w-full h-screen">
-    <div class="lg:grid grid-cols-2 w-full flex justify-between leading-snug items-center">
-        <div class="text-center px-8 my-auto">
-            <div class="lg:mx-32 px-4 text-3xl mb-8">
-                <span class="border-b-4 border-gray-200">Login to your Account</span>
-            </div>
+    <div class="w-full flex justify-between leading-snug items-center h-screen">
+        <div class="w-1/3 text-center px-14 py-8 mx-auto shadow-lg">
+            <img class="w-32 h-32 mx-auto" src="{{ asset('images/sign-in.png') }}" alt="Sign In">
             <form action="{{route('register')}}" method="POST">
                 @csrf
                 <div>
@@ -37,9 +35,6 @@
             <div class="text-left mt-4 font-medium text-lg">
                 Don't have an Account? <a class="text-yellow-600" href="{{ route('enroll') }}"> Register </a>
             </div>
-        </div>
-        <div class="hidden lg:block text-center bg-green-600 relative h-screen">
-            <img class="w-full object-cover mx-auto w-full h-screen" src="{{ asset('images/sign-in.png') }}" alt="Sign In">
         </div>
     </div>
 </div>
