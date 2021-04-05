@@ -18,6 +18,7 @@ use App\Http\Controllers\EnrollController;
 
 Route::get('/', function () { return view('welcome'); })->name('home');
 Route::get('/verify', function () { return view('auth.verify'); })->name('verify');
+Route::get('/courses', function () { return view('courses.index'); })->name('courses');
 Route::post('/subcribe-newsletter', [NewsletterController::class, 'store'])->name('news-letter');
 
 Route::get('/enroll', [EnrollController::class, 'index'])->name('enroll');

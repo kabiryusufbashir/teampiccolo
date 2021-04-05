@@ -13,7 +13,7 @@
 <div class="relative z-0 w-full h-screen">
     <div class="lg:grid grid-cols-2 w-full flex justify-between leading-snug items-center">
         <div class="hidden lg:block text-center bg-green-600 relative h-screen">
-            <img class="w-full object-cover mx-auto w-full h-screen" src="{{ asset('images/enroll.jpg') }}" alt="Enrollment">
+            <img class="w-full object-cover mx-auto w-full h-screen" src="{{ asset('images/verify.jpg') }}" alt="verify account">
         </div>
         <div class="text-center px-8 my-auto">
             <div class="lg:mx-32 px-4 text-3xl mb-8">
