@@ -15,7 +15,7 @@
     </head>
     <body>
         <!-- Navigation Bar -->
-        <div class="z-40 flex justify-between lg:grid grid-cols-5 gap-3 bg-blue-600 py-4 shadow lg:px-32 px-4 items-center fixed w-full">
+        <div class="z-40 flex justify-between lg:grid grid-cols-5 gap-3 bg-white py-4 shadow lg:px-32 px-4 items-center fixed w-full">
             <div class="lg:col-span-1">
                 <span class="text-center">@include('layouts.messages')</span>
                 <a href="{{ route('home') }}" class="text-white flex">
@@ -23,7 +23,7 @@
                 </a>
             </div>
             <div class="lg:col-span-3 hidden lg:block">
-                <nav class="lg:flex justify-between list-none text-white">
+                <nav class="lg:flex justify-between list-none text-gray-600">
                     <li><a href="{{ route('home') }}">Home</a></li>
                     <li><a href="{{ route('courses') }}">Courses</a></li>
                     <li><a href="#">About Us</a></li>
