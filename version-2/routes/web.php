@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Auth\Middleware\Authenticate;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\EnrollController;
 
@@ -17,12 +17,13 @@ use App\Http\Controllers\EnrollController;
 */
 
 Route::get('/', function () { return view('welcome'); })->name('home');
-Route::get('/verify', function () { return view('auth.verify'); })->name('verify');
-Route::get('/courses', function () { return view('courses.index'); })->name('courses');
 Route::post('/subcribe-newsletter', [NewsletterController::class, 'store'])->name('news-letter');
+Route::get('/courses', function () { return view('courses.index'); })->name('courses')->middleware('auth');
 
+//Enroll
 Route::get('/enroll', [EnrollController::class, 'index'])->name('enroll');
 Route::post('/register', [EnrollController::class, 'create'])->name('register');
+Route::get('/verify', function () { return view('auth.verify'); })->name('verify');
 Route::post('/verify', [EnrollController::class, 'verify'])->name('verify');
 
 
