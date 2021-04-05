@@ -17,7 +17,7 @@
         </div>
         <div class="text-center px-8 my-auto">
             <div class="lg:mx-32 px-4 text-3xl mb-8">
-                <span class="border-b-4 border-green-600 tracking-wider">Create an Account</span>
+                <span class="border-b-4 border-gray-200">Create an Account</span>
             </div>
             <form action="{{route('register')}}" method="POST">
                 @csrf
@@ -55,6 +55,9 @@
                     <button class="btn-submit">Create Account</button>
                 </div>
             </form>
+            <div class="text-left mt-4 font-medium text-lg">
+                Already have an account? <a class="text-blue-600 underline tracking-wider" href="{{ route('login') }}"> Login </a>
+            </div>
         </div>
     </div>
 </div>
