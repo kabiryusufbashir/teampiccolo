@@ -15,9 +15,9 @@ class LoginController extends Controller
         $users = User::where('category', 1)->get();
 
         if($users->count() === 0){
-            return view('auth.setup');    
+            return redirect()->route('setup');    
         }else{
-            return view('welcome');    
+            return route('home');    
         }
     }
 
@@ -25,9 +25,9 @@ class LoginController extends Controller
         $users = User::where('category', 1)->get();
 
         if($users->count() === 0){
-            return view('auth.setup');    
+            return redirect()->route('setup');;    
         }else{
-            return view('auth.login');    
+            return route('login');    
         }
     }
 

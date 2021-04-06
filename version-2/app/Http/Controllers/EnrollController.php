@@ -15,9 +15,9 @@ class EnrollController extends Controller
         $users = User::where('category', 1)->get();
 
         if($users->count() === 0){
-            return view('auth.setup');    
+            return redirect()->route('setup');    
         }else{
-            return view('auth.enroll');    
+            return route('enroll');    
         }
     }
 

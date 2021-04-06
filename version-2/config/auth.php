@@ -46,6 +46,36 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+
+        'admins' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+
+        'admins-api' => [
+            'driver' => 'token',
+            'provider' => 'admins',
+        ],
+
+        'students' => [
+            'driver' => 'session',
+            'provider' => 'students',
+        ],
+
+        'students-api' => [
+            'driver' => 'token',
+            'provider' => 'students',
+        ],
+
+        'blog' => [
+            'driver' => 'session',
+            'provider' => 'blog',
+        ],
+
+        'blog-api' => [
+            'driver' => 'token',
+            'provider' => 'blog',
+        ],
     ],
 
     /*
@@ -69,6 +99,21 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],
+
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin::class,
+        ],
+
+        'students' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Student::class,
+        ],
+
+        'blog' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Blog::class,
         ],
 
         // 'users' => [
