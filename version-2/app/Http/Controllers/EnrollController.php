@@ -12,7 +12,7 @@ use App\Models\User;
 class EnrollController extends Controller
 {
     public function index(){
-        return view('auth.enroll');
+        return redirect()->route('setup');
     }
 
     protected function create(Request $request)

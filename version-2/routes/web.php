@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Auth\Middleware\Authenticate;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\EnrollController;
 
@@ -16,7 +17,9 @@ use App\Http\Controllers\EnrollController;
 |
 */
 
-Route::get('/', function () { return view('welcome'); })->name('home');
+Route::get('/', [LoginController::class, 'index'])->name('home');
+Route::get('/setup', function () { return view('auth.setup'); })->name('setup');
+Route::post('/setup', [LoginController::class, 'create'])->name('setup-system');
 Route::get('/login', function () { return view('auth.login'); })->name('login');
 Route::post('/subcribe-newsletter', [NewsletterController::class, 'store'])->name('news-letter');
 Route::get('/courses', function () { return view('courses.index'); })->name('courses')->middleware('auth');

@@ -46,7 +46,7 @@
         <div class="hidden lg:block z-50 sticky inset-x-0 top-0 left-0 py-5">
             <div class="absolute top-0 right-0">
                 <a href="{{ route('login') }}" class="text-white flex">
-                    <button class="bg-green-600 p-8">
+                    <button class="bg-green-600 p-8 focus:outline-none">
                         <img class="w-10 h-10" src="{{ asset('images/login.png') }}" alt="Login Button">
                         Login
                     </button>

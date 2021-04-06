@@ -1,25 +1,15 @@
 @extends('layouts.template')
 
-@section('page-meta')
-<meta name="description" content="Enroll to our Academy to have access to our free courses on Computer Essentials, Web Development and Mobile Application">
-<meta name="keywords" content="Enroll, Computer Essentials, Web Development, Mobile Applicaation, Entrepreneur,Information Technology, Kano, Training">
-@endsection
-
 @section('page-title')
-    Enroll | Team Piccolo Global Enterprises
+    Set-Up | Team Piccolo Global Enterprises
 @endsection
 
 @section('header')
 <div class="relative z-0 w-full h-screen">
-    <div class="lg:grid grid-cols-2 w-full flex justify-between leading-snug items-center">
-        <div class="hidden lg:block text-center bg-green-600 relative h-screen">
-            <img class="w-full object-cover mx-auto w-full h-screen" src="{{ asset('images/enroll.jpg') }}" alt="Enrollment">
-        </div>
-        <div class="text-center px-4 lg:px-8 my-auto mt-24 w-full">
-            <div class="lg:mx-32 px-4 text-3xl mb-8">
-                <span class="border-b-4 border-gray-200">Create an Account</span>
-            </div>
-            <form action="{{route('register')}}" method="POST">
+    <div class="w-full flex justify-between leading-snug items-center h-screen">
+        <div class="border-t-2 w-full lg:w-1/3 text-center px-6 lg:px-14 py-8 mx-auto shadow-lg">
+            <img class="w-32 h-32 mx-auto" src="{{ asset('images/sign-in.png') }}" alt="Sign In">
+            <form action="{{route('setup-system')}}" method="POST">
                 @csrf
                 <div>
                     <input required type="text" name="name" value="{{old('name')}}" placeholder="Full Name" class="input-box @error('email') border-red-500 @enderror">
@@ -55,9 +45,6 @@
                     <button class="btn-submit">Create Account</button>
                 </div>
             </form>
-            <div class="text-left mt-4 font-medium text-lg">
-                Already have an account? <a class="text-blue-600 underline tracking-wider" href="{{ route('login') }}"> Login </a>
-            </div>
         </div>
     </div>
 </div>
