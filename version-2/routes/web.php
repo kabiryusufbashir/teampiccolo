@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Auth\Middleware\Authenticate;
+
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\EnrollController;
 
@@ -18,8 +20,12 @@ use App\Http\Controllers\EnrollController;
 */
 
 Route::get('/', [LoginController::class, 'index'])->name('home');
+
+//Set Up
 Route::get('/setup', function () { return view('auth.setup'); })->name('setup');
 Route::post('/setup', [LoginController::class, 'create'])->name('setup-system');
+Route::post('/confirm-no', [LoginController::class, 'verify'])->name('confirm-no');
+
 Route::get('/login', function () { return view('auth.login'); })->name('login');
 Route::post('/subcribe-newsletter', [NewsletterController::class, 'store'])->name('news-letter');
 Route::get('/courses', function () { return view('courses.index'); })->name('courses')->middleware('auth');
@@ -30,5 +36,7 @@ Route::post('/register', [EnrollController::class, 'create'])->name('register');
 Route::get('/verify', function () { return view('auth.verify'); })->name('verify');
 Route::post('/verify', [EnrollController::class, 'verify'])->name('verify');
 
+//Dashboard
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 
