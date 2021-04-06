@@ -15,9 +15,19 @@ class LoginController extends Controller
         $users = User::where('category', 1)->get();
 
         if($users->count() === 0){
-            return redirect()->route('setup');    
+            return view('auth.setup');    
         }else{
-            return redirect()->route('home');    
+            return view('welcome');    
+        }
+    }
+
+    public function login(){
+        $users = User::where('category', 1)->get();
+
+        if($users->count() === 0){
+            return view('auth.setup');    
+        }else{
+            return view('auth.login');    
         }
     }
 
@@ -47,7 +57,7 @@ class LoginController extends Controller
             'category' => 1,
         ]);
 
-        return redirect()->route('verify')->with(['phone_number' => $data['phone_number']]);
+        return redirect()->route('confirm-no')->with(['phone_number' => $data['phone_number']]);
     
     }
 
@@ -72,7 +82,6 @@ class LoginController extends Controller
             Auth::login($user->first());
             $request->session()->regenerate();
             return redirect()->route('dashboard');
-            return redirect()->route('courses')->with(['message' => 'Phone number verified']);
         }
         
         return back()->with(['phone_number' => $data['phone_number'], 'error' => 'Invalid verification code entered!']);

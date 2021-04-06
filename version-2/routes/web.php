@@ -24,9 +24,10 @@ Route::get('/', [LoginController::class, 'index'])->name('home');
 //Set Up
 Route::get('/setup', function () { return view('auth.setup'); })->name('setup');
 Route::post('/setup', [LoginController::class, 'create'])->name('setup-system');
+Route::get('/confirm-no', function () { return view('auth.confirm_no'); })->name('confirm-no');
 Route::post('/confirm-no', [LoginController::class, 'verify'])->name('confirm-no');
 
-Route::get('/login', function () { return view('auth.login'); })->name('login');
+Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/subcribe-newsletter', [NewsletterController::class, 'store'])->name('news-letter');
 Route::get('/courses', function () { return view('courses.index'); })->name('courses')->middleware('auth');
 

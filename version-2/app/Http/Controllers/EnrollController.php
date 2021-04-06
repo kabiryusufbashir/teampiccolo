@@ -12,7 +12,13 @@ use App\Models\User;
 class EnrollController extends Controller
 {
     public function index(){
-        return redirect()->route('setup');
+        $users = User::where('category', 1)->get();
+
+        if($users->count() === 0){
+            return view('auth.setup');    
+        }else{
+            return view('auth.enroll');    
+        }
     }
 
     protected function create(Request $request)
