@@ -24,12 +24,6 @@
                     @enderror
                 </div>
                 <div>
-                    <input required type="text" name="phone_number" value="{{old('phone_number')}}" placeholder="Phone No (e.g +2348000000000)" class="input-box @error('phone_number') border-red-500 @enderror">
-                    @error('phone_number')
-                        {{$message}}
-                    @enderror
-                </div>
-                <div>
                     <input required type="password" name="password" placeholder="Password" class="input-box @error('password') border-red-500 @enderror">
                     @error('password')
                         {{$message}}

@@ -20,7 +20,6 @@ class CreateUsersTable extends Migration
             $table->string('phone_number')->unique();
             $table->boolean('isVerified')->default(false);
             $table->string('password');
-            $table->string('category');
             $table->rememberToken();
             $table->timestamps();
         });

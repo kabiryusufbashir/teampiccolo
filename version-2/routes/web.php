@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Auth\Middleware\Authenticate;
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\NewsletterController;
@@ -19,17 +20,17 @@ use App\Http\Controllers\EnrollController;
 |
 */
 
-Route::get('/', [LoginController::class, 'index'])->name('home');
+
+Route::get('/', [AdminController::class, 'index'])->name('home');
+Route::post('/subcribe-newsletter', [NewsletterController::class, 'store'])->name('news-letter');
+Route::get('/courses', function () { return view('courses.index'); })->name('courses')->middleware('auth');
 
 //Set Up
 Route::get('/setup', function () { return view('auth.setup'); })->name('setup');
-Route::post('/setup', [LoginController::class, 'create'])->name('setup-system');
-Route::get('/confirm-no', function () { return view('auth.confirm_no'); })->name('confirm-no');
-Route::post('/confirm-no', [LoginController::class, 'verify'])->name('confirm-no');
+Route::post('/setup', [AdminController::class, 'create'])->name('setup-system');
 
-Route::get('/login', [LoginController::class, 'login'])->name('login');
-Route::post('/subcribe-newsletter', [NewsletterController::class, 'store'])->name('news-letter');
-Route::get('/courses', function () { return view('courses.index'); })->name('courses')->middleware('auth');
+//Login
+Route::get('/login', [LoginController::class, 'index'])->name('login');
 
 //Enroll
 Route::get('/enroll', [EnrollController::class, 'index'])->name('enroll');
@@ -39,5 +40,3 @@ Route::post('/verify', [EnrollController::class, 'verify'])->name('verify');
 
 //Dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-
-
