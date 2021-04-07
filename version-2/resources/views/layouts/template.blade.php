@@ -142,11 +142,11 @@
         @yield('header')
         @yield('body-content')
         <!-- footer  -->
-        <div class="bg-blue-600">
+        <div class="bg-gray-600">
             <div class="lg:mx-32 px-4 py-6 text-white">
                 <div class="lg:grid grid-cols-5 gap-6 py-4">
                     <div class="col-span-2">
-                        <span class="text-4xl font-medium border-b-4 border-white">Team Piccolo</span>
+                        <span class="text-3xl font-medium border-b-4 border-white">Team Piccolo</span>
                         <img class="w-20 my-4" src="{{ asset('images/logo.png') }}" alt="Team Piccolo Logo">
                         <p class="text-lg">Have an Idea you want to develop? Contact us now for your Best I.C.T Training and Software solutions</p>
                         <div class="flex my-4">

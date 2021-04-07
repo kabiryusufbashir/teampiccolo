@@ -7,7 +7,7 @@
 @section('header')
 <div class="relative z-0 w-full h-screen">
     <div class="w-full flex justify-between leading-snug items-center h-screen">
-        <div class="border-t-2 w-full lg:w-1/3 text-center px-6 lg:px-14 py-8 mx-auto shadow-lg">
+        <div class="border-t-2 w-full lg:w-1/3 text-center px-6 lg:px-8 py-8 mx-auto shadow-lg">
             <img class="w-32 h-32 mx-auto" src="{{ asset('images/sign-in.png') }}" alt="Sign In">
             <form action="{{route('setup-system')}}" method="POST">
                 @csrf

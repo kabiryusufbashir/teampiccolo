@@ -58,7 +58,7 @@
         </div>
     </div>
     <!-- Products -->
-    <div class="bg-blue-600 text-white">
+    <div class="bg-gray-600 text-white">
         <div class="my-6 py-10">
             <div class="lg:mx-32 px-4 text-4xl">
                 <span class="border-b-4 border-white">Products</span>

@@ -47,14 +47,14 @@ return [
             'hash' => false,
         ],
 
-        'admins' => [
+        'admin' => [
             'driver' => 'session',
-            'provider' => 'admins',
+            'provider' => 'admin',
         ],
 
-        'admins-api' => [
+        'admin-api' => [
             'driver' => 'token',
-            'provider' => 'admins',
+            'provider' => 'admin',
         ],
 
         'students' => [
@@ -101,7 +101,7 @@ return [
             'model' => App\Models\User::class,
         ],
 
-        'admins' => [
+        'admin' => [
             'driver' => 'eloquent',
             'model' => App\Models\Admin::class,
         ],

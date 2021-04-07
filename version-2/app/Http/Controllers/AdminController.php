@@ -14,12 +14,15 @@ class AdminController extends Controller
         return view('welcome');    
     }
 
-    protected function create(Request $request)
+    public function setup(){
+        return view('auth.setup');
+    }
+
+    public function create(Request $request)
     {
         $data = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email'],
-            'phone_number' => ['required', 'numeric', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
 
@@ -30,10 +33,16 @@ class AdminController extends Controller
                 'password' => Hash::make($data['password'])
             ]);
 
-            Auth::guard('admin')->login($user);
-            $request->session()->regenerate();
-            return redirect()->route('dashboard');
-        
+            try{
+                if(Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password])){
+                    $request->session()->regenerate();
+                    return redirect()->route('dashboard'); 
+                }else{
+                    return back()->with(['error' => 'Please try again later! ('.$e.')']);
+                }
+            }catch(Exception $e){
+                return back()->with(['error' => 'Please try again later! ('.$e.')']);
+            }
         }catch(Expection $e){
             return back()->with(['error' => 'Please try again later! ('.$e.')']);
         }

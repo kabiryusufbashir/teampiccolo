@@ -26,7 +26,7 @@ Route::post('/subcribe-newsletter', [NewsletterController::class, 'store'])->nam
 Route::get('/courses', function () { return view('courses.index'); })->name('courses')->middleware('auth');
 
 //Set Up
-Route::get('/setup', function () { return view('auth.setup'); })->name('setup');
+Route::get('/setup', [AdminController::class, 'setup'])->name('setup');
 Route::post('/setup', [AdminController::class, 'create'])->name('setup-system');
 
 //Login
