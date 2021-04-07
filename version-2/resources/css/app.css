@@ -9,3 +9,31 @@
 .btn-submit{
     @apply bg-green-600 py-2 text-white rounded-full uppercase w-full h-12 focus:outline-none;
 }
+
+.user-setting-caret{
+    @apply flex block px-4 py-2 hover:bg-gray-100 hover:text-gray-900 border-b;
+}
+
+.users-caret{
+    @apply cursor-pointer w-5 h-5 ml-auto my-auto text-gray-400;
+}
+
+.users-caret-menu{
+    @apply bg-white px-10 text-gray-500;
+}
+
+.stats-icon{
+    @apply w-16 h-16 rounded-full p-2;
+}
+
+.stats-card{
+    @apply bg-white shadow flex justify-between items-center p-6;
+}
+
+.card{
+    @apply bg-white shadow-lg items-center p-6 text-center;
+}
+
+.stats-value{
+    @apply text-right text-3xl font-medium;
+}
