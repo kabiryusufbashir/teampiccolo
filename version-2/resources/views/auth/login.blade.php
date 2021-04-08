@@ -14,7 +14,7 @@
     <div class="w-full flex justify-between leading-snug items-center h-screen">
         <div class="border-t-2 w-full lg:w-1/3 text-center px-6 lg:px-8 py-8 mx-auto shadow-lg">
             <img class="w-32 h-32 mx-auto" src="{{ asset('images/sign-in.png') }}" alt="Sign In">
-            <form action="{{route('register')}}" method="POST">
+            <form action="{{route('sign-in')}}" method="POST">
                 @csrf
                 <div>
                     <input required type="email" name="email" value="{{old('email')}}" placeholder="Email Address" class="input-box @error('name') border-red-500 @enderror">

@@ -17,7 +17,7 @@
             <!-- system details -->
             <div class="mx-3 flex items-center justify-between col-span-1">
                 <img class="w-10" src="{{ $system_settings->photo ?? asset('images/logo.png') }}" alt="Logo">
-                <h2 class="text-white ml-2 text-lg">{{$system_settings->hospital_name ?? 'Piccolo Hospital Mgt. System'}}</h2>
+                <h2 class="text-white ml-2 text-lg">Team Piccolo</h2>
                 <svg id="menuCaret" class="w-8 h-8 text-white cursor-pointer" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
             </div>
             <!-- user details -->
@@ -66,10 +66,10 @@
         </div>
     </div>
 
-    <!-- #menuAdmin  -->
+    <!-- #menu  -->
     <div class="md:grid md:grid-cols-5">
         <!-- Nav link  -->
-        <div id="#menuAdmin" class="hidden md:block px-3 bg-white col-span-1">
+        <div id="#menu" class="hidden md:block px-3 bg-white col-span-1">
             <h2 class="text-2xl py-3 border-b font-medium">Menu</h2>
             <ul>
                 <li class="py-3 flex border-b cursor-pointer">
@@ -187,5 +187,6 @@
             </div>
         </div>
     </div>
+    <script src="{{ asset('js/dashboard.js') }}"></script>
 </body>
 </html>
