@@ -32,6 +32,7 @@ Route::post('/setup', [AdminController::class, 'create'])->name('setup-system');
 //Login
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'login'])->name('sign-in');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 //Enroll
 Route::get('/enroll', [EnrollController::class, 'index'])->name('enroll');

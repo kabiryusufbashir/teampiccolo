@@ -54,7 +54,7 @@
                             <span class="user-setting-caret">
                                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clip-rule="evenodd"></path></svg>
                                 &nbsp;&nbsp;
-                                <form action="#" method="POST">
+                                <form action="{{ route('logout') }}" method="POST">
                                     @csrf 
                                     <button class="focus:outline-none focus:bg-gray-100 focus:text-gray-900" type="submit" name="logout">Logout</button>
                                 </form>
@@ -79,35 +79,86 @@
                     </a>
                 </li>
                 
-                <!-- Doctor -->
-                <li id="doctorCaret" class="py-3 flex border-b cursor-pointer">
-                    <img class="w-7 mr-4" src="{{ asset('images/doctor_icon.png') }}" alt="Doctor">
-                    <a href="#">Doctors</a>
-                    <svg id="doctorPointer" class="users-caret" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd"></path><path fill-rule="evenodd" d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                <!-- Clients -->
+                <li id="clientCaret" class="py-3 flex border-b cursor-pointer">
+                    <img class="w-7 mr-4" src="{{ asset('images/client_icon.png') }}" alt="client">
+                    <a href="#">Clients</a>
+                    <svg id="clientPointer" class="users-caret" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd"></path><path fill-rule="evenodd" d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
                 </li>
-                <div id="doctorMenu" class="users-caret-menu hidden">
+                <div id="clientMenu" class="users-caret-menu hidden">
                     <li class="py-3 flex border-b">
-                        <a href="#">Add Doctor</a>
+                        <a href="#">Add Clients</a>
                     </li>
                     <li class="py-3 flex">
-                        <a href="#">All Doctors</a>
+                        <a href="#">All Client</a>
                     </li>
                 </div>
+
+                <!-- Students -->
+                <li id="clientCaret" class="py-3 flex border-b cursor-pointer">
+                    <img class="w-7 mr-4" src="{{ asset('images/students_icon.png') }}" alt="Students">
+                    <a href="#">Students</a>
+                    <svg id="clientPointer" class="users-caret" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd"></path><path fill-rule="evenodd" d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                </li>
+                <div id="clientMenu" class="users-caret-menu hidden">
+                    <li class="py-3 flex border-b">
+                        <a href="#">Add Students</a>
+                    </li>
+                    <li class="py-3 flex">
+                        <a href="#">All Students</a>
+                    </li>
+                </div>
+
+                <!-- Staff -->
+                <li id="clientCaret" class="py-3 flex border-b cursor-pointer">
+                    <img class="w-7 mr-4" src="{{ asset('images/staff_icon.png') }}" alt="Staff">
+                    <a href="#">Staff</a>
+                    <svg id="clientPointer" class="users-caret" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd"></path><path fill-rule="evenodd" d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                </li>
+                <div id="clientMenu" class="users-caret-menu hidden">
+                    <li class="py-3 flex border-b">
+                        <a href="#">Add Staff</a>
+                    </li>
+                    <li class="py-3 flex">
+                        <a href="#">All Staff</a>
+                    </li>
+                </div>
+
+                <!-- Clients -->
+                <li id="clientCaret" class="py-3 flex border-b cursor-pointer">
+                    <img class="w-7 mr-4" src="{{ asset('images/blog_icon.png') }}" alt="Blog">
+                    <a href="#">Blog</a>
+                    <svg id="clientPointer" class="users-caret" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd"></path><path fill-rule="evenodd" d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                </li>
+                <div id="clientMenu" class="users-caret-menu hidden">
+                    <li class="py-3 flex border-b">
+                        <a href="#">Add Blog</a>
+                    </li>
+                    <li class="py-3 flex">
+                        <a href="#">All Blog</a>
+                    </li>
+                </div>
+
+                <!-- Logout  -->
+                <li id="clientCaret" class="py-3 flex border-b cursor-pointer">
+                    <img class="w-7 mr-4" src="{{ asset('images/logout_icon.png') }}" alt="Icon">
+                    <a href="{{ route('logout') }}">Logout</a>
+                </li>
             </ul>
         </div>
         <!-- Stats -->
         <div id="statsDiv" class="col-span-4">
             <!-- System Stats  -->
             <div class="md:grid md:grid-cols-4 md:gap-4 mx-2 my-6">
-                <!-- Doctor  -->
+                <!-- client  -->
                 <div class="stats-card">
                     <div>
-                        <img class="stats-icon bg-blue-400" src="{{ asset('images/doctor_stats.png') }}" alt="Doctor Stats Icon">
+                        <img class="stats-icon bg-blue-400" src="{{ asset('images/client_icon.png') }}" alt="Client Icon">
                     </div>
                     <div>
                         <div class="stats-value">09</div>
                         <div class="bg-blue-400 text-white px-4 py-1 rounded-lg flex items-center">
-                            <span>Doctors</span>
+                            <span>clients</span>
                             &nbsp;
                             <span>
                                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
@@ -118,12 +169,12 @@
                 <!-- Patient  -->
                 <div class="stats-card">
                     <div>
-                        <img class="stats-icon bg-yellow-400" src="{{ asset('images/patient_stats.png') }}" alt="Doctor Stats Icon">
+                        <img class="stats-icon bg-yellow-400" src="{{ asset('images/students_icon.png') }}" alt="Student Icon">
                     </div>
                     <div>
                         <div class="stats-value">3</div>
                         <div class="bg-yellow-500 text-white px-4 py-1 rounded-lg flex items-center">
-                            <span>Patient</span>
+                            <span>Students</span>
                             &nbsp;
                             <span>
                                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
@@ -134,12 +185,12 @@
                 <!-- Attend  -->
                 <div class="stats-card">
                     <div>
-                        <img class="stats-icon bg-green-400" src="{{ asset('images/attend.png') }}" alt="Attend Stats Icon">
+                        <img class="stats-icon bg-green-400" src="{{ asset('images/staff_icon.png') }}" alt="Staff Icon">
                     </div>
                     <div>
                         <div class="stats-value">40</div>
                         <div class="bg-green-500 text-white px-4 py-1 rounded-lg flex items-center">
-                            <span>Attend</span>
+                            <span>Staff</span>
                             &nbsp;
                             <span>
                                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
@@ -150,39 +201,18 @@
                 <!-- Waiting  -->
                 <div class="stats-card">
                     <div>
-                        <img class="stats-icon bg-purple-400" src="{{ asset('images/waiting.png') }}" alt="Waiting Stats Icon">
+                        <img class="stats-icon bg-purple-400" src="{{ asset('images/blog_icon.png') }}" alt="Blog Icon">
                     </div>
                     <div>
                         <div class="stats-value">100</div>
                         <div class="bg-purple-500 text-white px-4 py-1 rounded-lg flex items-center">
-                            <span>Waiting</span>
+                            <span>Blog</span>
                             &nbsp;
                             <span>
                                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
                             </span>
                         </div>    
                     </div>
-                </div>
-            </div>
-            <div class="md:grid md:grid-cols-2 md:gap-4 mx-2 my-6">
-                <div class="bg-white">
-                    <div class="stats-value px-16 py-4">Staff Statistic</div>
-                    <div>Graph</div>
-                </div>
-                <div class="bg-white">
-                    <div class="stats-value px-16 py-4">Patient Statistic</div>
-                    <div>Graph</div>
-                </div>
-            </div>
-            <!-- Charts  -->
-            <div class="bg-white md:grid md:grid-cols-2 md:gap-4 mx-2 my-6">
-                <div class="">
-                    <div class="stats-value px-16 py-4">Payment Status Statistic</div>
-                    <div>Graph</div>
-                </div>
-                <div>
-                    <div class="stats-value px-16 py-4">Sales Statistic 2021</div>
-                    <div>Graph</div>
                 </div>
             </div>
         </div>
