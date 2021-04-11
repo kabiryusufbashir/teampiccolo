@@ -24,6 +24,7 @@ use App\Http\Controllers\EnrollController;
 Route::get('/', [AdminController::class, 'index'])->name('home');
 Route::get('/courses', function () { return view('courses.index'); })->name('courses')->middleware('auth');
 Route::get('/about-us', function () { return view('about'); })->name('about');
+Route::get('/contact', function () { return view('contact'); })->name('contact');
 Route::post('/subcribe-newsletter', [NewsletterController::class, 'store'])->name('news-letter');
 
 //Set Up

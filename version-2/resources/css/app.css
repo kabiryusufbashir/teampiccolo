@@ -39,5 +39,9 @@
 }
 
 .paragraph{
-    @apply mx-10 lg:mx-16 text-green-800 text-base mb-4;
+    @apply mx-10 lg:mx-16 text-green-800 text-base mb-4 text-justify;
+}
+
+.paragraph-title{
+    @apply font-medium text-2xl text-green-600;
 }
