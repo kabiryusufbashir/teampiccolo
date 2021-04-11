@@ -12,7 +12,7 @@
 @section('header')
 <div class="relative z-0 w-full h-screen">
     <div class="lg:grid grid-cols-2 w-full flex justify-between leading-snug items-center">
-        <div class="hidden lg:block text-center bg-green-600 relative h-screen">
+        <div class="hidden lg:block text-center bg-green-600 relative h-screen shadow-lg">
             <img class="w-full object-cover mx-auto w-full h-screen" src="{{ asset('images/about.jpg') }}" alt="About Us">
         </div>
         <div class="my-auto mt-24 w-full">

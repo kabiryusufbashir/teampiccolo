@@ -26,6 +26,7 @@ Route::get('/courses', function () { return view('courses.index'); })->name('cou
 Route::get('/about-us', function () { return view('about'); })->name('about');
 Route::get('/contact', function () { return view('contact'); })->name('contact');
 Route::post('/subcribe-newsletter', [NewsletterController::class, 'store'])->name('news-letter');
+Route::post('/contact', [AdminController::class, 'contact'])->name('contact');
 
 //Set Up
 Route::get('/setup', [AdminController::class, 'setup'])->name('setup');

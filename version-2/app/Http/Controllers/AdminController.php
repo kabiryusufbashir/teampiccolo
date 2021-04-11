@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 use App\Models\Admin;
+use App\Models\Contact;
 
 class AdminController extends Controller
 {
@@ -45,6 +46,31 @@ class AdminController extends Controller
             }
         }catch(Expection $e){
             return back()->with(['error' => 'Please try again later! ('.$e.')']);
+        }
+    }
+
+    public function contact(Request $request){
+        $data = request()->validate([
+            'name'=> ['required'],
+            'email'=> ['required', 'email'],
+            'phone'=> ['required'],
+            'message'=> ['required'],
+        ]);
+
+        try{
+            Contact::create($data);
+            try{
+                $sendmail = Contact::latest('id')->first();
+                Mail::to('info@teampiccolo.com')
+                    ->cc('kabiryusufbashir@gmail.com')
+                    ->send(new ContactMail($sendmail));
+                return redirect('/')->with('success','Thanks for Contacting, We will get back you soon!');    
+    
+            }catch(Exception $e){
+                return redirect('/')->with('error', $e->getMessage());    
+            }
+        }catch(Exception $e){
+            return redirect('/')->with('error', $e->getMessage());    
         }
     }
 }
