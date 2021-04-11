@@ -31294,6 +31294,22 @@ video {
   text-align: right;
 }
 
+.paragraph{
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+  --tw-text-opacity: 1;
+  color: rgba(6, 95, 70, var(--tw-text-opacity));
+}
+
+@media (min-width: 1024px) {
+  .paragraph {
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

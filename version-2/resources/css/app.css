@@ -37,3 +37,7 @@
 .stats-value{
     @apply text-right text-3xl font-medium;
 }
+
+.paragraph{
+    @apply mx-10 lg:mx-16 text-green-800 text-base mb-4;
+}
