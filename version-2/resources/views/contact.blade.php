@@ -10,13 +10,11 @@
 @endsection
 
 @section('header')
-<div class="w-full mb-6 py-8">
-    <div class="lg:grid grid-cols-2 gap-6 w-full pt-20 flex justify-between leading-snug items-center">
-        <div class="px-4 lg:px-8 w-full shadow-lg p-6 mx-8">
-            <div class="mx-10 lg:mx-2 text-3xl mb-8">
-                <span class="border-b-4 border-green-600 ">For Any Enquiries, Contact Us Below</span>
-            </div>
-            <form action="{{route('contact')}}" method="POST">
+<div class="py-8">
+    <div class="grid grid-cols-1 lg:grid lg:grid-cols-2 gap-8 lg:mx-32 px-4 py-6 pt-24">
+        <div class="shadow-lg p-6">
+            <span class="border-b-4 border-green-600 text-2xl">For Any Enquiries</span>
+            <form action="{{route('contact')}}" method="POST" class="mt-4">
                 @csrf
                 <div>
                     <input required type="text" name="name" value="{{old('name')}}" placeholder="Full Name" class="input-box @error('email') border-red-500 @enderror">
@@ -37,7 +35,7 @@
                     @enderror
                 </div>
                 <div>
-                    <textarea required name="message" class="px-5 w-full border border-gray-400 h-24 rounded-lg my-2 text-lg focus:outline-none @error('password') border-red-500 @enderror" placeholder="Message"> </textarea>
+                    <textarea required name="enquiry" class="px-5 w-full border border-gray-400 h-24 rounded-lg my-2 text-lg focus:outline-none @error('password') border-red-500 @enderror" placeholder="Message"> </textarea>
                     @error('message')
                         {{$message}}
                     @enderror
@@ -47,16 +45,20 @@
                 </div>
             </form>
         </div>
-        <div class="shadow mx-4 p-4 lg:mx-8 my-auto">
+        <div>
             <div>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1380.029350253521!2d8.604651825840886!3d11.952856080372493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x11ae8265683aac83%3A0xd477b851b4bad822!2sIbrahim%20Kunya%20Housing%20Estate!5e0!3m2!1sen!2sng!4v1569176345363!5m2!1sen!2sng" width="100%" height="350" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
             </div>
             <div class="py-4">
-                <div class="py-1">
+                <div class="py-1 text-green-600">
                     <i class="fas fa-phone text-green-600"></i> 
                     <span>
-                        <a class="text-green-600" href="tel:+2348068593127">
+                        <a class="" href="tel:+2348068593127">
                             08068593127
+                        </a>
+                        ,
+                        <a class="text-green-600" href="tel:+2348032338280">
+                            08032338280
                         </a>
                     </span>
                 </div>

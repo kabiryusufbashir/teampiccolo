@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 use App\Models\Newsletter;
-
 use App\Mail\NewsLetterMail;
-use Illuminate\Support\Facades\Mail;
 
 class NewsletterController extends Controller
 {

@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 use App\Models\Admin;
 use App\Models\Contact;
+use App\Mail\ContactMail;
 
 class AdminController extends Controller
 {
@@ -54,7 +56,7 @@ class AdminController extends Controller
             'name'=> ['required'],
             'email'=> ['required', 'email'],
             'phone'=> ['required'],
-            'message'=> ['required'],
+            'enquiry'=> ['required'],
         ]);
 
         try{

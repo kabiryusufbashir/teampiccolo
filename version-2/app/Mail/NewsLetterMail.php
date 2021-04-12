@@ -27,9 +27,9 @@ class NewsLetterMail extends Mailable
      */
     public function build()
     {
-        return $this->from('info@teampiccolo.com')
+        return $this->from($this->newsletter->emails)
                     ->with([
-                        'emails' => $this->newsletter->email,
+                        'emails' => $this->newsletter->emails,
                     ])
                     ->subject('Team Piccolo NewsLetter')
                     ->view('emails.newslettersubscribe');

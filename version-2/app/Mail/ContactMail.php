@@ -27,12 +27,12 @@ class ContactMail extends Mailable
      */
     public function build()
     {
-        return $this->from('info@teampiccolo.com')
+        return $this->from($this->contact->email)
                     ->with([
                         'name' => $this->contact->name,
                         'email' => $this->contact->email,
                         'phone' => $this->contact->phone,
-                        'message' => $this->contact->message,
+                        'enquiry' => $this->contact->enquiry,
                     ])
                     ->subject('Team Piccolo Enquiry')
                     ->view('emails.contact');
