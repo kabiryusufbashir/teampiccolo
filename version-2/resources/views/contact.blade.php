@@ -10,12 +10,9 @@
 @endsection
 
 @section('header')
-<div class="relative z-0 w-full h-screen">
-    <div class="lg:grid grid-cols-2 w-full flex justify-between leading-snug items-center">
-        <div class="hidden lg:block text-center bg-green-600 relative h-screen shadow-lg">
-            <img class="w-full object-cover mx-auto w-full h-screen" src="{{ asset('images/contact-us.jpg') }}" alt="Contact Us">
-        </div>
-        <div class="px-4 lg:px-8 my-auto mt-24 w-full">
+<div class="w-full mb-6 py-8">
+    <div class="lg:grid grid-cols-2 gap-6 w-full pt-20 flex justify-between leading-snug items-center">
+        <div class="px-4 lg:px-8 w-full shadow-lg p-6 mx-8">
             <div class="mx-10 lg:mx-2 text-3xl mb-8">
                 <span class="border-b-4 border-green-600 ">For Any Enquiries, Contact Us Below</span>
             </div>
@@ -49,6 +46,35 @@
                     <button class="btn-submit">Submit</button>
                 </div>
             </form>
+        </div>
+        <div class="shadow mx-4 p-4 lg:mx-8 my-auto">
+            <div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1380.029350253521!2d8.604651825840886!3d11.952856080372493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x11ae8265683aac83%3A0xd477b851b4bad822!2sIbrahim%20Kunya%20Housing%20Estate!5e0!3m2!1sen!2sng!4v1569176345363!5m2!1sen!2sng" width="100%" height="350" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            </div>
+            <div class="py-4">
+                <div class="py-1">
+                    <i class="fas fa-phone text-green-600"></i> 
+                    <span>
+                        <a class="text-green-600" href="tel:+2348068593127">
+                            08068593127
+                        </a>
+                    </span>
+                </div>
+                <div class="py-1">
+                    <i class="fas fa-envelope-square text-green-600"></i>
+                    <span>
+                        <a class="text-green-600" href="mailto:info@teampiccolo.com">
+                           info@teampiccolo.com
+                        </a>
+                    </span>
+                </div>
+                <div class="py-1">
+                    <a>
+                        <i class="fas fa-home text-green-600"></i> 
+                        <a href="#" class="text-green-600">No 7 Kabiru Alhaji Bashir Street off Maiduguri Road Kano State, Nigeria</a>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
