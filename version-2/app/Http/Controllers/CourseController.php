@@ -34,7 +34,7 @@ class CourseController extends Controller
             'photo'=> 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        $imageName = 'images/courses/'.time().'.'.$request->photo->extension();  
+        $imageName = '/images/courses/'.time().'.'.$request->photo->extension();  
         
         try{
             Course::create([
@@ -59,7 +59,8 @@ class CourseController extends Controller
 
     public function edit($id)
     {
-        //
+        $course = Course::findOrFail($id);
+        return view('dashboard.course.edit',['course'=>$course]);
     }
 
     public function update(Request $request, $id)

@@ -1,3 +1,15 @@
+//Change Photo
+const changePhoto = document.querySelector("#changePhoto");
+const changePhotoField = document.querySelector("#changePhotoField");
+
+changePhoto.addEventListener('click', ()=>{
+    if(changePhotoField.classList.contains('hidden')){
+        changePhotoField.classList.remove('hidden');
+    }else{
+        changePhotoField.classList.add('hidden');
+    }
+});
+
 // Menu caret 
 const menuCaret = document.querySelector("#menuCaret");
 const menu = document.querySelector("#menu");
