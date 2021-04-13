@@ -34,12 +34,12 @@
                             @foreach($courses as $course)
                                 <div class="card border-2">
                                     <div>
-                                        <img class="w-24 h-24 rounded-full p-2 mx-auto" src=" {{ $course->photo }} " alt="{{ $course->name }} Image">    
+                                        <img class="w-32 h-32 rounded-full p-2 mx-auto border-2" src=" {{ $course->photo }} " alt="{{ $course->name }} Image">    
                                     </div>
                                     <div class="font-medium text-xl py-1">
                                         {{ $course->name }}
                                     </div>
-                                    <div class="flex text-left border-t py-1">
+                                    <div class="text-center border-t py-1">
                                         {{ $course->slug }}
                                     </div>
                                     <div class="flex justify-end border-t pt-4 pb-2 items-center">
@@ -58,7 +58,7 @@
                                             </button>
                                         </form>
                                         &nbsp;
-                                        <form action="#" method="POST">
+                                        <form action="{{ route('del-course', $course->id) }}" method="POST">
                                             @csrf 
                                             @method('DELETE')
                                             <button class="del-btn">

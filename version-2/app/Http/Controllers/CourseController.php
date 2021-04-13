@@ -33,8 +33,15 @@ class CourseController extends Controller
             'photo'=> 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
+        $imageName = 'images/doctors/'.time().'.'.$request->photo->extension();  
+        $request->photo->move(public_path('images/doctors'), $imageName);
+
         try{
-            Course::create($data);
+            Course::create([
+                'name'=>$request->name,
+                'slug'=>$request->slug,
+                'photo'=>$imageName
+            ]);
             return redirect()->route('all-course');
         }catch(Exception $e){
             return redirect('/')->with('error', $e->getMessage());    
@@ -58,6 +65,13 @@ class CourseController extends Controller
 
     public function destroy($id)
     {
-        //
+        $course = Course::findOrFail($id);
+        
+        try{
+            $course->delete();
+            return back()->with('success', 'Course deleted');
+        }catch(Exception $e){
+            return back()->with('error', 'Please try again... '.$e);
+        }
     }
 }
