@@ -42,7 +42,19 @@
             </div>
         </div>
         <!-- Login Button  -->
-        @if(Auth::guest())
+        @if(!Auth::guest())
+        <div class="hidden lg:block z-50 sticky inset-x-0 top-0 left-0 py-5">
+            <div class="absolute top-0 right-0">
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf 
+                    <button class="text-white bg-green-600 p-8 focus:outline-none focus:text-gray-900">
+                        <img class="w-10 h-10" src="{{ asset('images/login.png') }}" alt="Login Button">
+                        Logout
+                    </button>
+                </form>
+            </div>
+        </div>
+        @else
         <div class="hidden lg:block z-50 sticky inset-x-0 top-0 left-0 py-5">
             <div class="absolute top-0 right-0">
                 <a href="{{ route('login') }}" class="text-white flex">
@@ -126,7 +138,7 @@
                         </span>
                     </a>
                 </li>
-                @if(!Auth::guest())
+                @if(Auth::guest())
                 <li class="p-4">
                     <a href="{{ route('login') }}" class="flex items-center">
                         <span>
@@ -137,6 +149,17 @@
                             Login
                         </span>
                     </a>
+                </li>
+                @else
+                <li class="p-4">
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf 
+                        <button class="flex focus:outline-none focus:text-gray-900">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                            &nbsp;&nbsp;
+                            <span>Logout</span>
+                        </button>
+                    </form>
                 </li>
                 @endif
             </div>

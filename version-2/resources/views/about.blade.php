@@ -15,7 +15,7 @@
         <div class="hidden lg:block text-center bg-green-600 relative h-screen shadow-lg">
             <img class="w-full object-cover mx-auto w-full h-screen" src="{{ asset('images/about.jpg') }}" alt="About Us">
         </div>
-        <div class="my-auto mt-24 w-full">
+        <div class="my-auto mt-32 w-full">
             <div class="mx-10 lg:mx-16 text-3xl mb-8">
                 <span class="border-b-4 border-green-600">About Us</span>
             </div>
