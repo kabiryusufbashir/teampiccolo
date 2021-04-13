@@ -49,3 +49,5 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 
     //Course
     Route::get('/add-course', [CourseController::class, 'create'])->name('create-course');
+    Route::get('/all-course', [CourseController::class, 'index'])->name('all-course');
+    Route::post('/add-course', [CourseController::class, 'store'])->name('add-course');
