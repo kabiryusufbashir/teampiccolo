@@ -8,6 +8,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\EnrollController;
+use App\Http\Controllers\CourseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,3 +46,6 @@ Route::post('/verify', [EnrollController::class, 'verify'])->name('verify');
 
 //Dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    //Course
+    Route::get('/add-course', [CourseController::class, 'create'])->name('create-course');
