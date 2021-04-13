@@ -30,19 +30,23 @@ class CourseController extends Controller
         $data = request()->validate([
             'name'=> 'required',
             'slug'=> '',
+            'description'=> 'required',
             'photo'=> 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        $imageName = 'images/doctors/'.time().'.'.$request->photo->extension();  
-        $request->photo->move(public_path('images/doctors'), $imageName);
-
+        $imageName = 'images/courses/'.time().'.'.$request->photo->extension();  
+        
         try{
             Course::create([
                 'name'=>$request->name,
                 'slug'=>$request->slug,
+                'description'=>$request->description,
                 'photo'=>$imageName
-            ]);
-            return redirect()->route('all-course');
+                ]);
+
+                $request->photo->move(public_path('images/courses'), $imageName);
+                
+                return redirect()->route('all-course');
         }catch(Exception $e){
             return redirect('/')->with('error', $e->getMessage());    
         }

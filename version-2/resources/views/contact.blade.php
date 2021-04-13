@@ -35,8 +35,8 @@
                     @enderror
                 </div>
                 <div>
-                    <textarea required name="enquiry" class="px-5 w-full border border-gray-400 h-24 rounded-lg my-2 text-lg focus:outline-none @error('password') border-red-500 @enderror" placeholder="Message"> </textarea>
-                    @error('message')
+                    <textarea required name="enquiry" class="px-5 w-full border border-gray-400 h-24 rounded-lg my-2 text-lg focus:outline-none @error('enquiry') border-red-500 @enderror" placeholder="Enquiry"> </textarea>
+                    @error('enquiry')
                         {{$message}}
                     @enderror
                 </div>

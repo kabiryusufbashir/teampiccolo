@@ -51,4 +51,6 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
     Route::get('/add-course', [CourseController::class, 'create'])->name('create-course');
     Route::get('/all-course', [CourseController::class, 'index'])->name('all-course');
     Route::post('/add-course', [CourseController::class, 'store'])->name('add-course');
+    Route::get('/edit-course/{id}/edit', [CourseController::class, 'edit'])->name('edit-course');
+    Route::patch('/edit-course/{id}/update', [CourseController::class, 'update'])->name('update-course');
     Route::delete('/del-course/{id}', [CourseController::class, 'destroy'])->name('del-course');

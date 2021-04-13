@@ -45,6 +45,12 @@
                                 @enderror
                             </div>
                             <div class="my-2">
+                                <textarea name="description" class="px-5 w-full border border-gray-400 h-24 rounded-lg my-2 text-lg focus:outline-none @error('description') border-red-500 @enderror" placeholder="Description">Course Description</textarea>
+                                @error('description')
+                                    {{$message}}
+                                @enderror
+                            </div>
+                            <div class="my-2">
                                 <input type="file" name="photo" value="{{old('photo')}}" class="input-box border-0 @error('photo') border-red-500 @enderror">
                                 @error('photo')
                                     {{$message}}
