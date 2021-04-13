@@ -70,6 +70,18 @@
             </div>
         </div>
     </div>
-    <script src="{{ asset('js/dashboard.js') }}"></script>
+    <script type="text/javascript">
+        //Change Photo
+        const changePhoto = document.querySelector("#changePhoto");
+        const changePhotoField = document.querySelector("#changePhotoField");
+
+        changePhoto.addEventListener('click', ()=>{
+            if(changePhotoField.classList.contains('hidden')){
+                changePhotoField.classList.remove('hidden');
+            }else{
+                changePhotoField.classList.add('hidden');
+            }
+        });
+    </script>
 </body>
 </html>

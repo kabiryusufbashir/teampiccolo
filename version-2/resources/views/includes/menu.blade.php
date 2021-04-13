@@ -20,7 +20,7 @@
                 <a href="{{ route('create-course') }}">Add Course</a>
             </li>
             <li class="py-3 flex">
-                <a href="#">All Courses</a>
+                <a href="{{ route('all-course') }}">All Courses</a>
             </li>
         </div>
 
