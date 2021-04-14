@@ -15,7 +15,7 @@ class CourseController extends Controller
 
     public function index()
     {
-        $courses = Course::orderby('name','desc')->paginate(9);
+        $courses = Course::orderby('id','desc')->paginate(9);
 
         return view('dashboard.course.index', ['courses'=>$courses]);
     }
@@ -51,11 +51,6 @@ class CourseController extends Controller
             }catch(Exception $e){
                 return redirect('/')->with('error', $e->getMessage());    
             }
-        }
-        
-        public function show($id)
-        {
-            //
     }
     
     public function edit($id)

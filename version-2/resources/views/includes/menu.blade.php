@@ -101,8 +101,13 @@
 
         <!-- Logout  -->
         <li id="clientCaret" class="py-3 flex border-b cursor-pointer">
-            <img class="w-7 mr-4" src="{{ asset('images/logout_icon.png') }}" alt="Icon">
-            <a href="{{ route('logout') }}">Logout</a>
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf 
+                <button class="flex focus:outline-none focus:bg-gray-100 focus:text-gray-900" type="submit" name="logout">
+                    <img class="w-7 mr-4" src="{{ asset('images/logout_icon.png') }}" alt="Icon">
+                    <span>Logout</span>
+                </button>
+            </form>
         </li>
     </ul>
 </div>
