@@ -19,8 +19,14 @@
             <li class="py-3 flex border-b">
                 <a href="{{ route('create-course') }}">Add Course</a>
             </li>
-            <li class="py-3 flex">
+            <li class="py-3 flex border-b">
                 <a href="{{ route('all-course') }}">All Courses</a>
+            </li>
+            <li class="py-3 flex border-b">
+                <a href="{{ route('create-video') }}">Add Video</a>
+            </li>
+            <li class="py-3 flex">
+                <a href="{{ route('all-video') }}">All Videos</a>
             </li>
         </div>
 

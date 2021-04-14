@@ -9,6 +9,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\EnrollController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\VideoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,3 +55,11 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
     Route::get('/edit-course/{id}/edit', [CourseController::class, 'edit'])->name('edit-course');
     Route::patch('/edit-course/{id}/update', [CourseController::class, 'update'])->name('update-course');
     Route::delete('/del-course/{id}', [CourseController::class, 'destroy'])->name('del-course');
+
+    //Video
+    Route::get('/add-video', [VideoController::class, 'create'])->name('create-video');
+    Route::get('/all-video', [VideoController::class, 'index'])->name('all-video');
+    Route::post('/add-video', [VideoController::class, 'store'])->name('add-video');
+    Route::get('/edit-video/{id}/edit', [VideoController::class, 'edit'])->name('edit-video');
+    Route::patch('/edit-video/{id}/update', [VideoController::class, 'update'])->name('update-video');
+    Route::delete('/del-video/{id}', [VideoController::class, 'destroy'])->name('del-video');
