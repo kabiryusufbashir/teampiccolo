@@ -20,6 +20,7 @@ class CreateVideosTable extends Migration
             $table->text('url');
             $table->string('description');
             $table->string('slug')->nullable;
+            $table->string('photo');
             $table->timestamps();
 
             $table->index('course_id');

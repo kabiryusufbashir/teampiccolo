@@ -16,9 +16,7 @@ class VideoController extends Controller
 
     public function index()
     {
-        dd('hit');
         $videos = Video::orderby('id','desc')->paginate(9);
-
         return view('dashboard.video.index', ['videos'=>$videos]);
     }
 
@@ -35,8 +33,12 @@ class VideoController extends Controller
             'name'=> 'required',
             'url'=> 'required|url',
             'slug'=> '',
-            'description'=> 'required',
-        ]);
+            'description'=> 'required',    
+            'photo'=> 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            ]);
+    
+        $imageName = '/images/videos/'.time().'.'.$request->photo->extension();  
+            
 
         try{
             Video::create(
@@ -46,8 +48,11 @@ class VideoController extends Controller
                 'url'=>$request->url,
                 'slug'=>$request->slug,
                 'description'=>$request->description,
+                'photo'=>$imageName
                 ]);
                 
+                $request->photo->move(public_path('images/videos'), $imageName);
+        
                 return redirect()->route('all-video');
             }catch(Exception $e){
                 return redirect('/')->with('error', $e->getMessage());    
@@ -57,31 +62,56 @@ class VideoController extends Controller
     public function edit($id)
     {
         $video = Video::findOrFail($id);
-        return view('dashboard.video.edit',['video'=>$video]);
+        $courseSelect = Course::where('id', $video->course_id)->first();
+        $courses = Course::get();
+        return view('dashboard.video.edit',['video'=>$video, 'courses'=>$courses, 'courseSelect'=>$courseSelect]);
     }
     
     public function update(Request $request, $id)
     {
-        $data = request()->validate([
-            'course_id'=> 'required',
-            'name'=> 'required',
-            'url'=> 'required|url',
-            'slug'=> 'required',
-            'description'=> 'required',
-        ]);
-        
-        try{
-            $video = Video::where('id', $id)->update([
-                'course_id'=> $request->course_id,
-                'name'=> $request->name,
-                'url'=> $request->url,
-                'slug'=> $request->slug,
-                'description'=> $request->description,
+        if($request->photo !== null){
+
+            $imageName = '/images/videos/'.time().'.'.$request->photo->extension();  
+            
+            $data = request()->validate([
+                'course_id'=> 'required',
+                'name'=> 'required',
+                'url'=> 'required|url',
+                'slug'=> '',
+                'description'=> 'required',    
+                'photo'=> 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            ]);
+            
+            try{
+                $video = Video::where('id', $id)->update([
+                    'course_id'=>$request->course_id,
+                    'name'=>$request->name,
+                    'url'=>$request->url,
+                    'slug'=>$request->slug,
+                    'description'=>$request->description,
+                    'photo'=>$imageName
                 ]);
-                
-            return redirect()->route('all-video')->with('success', 'video Updated');
-        }catch(Exception $e){
-            return back()->with('error', 'Please try again... '.$e);
+                    
+                $request->photo->move(public_path('images/videos'), $imageName);
+                return redirect()->route('all-video')->with('success', 'Video Updated');
+            }catch(Exception $e){
+                return back()->with('error', 'Please try again... '.$e);
+            }
+        }else{
+            $data = request()->validate([
+                'course_id'=> 'required',
+                'name'=> 'required',
+                'url'=> 'required|url',
+                'slug'=> '',
+                'description'=> 'required',    
+            ]);
+            
+            try{
+                $video = Video::where('id', $id)->update($data);
+                return redirect()->route('all-video')->with('success', 'Video Updated');
+            }catch(Exception $e){
+                return back()->with('error', 'Please try again... '.$e);
+            }
         }
     }
 
@@ -91,7 +121,7 @@ class VideoController extends Controller
         
         try{
             $video->delete();
-            return back()->with('success', 'video deleted');
+            return back()->with('success', 'Video deleted');
         }catch(Exception $e){
             return back()->with('error', 'Please try again... '.$e);
         }
