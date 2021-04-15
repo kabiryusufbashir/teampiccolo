@@ -34,24 +34,18 @@
                             @foreach($videos as $video)
                                 <div class="card border-2">
                                     <div>
-                                        <img class="w-32 h-32 rounded-full p-2 mx-auto border-2" src=" {{ $video->photo }} " alt="{{ $video->name }} Image">    
+                                        <img class="w-full p-2 mx-auto border-2" src=" {{ $video->photo }} " alt="{{ $video->name }} Image">    
                                     </div>
                                     <div class="font-medium text-xl py-1">
                                         {{ $video->name }}
                                     </div>
-                                    <div class="text-center border-t py-1">
-                                        {{ $video->slug }}
-                                    </div>
-                                    <div class="text-center border-t py-1">
-                                        {{ $video->description }}
-                                    </div>
                                     <div class="flex justify-end border-t pt-4 pb-2 items-center">
-                                        <!-- <form>
+                                        <form>
                                             <button class="view-btn">
                                                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path></svg>
                                                 <span> View</span>
                                             </button>
-                                        </form> -->
+                                        </form>
                                         &nbsp;
                                         <form action="{{ route('edit-video', $video->id) }}" >
                                             @csrf 
