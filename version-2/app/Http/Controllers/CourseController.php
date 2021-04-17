@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use App\Models\Course;
+use App\Models\Video;
 
 class CourseController extends Controller
 {
@@ -55,6 +57,12 @@ class CourseController extends Controller
     public function show($id){
         $course = Course::findOrFail($id);
         return view('dashboard.course.show', ['course'=>$course]);
+    }
+    
+    public function playVideo($id){
+        $video = Video::findOrFail($id);
+        $course = Course::where('id', $video->course_id)->first();
+        return view('dashboard.course.play-video', ['video'=>$video, 'course'=>$course]);
     }
     
     public function edit($id)

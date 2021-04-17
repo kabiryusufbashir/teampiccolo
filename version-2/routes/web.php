@@ -53,6 +53,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
     Route::get('/course/create', [CourseController::class, 'create'])->name('course.create');
     Route::post('/course', [CourseController::class, 'store'])->name('course.store');
     Route::get('/course/{course}', [CourseController::class, 'show'])->name('course.show');
+    Route::get('/course/video/{course}', [CourseController::class, 'playVideo'])->name('course.play.video');
     Route::get('/course/{course}/edit', [CourseController::class, 'edit'])->name('course.edit');
     Route::patch('/course/{course}/update', [CourseController::class, 'update'])->name('course.update');
     Route::delete('/course/{course}', [CourseController::class, 'destroy'])->name('course.delete');
