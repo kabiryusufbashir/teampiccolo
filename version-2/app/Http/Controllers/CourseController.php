@@ -46,7 +46,7 @@ class CourseController extends Controller
                 
                 $request->photo->move(public_path('images/courses'), $imageName);
                 
-                return redirect()->route('all-course');
+                return redirect()->route('course.index');
             }catch(Exception $e){
                 return redirect('/')->with('error', $e->getMessage());    
             }
@@ -93,7 +93,7 @@ class CourseController extends Controller
             
             try{
                 $course = Course::where('id', $id)->update($data);
-                return redirect()->route('all-course')->with('success', 'Course Updated');
+                return redirect()->route('course.index')->with('success', 'Course Updated');
             }catch(Exception $e){
                 return back()->with('error', 'Please try again... '.$e);
             }

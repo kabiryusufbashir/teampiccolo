@@ -53,7 +53,7 @@ class VideoController extends Controller
                 
                 $request->photo->move(public_path('images/videos'), $imageName);
         
-                return redirect()->route('all-video');
+                return redirect()->route('video.index');
             }catch(Exception $e){
                 return redirect('/')->with('error', $e->getMessage());    
             }
@@ -93,7 +93,7 @@ class VideoController extends Controller
                 ]);
                     
                 $request->photo->move(public_path('images/videos'), $imageName);
-                return redirect()->route('all-video')->with('success', 'Video Updated');
+                return redirect()->route('video.index')->with('success', 'Video Updated');
             }catch(Exception $e){
                 return back()->with('error', 'Please try again... '.$e);
             }
@@ -108,7 +108,7 @@ class VideoController extends Controller
             
             try{
                 $video = Video::where('id', $id)->update($data);
-                return redirect()->route('all-video')->with('success', 'Video Updated');
+                return redirect()->route('video.index')->with('success', 'Video Updated');
             }catch(Exception $e){
                 return back()->with('error', 'Please try again... '.$e);
             }

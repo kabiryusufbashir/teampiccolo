@@ -49,17 +49,19 @@ Route::post('/verify', [EnrollController::class, 'verify'])->name('verify');
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     //Course
-    Route::get('/add-course', [CourseController::class, 'create'])->name('course.create');
-    Route::get('/all-course', [CourseController::class, 'index'])->name('course.index');
-    Route::post('/add-course', [CourseController::class, 'store'])->name('course.store');
-    Route::get('/edit-course/{id}/edit', [CourseController::class, 'edit'])->name('course.edit');
-    Route::patch('/edit-course/{id}/update', [CourseController::class, 'update'])->name('course.update');
-    Route::delete('/del-course/{id}', [CourseController::class, 'destroy'])->name('course.delete');
+    Route::get('/course', [CourseController::class, 'index'])->name('course.index');
+    Route::get('/course/create', [CourseController::class, 'create'])->name('course.create');
+    Route::post('/course', [CourseController::class, 'store'])->name('course.store');
+    Route::get('/course/{course}', [CourseController::class, 'show'])->name('course.show');
+    Route::get('/course/{course}/edit', [CourseController::class, 'edit'])->name('course.edit');
+    Route::patch('/course/{course}/update', [CourseController::class, 'update'])->name('course.update');
+    Route::delete('/course/{course}', [CourseController::class, 'destroy'])->name('course.delete');
 
     //Video
-    Route::get('/add-video', [VideoController::class, 'create'])->name('video.create');
-    Route::get('/all-video', [VideoController::class, 'index'])->name('video.index');
-    Route::post('/add-video', [VideoController::class, 'store'])->name('video.store');
-    Route::get('/edit-video/{id}/edit', [VideoController::class, 'edit'])->name('video.edit');
-    Route::patch('/edit-video/{id}/update', [VideoController::class, 'update'])->name('video.update');
-    Route::delete('/del-video/{id}', [VideoController::class, 'destroy'])->name('video.delete');
+    Route::get('/video', [VideoController::class, 'index'])->name('video.index');
+    Route::get('/video/create', [VideoController::class, 'create'])->name('video.create');
+    Route::post('/video', [VideoController::class, 'store'])->name('video.store');
+    Route::get('/video/{video}', [VideoController::class, 'show'])->name('video.show');
+    Route::get('/video/{video}/edit', [VideoController::class, 'edit'])->name('video.edit');
+    Route::patch('/video/{video}/update', [VideoController::class, 'update'])->name('video.update');
+    Route::delete('/video/{video}', [VideoController::class, 'destroy'])->name('video.delete');
