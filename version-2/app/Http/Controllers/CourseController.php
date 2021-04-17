@@ -51,11 +51,16 @@ class CourseController extends Controller
                 return redirect('/')->with('error', $e->getMessage());    
             }
     }
+
+    public function show($id){
+        $course = Course::findOrFail($id);
+        return view('dashboard.course.show', ['course'=>$course]);
+    }
     
     public function edit($id)
     {
         $course = Course::findOrFail($id);
-        return view('dashboard.course.edit',['course'=>$course]);
+        return view('dashboard.course.edit', ['course'=>$course]);
     }
     
     public function update(Request $request, $id)
