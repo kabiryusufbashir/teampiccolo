@@ -31,7 +31,7 @@
 }
 
 .card{
-    @apply bg-white shadow-lg items-center p-6 text-center;
+    @apply bg-white shadow-lg items-center p-6 text-center border-2 mb-4;
 }
 
 .stats-value{

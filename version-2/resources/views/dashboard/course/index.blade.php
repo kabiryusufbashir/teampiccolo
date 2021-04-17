@@ -32,9 +32,9 @@
                         </div>
                         <div class="md:grid md:grid-cols-3 md:gap-4 mx-2 my-6">
                             @foreach($courses as $course)
-                                <div class="card border-2">
+                                <div class="card">
                                     <div>
-                                        <img class="w-32 h-32 rounded-full p-2 mx-auto border-2" src=" {{ $course->photo }} " alt="{{ $course->name }} Image">    
+                                        <img class="w-36 p-2 mx-auto " src=" {{ $course->photo }} " alt="{{ $course->name }} Image">    
                                     </div>
                                     <div class="font-medium text-xl py-1">
                                         {{ $course->name }}

@@ -47,7 +47,7 @@
                         </div>
                         <div class="md:grid md:grid-cols-3 md:gap-4 mx-2 my-6">
                             @foreach($course->video as $video)
-                                <div class="card border-2">
+                                <div class="card">
                                     <div>
                                         <img class="w-full p-2 mx-auto border-2" src=" {{ $video->photo }} " alt="{{ $video->name }} Image">    
                                     </div>
