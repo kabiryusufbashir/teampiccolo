@@ -18,7 +18,7 @@
             <div class="md:grid md:grid-cols-4 md:gap-4">
                 <div class="col-span-4 bg-white mx-2 p-3">
                     <div class="flex justify-end">
-                        <a href="{{ route('create-course') }}">
+                        <a href="{{ route('course.create') }}">
                             <button class="create-btn">
                                 <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg> 
                                 Add Course
@@ -46,14 +46,14 @@
                                         {{ $course->description }}
                                     </div>
                                     <div class="flex justify-end border-t pt-4 pb-2 items-center">
-                                        <!-- <form>
+                                        <form action="{{ route('course.show', $course->id) }}">
                                             <button class="view-btn">
                                                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path></svg>
                                                 <span> View</span>
                                             </button>
-                                        </form> -->
+                                        </form>
                                         &nbsp;
-                                        <form action="{{ route('edit-course', $course->id) }}" >
+                                        <form action="{{ route('course.edit', $course->id) }}" >
                                             @csrf 
                                             <button class="edit-btn">
                                                 <span><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z"></path><path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd"></path></svg></span>
@@ -61,7 +61,7 @@
                                             </button>
                                         </form>
                                         &nbsp;
-                                        <form action="{{ route('del-course', $course->id) }}" method="POST">
+                                        <form action="{{ route('course.delete', $course->id) }}" method="POST">
                                             @csrf 
                                             @method('DELETE')
                                             <button class="del-btn">
@@ -75,7 +75,7 @@
                         </div>
                         @else
                             <div class="bg-white text-2xl text-center py-2">
-                                No course Found
+                                No Course Found
                             </div>
                         @endif
                     </div>

@@ -17,16 +17,16 @@
         </li>
         <div id="courseMenu" class="users-caret-menu hidden">
             <li class="py-3 flex border-b">
-                <a href="{{ route('create-course') }}">Add Course</a>
+                <a href="{{ route('course.create') }}">Add Course</a>
             </li>
             <li class="py-3 flex border-b">
-                <a href="{{ route('all-course') }}">All Courses</a>
+                <a href="{{ route('course.index') }}">All Courses</a>
             </li>
             <li class="py-3 flex border-b">
-                <a href="{{ route('create-video') }}">Add Video</a>
+                <a href="{{ route('video.create') }}">Add Video</a>
             </li>
             <li class="py-3 flex">
-                <a href="{{ route('all-video') }}">All Videos</a>
+                <a href="{{ route('video.index') }}">All Videos</a>
             </li>
         </div>
 
