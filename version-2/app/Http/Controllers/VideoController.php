@@ -58,6 +58,13 @@ class VideoController extends Controller
                 return redirect('/')->with('error', $e->getMessage());    
             }
     }
+
+    public function show($id){
+        $video = Video::findOrFail($id);
+        $course = Course::where('id', $video->course_id)->first();
+        
+        return view('dashboard.video.show', ['video'=>$video, 'course'=>$course]);
+    }
     
     public function edit($id)
     {
