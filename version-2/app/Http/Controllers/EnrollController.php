@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Hash;
 use Twilio\Rest\Client;
 
 use App\Models\User;
+use App\Models\Course;
+use App\Models\Video;
 
 class EnrollController extends Controller
 {
@@ -69,6 +71,9 @@ class EnrollController extends Controller
     }
 
     public function courses(){
-        return view('courses.index');
+        $courses = Course::orderby('id','desc')->paginate(10);
+        $videos = Video::orderby('id','desc')->paginate(10);
+
+        return view('courses.index', ['courses'=>$courses, 'videos'=>$videos]);
     }
 }

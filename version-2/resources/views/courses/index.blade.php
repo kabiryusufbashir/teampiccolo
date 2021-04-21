@@ -59,70 +59,64 @@
         </div>
     </div>
     <div class="md:grid md:grid-cols-4 md:gap-4 mx-2 my-6">
-        <!-- client  -->
-        <div class="stats-card">
-            <div>
-                <img class="stats-icon bg-blue-400" src="{{ asset('images/client_icon.png') }}" alt="Client Icon">
+        <!-- Courses  -->
+        @if($courses->count() > 0)
+            @foreach($courses as $course)
+                <div class="stats-card">
+                    <div>
+                        <img class="w-24 p-2" src="{{ $course->photo }}" alt="{{ $course->name }} Icon">
+                    </div>
+                    <div>
+                        <div class="text-right text-xl font-medium">Videos: {{ $course->video->count() }}</div>
+                        <div class="text-dark px-4 py-1 rounded-lg flex items-center">
+                            <span>{{ $course->name }}</span>
+                        </div>    
+                    </div>
+                </div>
+            @endforeach
+        @else
+            <div class="stats-card">
+                <div>
+                    <img class="stats-icon" src="{{ asset('images/logo.png') }}" alt="Logo Icon">
+                </div>
+                <div>
+                    <div class="bg-blue-400 text-white px-4 py-1 rounded-lg flex items-center">
+                        <span>Team Piccolo Course Module</span>
+                    </div>    
+                </div>
             </div>
-            <div>
-                <div class="stats-value">09</div>
-                <div class="bg-blue-400 text-white px-4 py-1 rounded-lg flex items-center">
-                    <span>clients</span>
-                    &nbsp;
-                    <span>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                    </span>
-                </div>    
-            </div>
+        @endif
+    </div>
+    <div>
+        @if($videos->count())
+        <div class="my-6 mx-3">
+            {{ $videos->links() }}
         </div>
-        <!-- Patient  -->
-        <div class="stats-card">
-            <div>
-                <img class="stats-icon bg-yellow-400" src="{{ asset('images/students_icon.png') }}" alt="Student Icon">
-            </div>
-            <div>
-                <div class="stats-value">3</div>
-                <div class="bg-yellow-500 text-white px-4 py-1 rounded-lg flex items-center">
-                    <span>Students</span>
-                    &nbsp;
-                    <span>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                    </span>
-                </div>    
-            </div>
+        <div class="md:grid md:grid-cols-5 md:gap-4 mx-2 my-6">
+            @foreach($videos as $video)
+                <div class="card border-2">
+                    <div>
+                        <img class="w-full p-2 mx-auto border-2" src=" {{ $video->photo }} " alt="{{ $video->name }} Image">    
+                    </div>
+                    <div class="font-medium text-xl py-1 border-b">
+                        {{ $video->name }}
+                    </div>
+                    <div class="flex justify-end border-t pt-4 pb-2 items-center">
+                        <form action="{{ route('video.show', $video->id) }}">
+                            <button class="view-btn">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path></svg>
+                                <span> Play</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            @endforeach
         </div>
-        <!-- Attend  -->
-        <div class="stats-card">
-            <div>
-                <img class="stats-icon bg-green-400" src="{{ asset('images/staff_icon.png') }}" alt="Staff Icon">
+        @else
+            <div class="bg-white text-2xl text-center py-2">
+                No Video Found
             </div>
-            <div>
-                <div class="stats-value">40</div>
-                <div class="bg-green-500 text-white px-4 py-1 rounded-lg flex items-center">
-                    <span>Staff</span>
-                    &nbsp;
-                    <span>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                    </span>
-                </div>    
-            </div>
-        </div>
-        <!-- Waiting  -->
-        <div class="stats-card">
-            <div>
-                <img class="stats-icon bg-purple-400" src="{{ asset('images/blog_icon.png') }}" alt="Blog Icon">
-            </div>
-            <div>
-                <div class="stats-value">100</div>
-                <div class="bg-purple-500 text-white px-4 py-1 rounded-lg flex items-center">
-                    <span>Blog</span>
-                    &nbsp;
-                    <span>
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                    </span>
-                </div>    
-            </div>
-        </div>
+        @endif
     </div>
     <script src="{{ asset('js/courses.js') }}"></script>
 </body>
