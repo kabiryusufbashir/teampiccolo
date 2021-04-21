@@ -71,6 +71,7 @@ class VideoController extends Controller
         $video = Video::findOrFail($id);
         $courseSelect = Course::where('id', $video->course_id)->first();
         $courses = Course::get();
+
         return view('dashboard.video.edit',['video'=>$video, 'courses'=>$courses, 'courseSelect'=>$courseSelect]);
     }
     

@@ -24,7 +24,6 @@ use App\Http\Controllers\VideoController;
 
 
 Route::get('/', [AdminController::class, 'index'])->name('home');
-Route::get('/courses', function () { return view('courses.index'); })->name('courses')->middleware('auth');
 Route::get('/about-us', function () { return view('about'); })->name('about');
 Route::get('/contact', function () { return view('contact'); })->name('contact');
 Route::post('/subcribe-newsletter', [NewsletterController::class, 'store'])->name('news-letter');
@@ -44,6 +43,7 @@ Route::get('/enroll', [EnrollController::class, 'index'])->name('enroll');
 Route::post('/register', [EnrollController::class, 'create'])->name('register');
 Route::get('/verify', function () { return view('auth.verify'); })->name('verify');
 Route::post('/verify', [EnrollController::class, 'verify'])->name('verify');
+Route::get('/courses', [EnrollController::class, 'courses'])->name('courses')->middleware('auth');
 
 //Dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');

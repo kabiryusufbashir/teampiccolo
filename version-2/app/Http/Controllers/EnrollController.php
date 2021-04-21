@@ -67,4 +67,8 @@ class EnrollController extends Controller
         }
         return back()->with(['phone_number' => $data['phone_number'], 'error' => 'Invalid verification code entered!']);
     }
+
+    public function courses(){
+        return view('courses.index');
+    }
 }

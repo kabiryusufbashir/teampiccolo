@@ -54,6 +54,19 @@
                                     {{$message}}
                                 @enderror
                             </div>
+                            <div class="my-2">
+                                <select name="status" class="input-box">
+                                    <option value="{{ $course->status }}">{{ $courseStatus }}</option>
+                                    @if($courseStatus === 'Active')
+                                        <option value="0">De-active</option>
+                                    @else
+                                        <option value="1">Active</option>
+                                    @endif
+                                </select>
+                                @error('status')
+                                    {{$message}}
+                                @enderror
+                            </div>
                             <div id="changePhoto" class="my-2 cursor-pointer text-xl underline text-blue-600">Change Photo</div>
                             <div id="changePhotoField" class="my-2 hidden">
                                 <input type="file" name="photo" value="{{old('photo')}}" class="input-box border-0 @error('photo') border-red-500 @enderror">

@@ -62,13 +62,22 @@ class CourseController extends Controller
     public function playVideo($id){
         $video = Video::findOrFail($id);
         $course = Course::where('id', $video->course_id)->first();
+
         return view('dashboard.course.play-video', ['video'=>$video, 'course'=>$course]);
     }
     
     public function edit($id)
     {
         $course = Course::findOrFail($id);
-        return view('dashboard.course.edit', ['course'=>$course]);
+        $courseStatus = $course->status;
+        
+        if($courseStatus === "1"){
+            $courseStatus = 'Active';
+        }else{
+            $courseStatus = 'De-Active';
+        }
+
+        return view('dashboard.course.edit', ['course'=>$course, 'courseStatus'=>$courseStatus]);
     }
     
     public function update(Request $request, $id)
@@ -81,6 +90,7 @@ class CourseController extends Controller
                 'name'=> 'required',
                 'slug'=> 'required',
                 'description'=> 'required',
+                'status'=> '',
                 'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             ]);
             
@@ -89,6 +99,7 @@ class CourseController extends Controller
                     'name'=> $request->name,
                     'slug'=> $request->slug,
                     'description'=> $request->description,
+                    'status'=> $request->status,
                     'photo'=> $imageName
                     ]);
                     
@@ -101,6 +112,7 @@ class CourseController extends Controller
             $data = request()->validate([
                 'name'=> 'required',
                 'slug'=> 'required',
+                'status'=> '',
                 'description'=> 'required',
             ]);
             
