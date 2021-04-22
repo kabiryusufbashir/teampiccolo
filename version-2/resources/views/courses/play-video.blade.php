@@ -1,10 +1,10 @@
 <html lang="en">
 <head>
-    <title>Courses | Team Piccolo Global Enterprises</title>
+    <title>{{ $video->name }} | Team Piccolo Global Enterprises</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Web Development Courses">
+    <meta name="description" content="{{ $video->description }}">
     <meta name="keywords" content="HTML, CSS, JavaScript, Bootstrap, Enroll, Computer Essentials, Web Development, Mobile Applicaation, Entrepreneur,Information Technology, Kano, Training">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
@@ -58,77 +58,45 @@
             </div>
         </div>
     </div>
-    <div class="mx-3 my-6">
-        <div class="text-3xl mb-8">
-            <span class="border-b-4 border-green-600">Courses</span>
+
+    <!-- Play Video -->
+    <div id="statsDiv" class="ml-2">
+        <div class="text-2xl bg-white text-center border-b shadow py-2">
+            @include('layouts.messages')
         </div>
-        @if($courses->count() > 0)
-            <div class="my-6 mx-3">
-                {{ $courses->links() }}
-            </div>
-            <div class="md:grid md:grid-cols-4 md:gap-4">
-                <!-- Courses  -->
-                @foreach($courses as $course)
-                    <div class="stats-card">
-                        <div>
-                            <img class="w-24 p-2" src="{{ $course->photo }}" alt="{{ $course->name }} Icon">
-                        </div>
-                        <div>
-                            <div class="text-right text-xl font-medium">Videos: {{ $course->video->count() }}</div>
-                            <div class="text-dark px-4 py-1 rounded-lg flex items-center">
-                                <span>{{ $course->name }}</span>
-                            </div>    
-                        </div>
-                    </div>
-                @endforeach
-        @else
-            <div class="stats-card">
-                <div>
-                    <img class="stats-icon" src="{{ asset('images/logo.png') }}" alt="Logo Icon">
+        <div class="w-full lg:w-2/3 mx-auto shadow-lg py-4">
+            <div class="bg-white mx-2 p-3">
+                <div class="flex justify-end">
+                    <a href="{{ url()->previous() }}">
+                        <button class="create-btn">
+                        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M8.445 14.832A1 1 0 0010 14v-2.798l5.445 3.63A1 1 0 0017 14V6a1 1 0 00-1.555-.832L10 8.798V6a1 1 0 00-1.555-.832l-6 4a1 1 0 000 1.664l6 4z"></path></svg>
+                            Back
+                        </button>
+                    </a>
                 </div>
                 <div>
-                    <div class="bg-blue-400 text-white px-4 py-1 rounded-lg flex items-center">
-                        <span>Team Piccolo Course Module</span>
-                    </div>    
+                    @if($video->count())
+                    <div class="my-6 mx-3 text-3xl font-medium">
+                        {{ $course->name }}
+                    </div>
+                    <div class="flex justify-center border-t-2 py-2">
+                        <iframe class="w-full h-full md:h-96 md:w-3/4" src="{{ $video->url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="lg:grid lg:grid-cols-2 md:gap-4 mx-2 my-6 border-green-600 py-4">
+                        <div class="md:my-auto text-lg">
+                            Name: <b>{{ $video->name }}</b> <br> 
+                            Description: <b>{{ $video->description }}</b> 
+                        </div>
+                    </div>
+                    
+                    @else
+                        <div class="bg-white text-2xl text-center py-2">
+                            No Video Found
+                        </div>
+                    @endif
                 </div>
             </div>
-        @endif
         </div>
-    </div>
-    <div class="mt-6 border-t-2">
-        <div class="mx-3 my-4 text-3xl mb-8">
-            <span class="border-b-4 border-green-600">All videos</span>
-        </div>
-        @if($videos->count())
-        <div class="my-6 mx-3">
-            {{ $videos->links() }}
-        </div>
-        <div class="md:grid md:grid-cols-5 md:gap-4 mx-2 my-6">
-            @foreach($videos as $video)
-                <div class="card border-2">
-                    <div>
-                        <img class="w-full p-2 mx-auto border-2" src=" {{ $video->photo }} " alt="{{ $video->name }} Image">    
-                    </div>
-                    <div class="font-medium text-xl py-1 border-b">
-                        {{ $video->name }}
-                    </div>
-                    <div class="flex justify-center border-t pt-4 pb-2 items-center">
-                        <form action="{{ route('play.video', $video->id) }}">
-                            <button class="flex bg-red-600 tracking-wider py-2 px-6 text-white rounded-lg hover:bg-blue-600 hover:text-black hover:border-black transition ease-out duration-700 items-center focus:outline-none">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
-                                &nbsp;&nbsp;
-                                <span> Play</span>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-        @else
-            <div class="bg-white text-2xl text-center py-2">
-                No Video Found
-            </div>
-        @endif
     </div>
     <script src="{{ asset('js/courses.js') }}"></script>
 </body>

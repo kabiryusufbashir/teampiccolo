@@ -44,6 +44,7 @@ Route::post('/register', [EnrollController::class, 'create'])->name('register');
 Route::get('/verify', function () { return view('auth.verify'); })->name('verify');
 Route::post('/verify', [EnrollController::class, 'verify'])->name('verify');
 Route::get('/courses', [EnrollController::class, 'courses'])->name('courses')->middleware('auth');
+Route::get('/play-video/{video}', [EnrollController::class, 'playVideo'])->name('play.video');
 
 //Dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');

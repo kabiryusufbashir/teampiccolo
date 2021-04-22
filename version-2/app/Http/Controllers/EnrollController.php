@@ -71,9 +71,16 @@ class EnrollController extends Controller
     }
 
     public function courses(){
-        $courses = Course::orderby('id','desc')->paginate(10);
+        $courses = Course::orderby('id','desc')->paginate(4);
         $videos = Video::orderby('id','desc')->paginate(10);
 
         return view('courses.index', ['courses'=>$courses, 'videos'=>$videos]);
+    }
+
+    public function playVideo($id){
+        $video = Video::findOrFail($id);
+        $course = Course::where('id', $video->course_id)->first();
+        
+        return view('courses.play-video', ['video'=>$video, 'course'=>$course]);
     }
 }
