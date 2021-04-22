@@ -16,6 +16,9 @@
 <body>
 @include('layouts.courses-nav')
     <div class="mx-3 my-6">
+        <div class="text-2xl bg-white text-center border-b shadow py-2">
+            @include('layouts.messages')
+        </div>
         <div class="text-3xl mb-8">
             <span class="border-b-4 border-green-600">Courses</span>
         </div>

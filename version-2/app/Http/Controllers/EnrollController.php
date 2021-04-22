@@ -69,23 +69,4 @@ class EnrollController extends Controller
         }
         return back()->with(['phone_number' => $data['phone_number'], 'error' => 'Invalid verification code entered!']);
     }
-
-    public function courses(){
-        $courses = Course::orderby('id','desc')->paginate(4);
-        $videos = Video::orderby('id','desc')->paginate(10);
-
-        return view('courses.index', ['courses'=>$courses, 'videos'=>$videos]);
-    }
-
-    public function playVideo($id){
-        $video = Video::findOrFail($id);
-        $course = Course::where('id', $video->course_id)->first();
-        
-        return view('courses.play-video', ['video'=>$video, 'course'=>$course]);
-    }
-
-    public function showCourse($id){
-        $course = Course::findOrFail($id);
-        return view('courses.show-course', ['course'=>$course]);
-    }
 }

@@ -10,6 +10,7 @@ use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\EnrollController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\VideoController;
+use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,10 +44,14 @@ Route::get('/enroll', [EnrollController::class, 'index'])->name('enroll');
 Route::post('/register', [EnrollController::class, 'create'])->name('register');
 Route::get('/verify', function () { return view('auth.verify'); })->name('verify');
 Route::post('/verify', [EnrollController::class, 'verify'])->name('verify');
-Route::get('/courses', [EnrollController::class, 'courses'])->name('courses')->middleware('auth');
-Route::get('/play-video/{video}', [EnrollController::class, 'playVideo'])->name('play.video');
-Route::get('/show-course/{course}', [EnrollController::class, 'showCourse'])->name('show.course');
 
+//Students
+Route::get('/courses', [StudentController::class, 'courses'])->name('courses')->middleware('auth');
+Route::get('/play-video/{video}', [StudentController::class, 'playVideo'])->name('play.video')->middleware('auth');
+Route::get('/show-course/{course}', [StudentController::class, 'showCourse'])->name('show.course')->middleware('auth');
+Route::get('/student/{student}/edit', [StudentController::class, 'edit'])->name('student.profile.edit')->middleware('auth');
+Route::patch('/student/{student}/update', [StudentController::class, 'update'])->name('student.profile.update')->middleware('auth');
+    
 //Dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth:admin');
 
