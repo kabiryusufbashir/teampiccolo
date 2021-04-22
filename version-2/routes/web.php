@@ -45,25 +45,26 @@ Route::get('/verify', function () { return view('auth.verify'); })->name('verify
 Route::post('/verify', [EnrollController::class, 'verify'])->name('verify');
 Route::get('/courses', [EnrollController::class, 'courses'])->name('courses')->middleware('auth');
 Route::get('/play-video/{video}', [EnrollController::class, 'playVideo'])->name('play.video');
+Route::get('/show-course/{course}', [EnrollController::class, 'showCourse'])->name('show.course');
 
 //Dashboard
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth:admin');
 
     //Course
-    Route::get('/course', [CourseController::class, 'index'])->name('course.index');
-    Route::get('/course/create', [CourseController::class, 'create'])->name('course.create');
-    Route::post('/course', [CourseController::class, 'store'])->name('course.store');
-    Route::get('/course/{course}', [CourseController::class, 'show'])->name('course.show');
-    Route::get('/course/video/{course}', [CourseController::class, 'playVideo'])->name('course.play.video');
-    Route::get('/course/{course}/edit', [CourseController::class, 'edit'])->name('course.edit');
-    Route::patch('/course/{course}/update', [CourseController::class, 'update'])->name('course.update');
-    Route::delete('/course/{course}', [CourseController::class, 'destroy'])->name('course.delete');
+    Route::get('/course', [CourseController::class, 'index'])->name('course.index')->middleware('auth:admin');
+    Route::get('/course/create', [CourseController::class, 'create'])->name('course.create')->middleware('auth:admin');
+    Route::post('/course', [CourseController::class, 'store'])->name('course.store')->middleware('auth:admin');
+    Route::get('/course/{course}', [CourseController::class, 'show'])->name('course.show')->middleware('auth:admin');
+    Route::get('/course/video/{course}', [CourseController::class, 'playVideo'])->name('course.play.video')->middleware('auth:admin');
+    Route::get('/course/{course}/edit', [CourseController::class, 'edit'])->name('course.edit')->middleware('auth:admin');
+    Route::patch('/course/{course}/update', [CourseController::class, 'update'])->name('course.update')->middleware('auth:admin');
+    Route::delete('/course/{course}', [CourseController::class, 'destroy'])->name('course.delete')->middleware('auth:admin');
 
     //Video
-    Route::get('/video', [VideoController::class, 'index'])->name('video.index');
-    Route::get('/video/create', [VideoController::class, 'create'])->name('video.create');
-    Route::post('/video', [VideoController::class, 'store'])->name('video.store');
-    Route::get('/video/{video}', [VideoController::class, 'show'])->name('video.show');
-    Route::get('/video/{video}/edit', [VideoController::class, 'edit'])->name('video.edit');
-    Route::patch('/video/{video}/update', [VideoController::class, 'update'])->name('video.update');
-    Route::delete('/video/{video}', [VideoController::class, 'destroy'])->name('video.delete');
+    Route::get('/video', [VideoController::class, 'index'])->name('video.index')->middleware('auth:admin');
+    Route::get('/video/create', [VideoController::class, 'create'])->name('video.create')->middleware('auth:admin');
+    Route::post('/video', [VideoController::class, 'store'])->name('video.store')->middleware('auth:admin');
+    Route::get('/video/{video}', [VideoController::class, 'show'])->name('video.show')->middleware('auth:admin');
+    Route::get('/video/{video}/edit', [VideoController::class, 'edit'])->name('video.edit')->middleware('auth:admin');
+    Route::patch('/video/{video}/update', [VideoController::class, 'update'])->name('video.update')->middleware('auth:admin');
+    Route::delete('/video/{video}', [VideoController::class, 'destroy'])->name('video.delete')->middleware('auth:admin');

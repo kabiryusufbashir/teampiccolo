@@ -31487,6 +31487,52 @@ video {
   transition-duration: 700ms;
 }
 
+.play-btn{
+  --tw-bg-opacity: 1;
+  background-color: rgba(220, 38, 38, var(--tw-bg-opacity));
+}
+
+.play-btn:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(37, 99, 235, var(--tw-bg-opacity));
+  --tw-border-opacity: 1;
+  border-color: rgba(0, 0, 0, var(--tw-border-opacity));
+}
+
+.play-btn {
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.play-btn:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.play-btn {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+}
+
+.play-btn:hover {
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+}
+
+.play-btn {
+  letter-spacing: 0.05em;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 700ms;
+}
+
 .paragraph{
   font-size: 1rem;
   line-height: 1.5rem;

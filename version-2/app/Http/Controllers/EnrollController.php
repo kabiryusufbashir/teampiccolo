@@ -83,4 +83,9 @@ class EnrollController extends Controller
         
         return view('courses.play-video', ['video'=>$video, 'course'=>$course]);
     }
+
+    public function showCourse($id){
+        $course = Course::findOrFail($id);
+        return view('courses.show-course', ['course'=>$course]);
+    }
 }
