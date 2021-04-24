@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+
 use App\Models\User;
 use App\Models\Course;
 use App\Models\Video;
@@ -75,6 +78,30 @@ class StudentController extends Controller
             }catch(Exception $e){
                 return back()->with('error', 'Please try again... '.$e);
             }
+        }
+    }
+
+    public function changePassword($id){
+        $user = User::findOrFail($id);
+        return view('courses.studentChangePassword', ['user'=>$user]);
+    }
+
+    public function passwordUpdate(Request $request, $id){
+        $data = $request->validate([
+            'old_password' => ['required'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+
+        $email = $request->email;
+
+        $password = Hash::make($data['password']);
+        
+        $user = User::where('email', $email)->first();
+        
+        if(Auth::attempt(['email' => $request->email, 'password' => $request->old_password])){
+            dd('Good to go');
+        }else{
+            dd('Wrong Password');
         }
     }
 }
