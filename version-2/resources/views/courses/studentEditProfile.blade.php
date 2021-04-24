@@ -38,10 +38,16 @@
                             <h2 class="text-2xl text-center py-4 font-medium border-b-4 uppercase">Edit Profile</h2>
                         </div>
                         <div class="my-2">
-                            <img class="w-32 h-32 rounded-full p-2 mx-auto border-2" src=" {{ $user->photo ?? asset('/images/logo.png') }} " alt="{{ $user->name }} Image">    
+                            <img class="w-36 h-36 rounded-full p-2 mx-auto" src=" {{ $user->photo ?? asset('/images/logo.png') }} " alt="{{ $user->name }} Image">    
                         </div>
                         <div class="my-2">
-                            <input type="text" value="{{ $user->name }}" name="name" value="{{old('name')}}" placeholder="user Name" class="input-box @error('name') border-red-500 @enderror">
+                            <input disabled type="email" value="{{ $user->email }}" name="email" value="{{old('email')}}" placeholder="Email Address" class="input-box @error('email') border-red-500 @enderror">
+                            @error('email')
+                                {{$message}}
+                            @enderror
+                        </div>
+                        <div class="my-2">
+                            <input type="text" value="{{ $user->name }}" name="name" value="{{old('name')}}" placeholder="Full Name" class="input-box @error('name') border-red-500 @enderror">
                             @error('name')
                                 {{$message}}
                             @enderror
@@ -80,6 +86,6 @@
             }
         });
     </script>
-    <script src="{{ asset('js/users.js') }}"></script>
+    <script src="{{ asset('js/courses.js') }}"></script>
 </body>
 </html>
