@@ -11,6 +11,7 @@ use App\Http\Controllers\EnrollController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,3 +83,12 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
     Route::get('/video/{video}/edit', [VideoController::class, 'edit'])->name('video.edit')->middleware('auth:admin');
     Route::patch('/video/{video}/update', [VideoController::class, 'update'])->name('video.update')->middleware('auth:admin');
     Route::delete('/video/{video}', [VideoController::class, 'destroy'])->name('video.delete')->middleware('auth:admin');
+
+    //Blog
+    Route::get('/blog', [BlogController::class, 'index'])->name('blog.index')->middleware('auth:admin');
+    Route::get('/blog/create', [BlogController::class, 'create'])->name('blog.create')->middleware('auth:admin');
+    Route::post('/blog', [BlogController::class, 'store'])->name('blog.store')->middleware('auth:admin');
+    Route::get('/blog/{blog}', [BlogController::class, 'show'])->name('blog.show')->middleware('auth:admin');
+    Route::get('/blog/{blog}/edit', [BlogController::class, 'edit'])->name('blog.edit')->middleware('auth:admin');
+    Route::patch('/blog/{blog}/update', [BlogController::class, 'update'])->name('blog.update')->middleware('auth:admin');
+    Route::delete('/blog/{blog}', [BlogController::class, 'destroy'])->name('blog.delete')->middleware('auth:admin');
