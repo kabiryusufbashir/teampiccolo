@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 use App\Models\Admin;
 
@@ -85,7 +86,7 @@ class DashboardController extends Controller
                     $password = Hash::make($request->password);
                         try{
                             $user = Admin::where('id', $id)->update(['password'=> $password]);
-                            return redirect()->route('courses')->with('success', 'Password Changed');
+                            return redirect()->route('dashboard')->with('success', 'Password Changed');
                         }catch(Exception $e){
                             return back()->with('error', 'Please try again... '.$e);
                         }

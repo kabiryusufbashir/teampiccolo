@@ -5,7 +5,9 @@
 <body>
     <!-- Nav  -->
     @include('includes.nav')
-
+    <div class="text-2xl bg-white text-center border-b shadow py-2">
+        @include('layouts.messages')
+    </div>
     <!-- #menu  -->
     <div class="md:grid md:grid-cols-5">
         <!-- Nav link  -->

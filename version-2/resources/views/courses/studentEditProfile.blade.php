@@ -15,7 +15,7 @@
 </head>
 <body>
     @include('layouts.courses-nav')
-    <!-- Play Video -->
+    <!-- Edit Profile -->
     <div id="statsDiv" class="ml-2">
         <div class="text-2xl bg-white text-center border-b shadow py-2">
             @include('layouts.messages')
