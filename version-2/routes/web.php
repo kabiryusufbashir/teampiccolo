@@ -58,6 +58,12 @@ Route::post('/logout-student', [StudentController::class, 'logout'])->name('logo
 //Dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth:admin');
 
+    //Profile
+    Route::get('/profile/{profile}/edit', [DashboardController::class, 'edit'])->name('admin.profile.edit')->middleware('auth:admin');
+    Route::patch('/profile/{profile}/update', [DashboardController::class, 'update'])->name('admin.profile.update')->middleware('auth:admin');
+    Route::get('/profile/{profile}/change-password', [DashboardController::class, 'changePassword'])->name('admin.profile.change-password')->middleware('auth:admin');
+    Route::patch('/profile/{profile}/change-password', [DashboardController::class, 'passwordUpdate'])->name('admin.profile.passwordUpdate')->middleware('auth:admin');
+
     //Course
     Route::get('/course', [CourseController::class, 'index'])->name('course.index')->middleware('auth:admin');
     Route::get('/course/create', [CourseController::class, 'create'])->name('course.create')->middleware('auth:admin');
