@@ -38,10 +38,10 @@
         </li>
         <div id="blogMenu" class="users-caret-menu hidden">
             <li class="py-3 flex border-b">
-                <a href="#">Add Blog</a>
+                <a href="{{ route('blog.create') }}">Add Blog</a>
             </li>
             <li class="py-3 flex">
-                <a href="#">All Blog</a>
+                <a href="{{ route('blog.index') }}">All Blog</a>
             </li>
         </div>
 
