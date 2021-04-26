@@ -87,21 +87,36 @@ class StudentController extends Controller
     }
 
     public function passwordUpdate(Request $request, $id){
+        
         $data = $request->validate([
             'old_password' => ['required'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
 
-        $email = $request->email;
-
-        $password = Hash::make($data['password']);
+        $user =  User::findOrFail($id);
         
-        $user = User::where('email', $email)->first();
-        
-        if(Auth::attempt(['email' => $request->email, 'password' => $request->old_password])){
-            dd('Good to go');
-        }else{
-            dd('Wrong Password');
+        if($request->old_password){
+            if (Hash::check($request->old_password, $user->password)){
+                if ($request->password === $request->password_confirmation){
+                    $password = Hash::make($request->password);
+                        try{
+                            $user = User::where('id', $id)->update(['password'=> $password]);
+                            return redirect()->route('courses')->with('success', 'Password Changed');
+                        }catch(Exception $e){
+                            return back()->with('error', 'Please try again... '.$e);
+                        }
+                }else{
+                    return back()->with('error', 'Password does not match');
+                }
+            }else{
+                return back()->with('error', 'Please Check Your Password and Try Again');
+            }
         }
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        return redirect()->route('home');
     }
 }

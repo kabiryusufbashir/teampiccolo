@@ -53,7 +53,8 @@ Route::get('/student/{student}/edit', [StudentController::class, 'edit'])->name(
 Route::patch('/student/{student}/update', [StudentController::class, 'update'])->name('student.profile.update')->middleware('auth');
 Route::get('/student/{student}/change-password', [StudentController::class, 'changePassword'])->name('student.profile.change-password')->middleware('auth');
 Route::patch('/student/{student}/change-password', [StudentController::class, 'passwordUpdate'])->name('student.profile.passwordUpdate')->middleware('auth');
-    
+Route::post('/logout-student', [StudentController::class, 'logout'])->name('logout.student')->middleware('auth');
+
 //Dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth:admin');
 

@@ -32,7 +32,7 @@ class LoginController extends Controller
                     $request->session()->regenerate();
                     return redirect()->route('courses');
                 }else{
-                    return back()->with('error', 'Incorrect username or password');
+                    return back()->with('error', 'Incorrect Username or Password');
                 }
             }catch(Exception $e){
                 return redirect('/')->with('error', $e->getMessage());
@@ -57,10 +57,11 @@ class LoginController extends Controller
 
     public function logout(Request $request)
     {
-        Auth::logout();
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-
+        //Auth::logout();
+        //$request->session()->invalidate();
+        //$request->session()->regenerateToken();
+        
+        Auth::guard('admin')->logout();
         return redirect()->route('home');
     }
 
