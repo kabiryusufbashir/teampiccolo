@@ -26,7 +26,7 @@
                     <li><a href="{{ route('home') }}">Home</a></li>
                     <li><a href="{{ route('about') }}">About Us</a></li>
                     <li><a href="{{ route('courses') }}">Courses</a></li>
-                    <li><a href="#">Publications</a></li>
+                    <li><a href="#">E-books</a></li>
                     <li><a href="#">Blog</a></li>
                     <li><a href="{{ route('contact') }}">Contact Us</a></li>
                 </nav>
@@ -112,7 +112,7 @@
                         </span>
                         &nbsp;&nbsp;
                         <span>
-                            Publications
+                            E-books
                         </span>
                     </a>
                 </li>

@@ -38,7 +38,7 @@
                         <img class="stats-icon bg-yellow-400" src="{{ asset('images/students_icon.png') }}" alt="Student Icon">
                     </div>
                     <div>
-                        <div class="stats-value">3</div>
+                        <div class="stats-value">{{ $students->count() }}</div>
                         <div class="bg-yellow-500 text-white px-4 py-1 rounded-lg flex items-center">
                             <span>Students</span>
                             &nbsp;
@@ -48,13 +48,13 @@
                         </div>    
                     </div>
                 </div>
-                <!-- Attend  -->
+                <!-- Staff  -->
                 <div class="stats-card">
                     <div>
                         <img class="stats-icon bg-green-400" src="{{ asset('images/staff_icon.png') }}" alt="Staff Icon">
                     </div>
                     <div>
-                        <div class="stats-value">40</div>
+                        <div class="stats-value">{{ $staff->count() }}</div>
                         <div class="bg-green-500 text-white px-4 py-1 rounded-lg flex items-center">
                             <span>Staff</span>
                             &nbsp;
@@ -64,7 +64,7 @@
                         </div>    
                     </div>
                 </div>
-                <!-- Waiting  -->
+                <!-- Blog  -->
                 <div class="stats-card">
                     <div>
                         <img class="stats-icon bg-purple-400" src="{{ asset('images/blog_icon.png') }}" alt="Blog Icon">

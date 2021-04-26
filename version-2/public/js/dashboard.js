@@ -55,20 +55,21 @@ courseCaret.addEventListener('click', ()=>{
     }
 });
 
-// Nurse caret 
-const nurseCaret = document.querySelector("#nurseCaret");
-const nurseMenu = document.querySelector("#nurseMenu");
+// Blog caret 
+const blogCaret = document.querySelector("#blogCaret");
+const blogMenu = document.querySelector("#blogMenu");
+const blogPointer = document.querySelector("#blogPointer");
 
-nurseCaret.addEventListener('click', ()=>{
-    if(nurseMenu.classList.contains('hidden')){
-        nurseMenu.classList.remove('hidden');
-        nurseCaret.classList.add('transform');
-        nurseCaret.classList.add('rotate-90');
-        nurseCaret.classList.add('transition');
+blogCaret.addEventListener('click', ()=>{
+    if(blogMenu.classList.contains('hidden')){
+        blogMenu.classList.remove('hidden');
+        blogPointer.classList.add('transform');
+        blogPointer.classList.add('rotate-90');
+        blogCaret.classList.add('transition');
     }else{
-        nurseMenu.classList.add('hidden');
-        nurseCaret.classList.remove('transform');
-        nurseCaret.classList.remove('roate-90');
+        blogMenu.classList.add('hidden');
+        blogPointer.classList.remove('transform');
+        blogPointer.classList.remove('roate-90');
     }
 });
 

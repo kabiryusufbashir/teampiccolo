@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 use App\Models\Admin;
+use App\Models\User;
 
 class DashboardController extends Controller
 {
@@ -18,7 +19,9 @@ class DashboardController extends Controller
     public function index(){
         
         $admin = Auth::guard('admin')->user();
-        return view('dashboard.index', ['admin'=>$admin]);
+        $students = User::get();
+        $staff = Admin::get();
+        return view('dashboard.index', ['admin'=>$admin, 'students'=>$students, 'staff'=>$staff]);
     }
 
     public function edit($id)
