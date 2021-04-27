@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Blog;
 
 class BlogController extends Controller
 {
@@ -77,7 +78,6 @@ class BlogController extends Controller
             
             $data = request()->validate([
                 'title'=> 'required',
-                'author'=> 'required',
                 'content'=> 'required',
                 'status'=> '',
                 'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -86,7 +86,6 @@ class BlogController extends Controller
             try{
                 $blog = Blog::where('id', $id)->update([
                     'title'=> $request->title,
-                    'author'=> $request->author,
                     'content'=> $request->content,
                     'status'=> $request->status,
                     'photo'=> $imageName
@@ -100,7 +99,6 @@ class BlogController extends Controller
         }else{
             $data = request()->validate([
                 'title'=> 'required',
-                'author'=> 'required',
                 'status'=> '',
                 'content'=> 'required',
             ]);
