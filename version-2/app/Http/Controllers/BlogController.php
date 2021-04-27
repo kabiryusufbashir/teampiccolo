@@ -59,15 +59,15 @@ class BlogController extends Controller
     public function edit($id)
     {
         $blog = Blog::findOrFail($id);
-        $blogstatus = $blog->status;
+        $blogStatus = $blog->status;
         
-        if($blogstatus === "1"){
-            $blogstatus = 'Active';
+        if($blogStatus === "1"){
+            $blogStatus = 'Active';
         }else{
-            $blogstatus = 'De-Active';
+            $blogStatus = 'De-Active';
         }
 
-        return view('dashboard.blog.edit', ['blog'=>$blog, 'blogstatus'=>$blogstatus]);
+        return view('dashboard.blog.edit', ['blog'=>$blog, 'blogStatus'=>$blogStatus]);
     }
     
     public function update(Request $request, $id)
@@ -92,7 +92,7 @@ class BlogController extends Controller
                     ]);
                     
                 $request->photo->move(public_path('images/blogs'), $imageName);
-                return redirect()->route('all-blog')->with('success', 'blog Updated');
+                return redirect()->route('blog.index')->with('success', 'Blog Updated');
             }catch(Exception $e){
                 return back()->with('error', 'Please try again... '.$e);
             }

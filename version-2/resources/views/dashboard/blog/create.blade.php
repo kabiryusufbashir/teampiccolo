@@ -25,7 +25,7 @@
                             </button>
                         </a>
                     </div>
-                    <div class="lg:w-2/4 mx-auto">
+                    <div class="lg:w-3/4 mx-auto">
                         <form class="bg-white shadow-lg p-4" action="{{ route('blog.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div>
