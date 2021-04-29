@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+use App\Models\Admin;
+
 class Blog extends Model
 {
     use HasFactory;
@@ -12,5 +14,9 @@ class Blog extends Model
     protected $fillable = [
         'title', 'photo', 'content', 'author', 'status'
     ];
+
+    public function author(){
+        return $this->belongsTo(Admin::class);
+    }
     
 }

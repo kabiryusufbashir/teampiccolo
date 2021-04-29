@@ -27,7 +27,7 @@
                     <li><a href="{{ route('about') }}">About Us</a></li>
                     <li><a href="{{ route('courses') }}">Courses</a></li>
                     <li><a href="#">E-books</a></li>
-                    <li><a href="#">Blog</a></li>
+                    <li><a href="{{ route('blog') }}">Blog</a></li>
                     <li><a href="{{ route('contact') }}">Contact Us</a></li>
                 </nav>
             </div>
@@ -117,7 +117,7 @@
                     </a>
                 </li>
                 <li class="p-4">
-                    <a href="#" class="flex items-center">
+                    <a href="{{ route('blog') }}" class="flex items-center">
                         <span>
                             <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z" clip-rule="evenodd"></path></svg>
                         </span>
@@ -205,11 +205,11 @@
                             <li>
                                 <a class="flex items-center py-2 text-lg" href="#">
                                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd"></path><path fill-rule="evenodd" d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
-                                        &nbsp; Publications
+                                        &nbsp; E-books
                                 </a>
                             </li>
                             <li>
-                                <a class="flex items-center py-2 text-lg" href="#">
+                                <a class="flex items-center py-2 text-lg" href="{{ route('blog') }}">
                                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd"></path><path fill-rule="evenodd" d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
                                         &nbsp; Blog
                                 </a>

@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Mail;
 
 use App\Models\Admin;
 use App\Models\Contact;
+use App\Models\Blog;
+
 use App\Mail\ContactMail;
 
 class AdminController extends Controller
@@ -74,5 +76,10 @@ class AdminController extends Controller
         }catch(Exception $e){
             return redirect('/')->with('error', $e->getMessage());    
         }
+    }
+
+    public function blog(){
+        $blogs = Blog::paginate(9);
+        return view('blog', ['blogs'=>$blogs]); 
     }
 }

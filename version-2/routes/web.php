@@ -26,6 +26,7 @@ use App\Http\Controllers\BlogController;
 
 
 Route::get('/', [AdminController::class, 'index'])->name('home');
+Route::get('/blog-post', [AdminController::class, 'blog'])->name('blog');
 Route::get('/about-us', function () { return view('about'); })->name('about');
 Route::get('/contact', function () { return view('contact'); })->name('contact');
 Route::post('/subcribe-newsletter', [NewsletterController::class, 'store'])->name('news-letter');
