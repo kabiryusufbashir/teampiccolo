@@ -85,8 +85,11 @@ class AdminController extends Controller
 
     public function readBlog($id){
         $blog = Blog::findOrFail($id);
-        dd($blog->views + 1);
+        $views = $blog->views + 1;
+
         $updateView = Blog::where('id', $id)->update(['views'=> $views]);
+        
         return view('readBlog', ['blog'=>$blog]);
+        
     }
 }
