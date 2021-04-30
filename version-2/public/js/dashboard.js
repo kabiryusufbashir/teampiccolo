@@ -73,20 +73,21 @@ blogCaret.addEventListener('click', ()=>{
     }
 });
 
-// Pharmacist caret 
-const pharmacistCaret = document.querySelector("#pharmacistCaret");
-const pharmacistMenu = document.querySelector("#pharmacistMenu");
+// Ebook caret 
+const ebookCaret = document.querySelector("#ebookCaret");
+const ebookMenu = document.querySelector("#ebookMenu");
+const ebookPointer = document.querySelector("#ebookPointer");
 
-pharmacistCaret.addEventListener('click', ()=>{
-    if(pharmacistMenu.classList.contains('hidden')){
-        pharmacistMenu.classList.remove('hidden');
-        pharmacistCaret.classList.add('transform');
-        pharmacistCaret.classList.add('rotate-90');
-        pharmacistCaret.classList.add('transition');
+ebookCaret.addEventListener('click', ()=>{
+    if(ebookMenu.classList.contains('hidden')){
+        ebookMenu.classList.remove('hidden');
+        ebookPointer.classList.add('transform');
+        ebookPointer.classList.add('rotate-90');
+        ebookCaret.classList.add('transition');
     }else{
-        pharmacistMenu.classList.add('hidden');
-        pharmacistCaret.classList.remove('transform');
-        pharmacistCaret.classList.remove('roate-90');
+        ebookMenu.classList.add('hidden');
+        ebookPointer.classList.remove('transform');
+        ebookPointer.classList.remove('roate-90');
     }
 });
 
