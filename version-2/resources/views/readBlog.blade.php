@@ -12,7 +12,7 @@
 @section('header')
 <div class="relative z-0 w-full">
     <div class="w-full lg:w-2/3 mx-auto leading-snug items-center">
-        <div class="my-24 w-full px-6">
+        <div class="w-full px-6 py-24">
             <div>
                 <img class="mx-auto w-48" src="{{ $blog->photo }}" alt="{{ $blog->title }}">
             </div>
