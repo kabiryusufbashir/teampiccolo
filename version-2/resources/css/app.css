@@ -73,3 +73,7 @@
 .page-title{
     @apply w-full text-center pt-24 lg:pt-16 pb-4 font-medium px-6 text-4xl text-green-600;
 }
+
+.btn-layout-control{
+    @apply lg:flex justify-end border-t pt-4 pb-2 items-center;
+}

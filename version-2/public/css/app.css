@@ -31579,6 +31579,20 @@ video {
   }
 }
 
+.btn-layout-control{
+  border-top-width: 1px;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 0.5rem;
+  padding-top: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .btn-layout-control {
+    display: flex;
+  }
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

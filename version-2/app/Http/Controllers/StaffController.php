@@ -16,9 +16,8 @@ class StaffController extends Controller
 
     public function index()
     {
-        $admins = Admin::orderby('id','desc')->paginate(9);
-        dd('hit');
-        return view('dashboard.staff.index', ['admins'=>$admins]);
+        $staffs = Admin::orderby('id','desc')->paginate(9);
+        return view('dashboard.staff.index', ['staffs'=>$staffs]);
     }
 
     public function create()
@@ -60,22 +59,22 @@ class StaffController extends Controller
     }
 
     public function show($id){
-        $admin = Admin::findOrFail($id);
-        return view('dashboard.staff.show', ['admin'=>$admin]);
+        $staff = Admin::findOrFail($id);
+        return view('dashboard.staff.show', ['staff'=>$staff]);
     }
     
     public function edit($id)
     {
-        $admin = Admin::findOrFail($id);
-        $adminStatus = $admin->status;
+        $staff = Admin::findOrFail($id);
+        $staffStatus = $admin->status;
         
-        if($adminStatus === "1"){
-            $adminStatus = 'Active';
+        if($staffStatus === "1"){
+            $staffStatus = 'Active';
         }else{
-            $adminStatus = 'De-Active';
+            $staffStatus = 'De-Active';
         }
 
-        return view('dashboard.staff.edit', ['admin'=>$admin, 'adminStatus'=>$adminStatus]);
+        return view('dashboard.staff.edit', ['staff'=>$staff, 'staffStatus'=>$staffStatus]);
     }
     
     public function update(Request $request, $id)
@@ -94,7 +93,7 @@ class StaffController extends Controller
             ]);
             
             try{
-                $admin = admin::where('id', $id)->update([
+                $staff = Admin::where('id', $id)->update([
                     'title'=> $request->title,
                     'name'=> $request->name,
                     'email'=> $request->email,
@@ -120,7 +119,7 @@ class StaffController extends Controller
             ]);
             
             try{
-                $admin = admin::where('id', $id)->update($data);
+                $staff = Admin::where('id', $id)->update($data);
                 return redirect()->route('staff.index')->with('success', 'admin Updated');
             }catch(Exception $e){
                 return back()->with('error', 'Please try again... '.$e);
@@ -130,11 +129,11 @@ class StaffController extends Controller
 
     public function destroy($id)
     {
-        $admin = admin::findOrFail($id);
+        $staff = Admin::findOrFail($id);
         
         try{
-            $admin->delete();
-            return back()->with('success', 'admin deleted');
+            $staff->delete();
+            return back()->with('success', 'Staff deleted');
         }catch(Exception $e){
             return back()->with('error', 'Please try again... '.$e);
         }

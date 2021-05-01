@@ -27,7 +27,7 @@
                 </div>
                 @endforeach
             </div>
-            <div class="col-span-1 border-t-2">
+            <div class="col-span-1 border-t-2 lg:border-t-0">
                 @foreach($staffs as $staff)
                 <div class="lg:w-2/3 lg:ml-auto shadow-lg p-6 m-6">
                     <img style="width:180px; height:180px;" class="my-4 mx-auto" src="{{ $staff->photo }}" alt="{{ $staff->name }}">
