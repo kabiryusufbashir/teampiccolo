@@ -29,7 +29,7 @@ class EbookController extends Controller
     {
         $data = request()->validate([
             'name'=> 'required',
-            'path'=> 'file|required|doc,pdf,docx',
+            'path'=> 'file|required',
         ]);
 
         $bookName = '/docs/ebooks/'.time().'.'.$request->path->extension();  
