@@ -13,21 +13,31 @@
     <!-- Blog  -->
     @if($blogs->count())
         <div class="page-title">
-            Team Piccolo blog 
+            Team Piccolo Blog 
         </div>
-        <div class="lg:grid grid-cols-3 gap-8 lg:mx-32 px-4 py-6">
+        <div class="lg:grid grid-cols-3 gap-8 lg:mx-24">
+            <div class="col-span-2">
             @foreach($blogs as $blog)
-                <div class="shadow-lg p-6 mt-4">
+                <div class="lg:w-2/3 shadow-lg p-10 m-4">
                     <h3 class="paragraph-title">{{ $blog->title }}</h3>
                     <img style="width:180px; height:180px;" class="my-4 mx-auto" src="{{ $blog->photo }}" alt="{{ $blog->title }}">
                     <p class="paragraph">
-                        <!-- {!! html_entity_decode(substr($blog->content, 0, 100)) !!}<br> -->
                         {!! html_entity_decode(Str::limit($blog->content, 150, '...')) !!} <a class="text-blue-600" href="{{ route('blog.read', $blog->id) }}">Read more</a><br>
                         <b>By {{ \App\Models\Admin::where(['id' => $blog->author])->first()->name }}</b><br>
                         <span>Read: {{ $blog->views }}</span>
                     </p>
                 </div>
             @endforeach
+            </div>
+            <div class="col-span-1 border-t-2">
+                @foreach($staffs as $staff)
+                <div class="lg:w-3/4 lg:ml-auto shadow-lg p-6 m-6">
+                    <img style="width:180px; height:180px;" class="my-4 mx-auto" src="{{ $staff->photo }}" alt="{{ $staff->name }}">
+                    <h3 class="paragraph-title text-center">{{ $staff->name }}</h3>
+                    <h3 class="text-center text-green-500">{{ $staff->title }}</h3>
+                </div>
+                @endforeach            
+            </div>
         </div>
     @else
         <div class="text-2xl lg:mx-32 px-4 my-6 relative top-10 my-24">

@@ -71,5 +71,5 @@
 }
 
 .page-title{
-    @apply w-full text-center pt-16 pb-4 font-medium underline px-6 text-4xl text-green-600;
+    @apply w-full text-center pt-24 lg:pt-16 pb-4 font-medium px-6 text-4xl text-green-600;
 }

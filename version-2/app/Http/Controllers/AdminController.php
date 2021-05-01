@@ -81,7 +81,8 @@ class AdminController extends Controller
 
     public function blog(){
         $blogs = Blog::paginate(9);
-        return view('blog', ['blogs'=>$blogs]); 
+        $staffs = Admin::orderby('name', 'asc')->get();
+        return view('blog', ['blogs'=>$blogs, 'staffs'=>$staffs]); 
     }
 
     public function readBlog($id){
@@ -96,7 +97,8 @@ class AdminController extends Controller
     }
 
     public function ebook(){
+        $staffs = Admin::orderby('name', 'asc')->get();
         $ebooks = Ebook::orderby('id', 'desc')->paginate(10);
-        return view('ebook', ['ebooks'=>$ebooks]); 
+        return view('ebook', ['ebooks'=>$ebooks, 'staffs'=>$staffs]); 
     }
 }

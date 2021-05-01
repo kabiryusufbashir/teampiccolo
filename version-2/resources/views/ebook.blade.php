@@ -13,17 +13,30 @@
     <!-- ebook  -->
     @if($ebooks->count())
         <div class="page-title">
-            Team Piccolo Ebook 
+            Team Piccolo Ebooks 
         </div>
-        @foreach($ebooks as $ebook)
-            <div class="w-full lg:w-1/3 mx-auto shadow-lg py-24 lg:py-12 px-6 border-t-2">
-                <h3 class="paragraph-title">
-                    <a class="hover:text-blue-600 hover:underline" target="_blank" href="{{ $ebook->path }}">
-                        {{ $ebook->name }}
-                    </a>
-                </h3>
+        <div class="lg:grid lg:grid-cols-3 gap-8">
+            <div class="col-span-2">
+                @foreach($ebooks as $ebook)
+                <div class="w-full py-6 px-6 border-t-2">
+                    <h3 class="paragraph-title">
+                        <a class="hover:text-blue-600 hover:underline" target="_blank" href="{{ $ebook->path }}">
+                            {{ $ebook->name }}
+                        </a>
+                    </h3>
+                </div>
+                @endforeach
             </div>
-        @endforeach
+            <div class="col-span-1 border-t-2">
+                @foreach($staffs as $staff)
+                <div class="lg:w-2/3 lg:ml-auto shadow-lg p-6 m-6">
+                    <img style="width:180px; height:180px;" class="my-4 mx-auto" src="{{ $staff->photo }}" alt="{{ $staff->name }}">
+                    <h3 class="paragraph-title text-center">{{ $staff->name }}</h3>
+                    <h3 class="text-center text-green-500">{{ $staff->title }}</h3>
+                </div>
+                @endforeach            
+            </div>
+        </div>
     @else
         <div class="text-2xl lg:mx-32 px-4 my-6 relative top-10 my-24">
             No ebook Post found!
