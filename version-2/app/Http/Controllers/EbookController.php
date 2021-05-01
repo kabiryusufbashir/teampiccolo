@@ -47,18 +47,12 @@ class EbookController extends Controller
                 return redirect('/')->with('error', $e->getMessage());    
             }
     }
-
-    public function show($id){
-        dd('hited');
-        $ebook = Ebook::findOrFail($id);
-        return view('dashboard.ebook.show', ['ebook'=>$ebook]);
-    }
     
     public function edit($id)
     {
         $ebook = Ebook::findOrFail($id);
         
-        return view('dashboard.ebook.edit', ['ebook'=>$ebook, 'ebookStatus'=>$ebookStatus]);
+        return view('dashboard.ebook.edit', ['ebook'=>$ebook]);
     }
     
     public function update(Request $request, $id)
@@ -69,7 +63,7 @@ class EbookController extends Controller
             
             $data = request()->validate([
                 'name'=> 'required',
-                'path' => 'file|required|doc,pdf,docx',
+                'path' => 'file|required',
             ]);
             
             try{
@@ -79,6 +73,7 @@ class EbookController extends Controller
                     ]);
                     
                 $request->path->move(public_path('docs/ebooks'), $bookName);
+                
                 return redirect()->route('ebook.index')->with('success', 'Ebook Updated');
             }catch(Exception $e){
                 return back()->with('error', 'Please try again... '.$e);
@@ -86,7 +81,6 @@ class EbookController extends Controller
         }else{
             $data = request()->validate([
                 'name'=> 'required',
-                'content'=> 'required',
             ]);
             
             try{

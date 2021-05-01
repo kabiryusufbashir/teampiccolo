@@ -100,7 +100,6 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
     Route::get('/ebook', [EbookController::class, 'index'])->name('ebook.index')->middleware('auth:admin');
     Route::get('/ebook/create', [EbookController::class, 'create'])->name('ebook.create')->middleware('auth:admin');
     Route::post('/ebook', [EbookController::class, 'store'])->name('ebook.store')->middleware('auth:admin');
-    Route::get('/ebook/{ebook}', [EbookController::class, 'show'])->name('ebook.show')->middleware('auth:admin');
     Route::get('/ebook/{ebook}/edit', [EbookController::class, 'edit'])->name('ebook.edit')->middleware('auth:admin');
     Route::patch('/ebook/{ebook}/update', [EbookController::class, 'update'])->name('ebook.update')->middleware('auth:admin');
     Route::delete('/ebook/{ebook}', [EbookController::class, 'destroy'])->name('ebook.delete')->middleware('auth:admin');
