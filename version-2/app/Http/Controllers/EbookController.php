@@ -16,7 +16,6 @@ class EbookController extends Controller
     public function index()
     {
         $ebooks = Ebook::orderby('id','desc')->paginate(9);
-        dd('hit');
         return view('dashboard.ebook.index', ['ebooks'=>$ebooks]);
     }
 
@@ -50,6 +49,7 @@ class EbookController extends Controller
     }
 
     public function show($id){
+        dd('hited');
         $ebook = Ebook::findOrFail($id);
         return view('dashboard.ebook.show', ['ebook'=>$ebook]);
     }
