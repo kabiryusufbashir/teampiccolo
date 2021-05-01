@@ -13,6 +13,7 @@ use App\Http\Controllers\VideoController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\EbookController;
+use App\Http\Controllers\StaffController;
 
 /*
 |--------------------------------------------------------------------------
@@ -104,3 +105,12 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
     Route::get('/ebook/{ebook}/edit', [EbookController::class, 'edit'])->name('ebook.edit')->middleware('auth:admin');
     Route::patch('/ebook/{ebook}/update', [EbookController::class, 'update'])->name('ebook.update')->middleware('auth:admin');
     Route::delete('/ebook/{ebook}', [EbookController::class, 'destroy'])->name('ebook.delete')->middleware('auth:admin');
+
+    //Staff
+    Route::get('/staff', [StaffController::class, 'index'])->name('staff.index')->middleware('auth:admin');
+    Route::get('/staff/create', [StaffController::class, 'create'])->name('staff.create')->middleware('auth:admin');
+    Route::post('/staff', [StaffController::class, 'store'])->name('staff.store')->middleware('auth:admin');
+    Route::get('/staff/{staff}', [StaffController::class, 'show'])->name('staff.show')->middleware('auth:admin');
+    Route::get('/staff/{staff}/edit', [StaffController::class, 'edit'])->name('staff.edit')->middleware('auth:admin');
+    Route::patch('/staff/{staff}/update', [StaffController::class, 'update'])->name('staff.update')->middleware('auth:admin');
+    Route::delete('/staff/{staff}', [StaffController::class, 'destroy'])->name('staff.delete')->middleware('auth:admin');

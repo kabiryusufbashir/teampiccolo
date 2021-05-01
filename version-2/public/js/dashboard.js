@@ -91,53 +91,21 @@ ebookCaret.addEventListener('click', ()=>{
     }
 });
 
-// laboratorist caret 
-const laboratoristCaret = document.querySelector("#laboratoristCaret");
-const laboratoristMenu = document.querySelector("#laboratoristMenu");
+// Staff caret 
+const staffCaret = document.querySelector("#staffCaret");
+const staffMenu = document.querySelector("#staffMenu");
+const staffPointer = document.querySelector("#staffPointer");
 
-laboratoristCaret.addEventListener('click', ()=>{
-    if(laboratoristMenu.classList.contains('hidden')){
-        laboratoristMenu.classList.remove('hidden');
-        laboratoristCaret.classList.add('transform');
-        laboratoristCaret.classList.add('rotate-90');
-        laboratoristCaret.classList.add('transition');
+staffCaret.addEventListener('click', ()=>{
+    if(staffMenu.classList.contains('hidden')){
+        staffMenu.classList.remove('hidden');
+        staffPointer.classList.add('transform');
+        staffPointer.classList.add('rotate-90');
+        staffCaret.classList.add('transition');
     }else{
-        laboratoristMenu.classList.add('hidden');
-        laboratoristCaret.classList.remove('transform');
-        laboratoristCaret.classList.remove('roate-90');
+        staffMenu.classList.add('hidden');
+        staffPointer.classList.remove('transform');
+        staffPointer.classList.remove('roate-90');
     }
 });
 
-// accountant caret 
-const accountantCaret = document.querySelector("#accountantCaret");
-const accountantMenu = document.querySelector("#accountantMenu");
-
-accountantCaret.addEventListener('click', ()=>{
-    if(accountantMenu.classList.contains('hidden')){
-        accountantMenu.classList.remove('hidden');
-        accountantCaret.classList.add('transform');
-        accountantCaret.classList.add('rotate-90');
-        accountantCaret.classList.add('transition');
-    }else{
-        accountantMenu.classList.add('hidden');
-        accountantCaret.classList.remove('transform');
-        accountantCaret.classList.remove('roate-90');
-    }
-});
-
-// Patient caret 
-const patientCaret = document.querySelector("#patientCaret");
-const patientMenu = document.querySelector("#patientMenu");
-
-patientCaret.addEventListener('click', ()=>{
-    if(patientMenu.classList.contains('hidden')){
-        patientMenu.classList.remove('hidden');
-        patientCaret.classList.add('transform');
-        patientCaret.classList.add('rotate-90');
-        patientCaret.classList.add('transition');
-    }else{
-        patientMenu.classList.add('hidden');
-        patientCaret.classList.remove('transform');
-        patientCaret.classList.remove('roate-90');
-    }
-});
