@@ -69,3 +69,7 @@
 .paragraph-title{
     @apply font-medium text-2xl text-green-600;
 }
+
+.page-title{
+    @apply w-full text-center pt-16 pb-4 font-medium underline px-6 text-4xl text-green-600;
+}

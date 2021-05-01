@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Models\Admin;
 use App\Models\Contact;
 use App\Models\Blog;
+use App\Models\Ebook;
 
 use App\Mail\ContactMail;
 
@@ -92,5 +93,10 @@ class AdminController extends Controller
         
         return view('readBlog', ['blog'=>$blog]);
 
+    }
+
+    public function ebook(){
+        $ebooks = Ebook::orderby('id', 'desc')->paginate(10);
+        return view('ebook', ['ebooks'=>$ebooks]); 
     }
 }

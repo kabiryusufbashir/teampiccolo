@@ -28,6 +28,7 @@ use App\Http\Controllers\EbookController;
 
 Route::get('/', [AdminController::class, 'index'])->name('home');
 Route::get('/blog-post', [AdminController::class, 'blog'])->name('blog');
+Route::get('/e-book', [AdminController::class, 'ebook'])->name('ebook');
 Route::get('/blog-post/{blog}', [AdminController::class, 'readBlog'])->name('blog.read');
 Route::get('/about-us', function () { return view('about'); })->name('about');
 Route::get('/contact', function () { return view('contact'); })->name('contact');

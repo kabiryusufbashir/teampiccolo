@@ -12,7 +12,10 @@
 @section('body-content')
     <!-- Blog  -->
     @if($blogs->count())
-        <div class="lg:grid grid-cols-3 gap-8 lg:mx-32 px-4 py-24">
+        <div class="page-title">
+            Team Piccolo blog 
+        </div>
+        <div class="lg:grid grid-cols-3 gap-8 lg:mx-32 px-4 py-6">
             @foreach($blogs as $blog)
                 <div class="shadow-lg p-6 mt-4">
                     <h3 class="paragraph-title">{{ $blog->title }}</h3>
