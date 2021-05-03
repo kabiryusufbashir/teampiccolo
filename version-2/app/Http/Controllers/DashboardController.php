@@ -105,5 +105,8 @@ class DashboardController extends Controller
         }
     }
 
-    
+    public function allStudent(){
+        $students = User::orderby('id','desc')->paginate(9);
+        return view('dashboard.student.index', ['students'=>$students]);
+    }
 }
