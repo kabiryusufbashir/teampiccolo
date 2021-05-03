@@ -27,12 +27,15 @@ class ClientController extends Controller
     public function store(Request $request)
     {
         $data = request()->validate([
-            'title'=> 'required',
             'name'=> 'required',
             'email'=> 'required|email',
             'phone_number'=> 'required',
-            'category'=> 'required',
-            'photo'=> 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'website'=> 'required|url',
+            'address'=> 'required',
+            'company'=> 'required',
+            'photo'=> 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'contract_description'=> 'required',
+            'date_signed'=> 'required'
         ]);
 
         $imageName = '/images/clients/'.time().'.'.$request->photo->extension();  
@@ -40,13 +43,15 @@ class ClientController extends Controller
         try{
             Client::create(
                 [
-                'title'=>$request->title,
                 'name'=>$request->name,
                 'email'=>$request->email,
                 'phone_number'=>$request->phone_number,
-                'category'=>$request->category,
+                'website'=>$request->website,
+                'address'=>$request->address,
+                'company'=>$request->company,
                 'photo'=>$imageName,
-                'password' => Hash::make('1234567890')
+                'contract_description'=>$request->contract_description,
+                'date_signed'=>$request->date_signed
                 ]);
                 
                 $request->photo->move(public_path('images/clients'), $imageName);
@@ -83,24 +88,29 @@ class ClientController extends Controller
             $imageName = '/images/clients/'.time().'.'.$request->photo->extension();  
             
             $data = request()->validate([
-                'title'=> 'required',
                 'name'=> 'required',
                 'email'=> 'required|email',
                 'phone_number'=> 'required',
-                'category'=> 'required',
-                'photo'=> 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+                'website'=> 'required|url',
+                'address'=> 'required',
+                'company'=> 'required',
+                'photo'=> 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'contract_description'=> 'required',
+                'date_signed'=> 'required'
             ]);
             
             try{
                 $client = Client::where('id', $id)->update([
-                    'title'=> $request->title,
                     'name'=> $request->name,
                     'email'=> $request->email,
                     'phone_number'=> $request->phone_number,
-                    'category'=> $request->category,
-                    'status'=> $request->status,
-                    'photo'=> $imageName
-                    ]);
+                    'website'=> $request->website,
+                    'address'=> $request->address,
+                    'company'=> $request->company,
+                    'photo'=> $imageName,
+                    'contract_description'=> $request->contract_description,
+                    'date_signed'=> $request->date_signed
+                ]);
                     
                 $request->photo->move(public_path('images/clients'), $imageName);
                 return redirect()->route('client.index')->with('success', 'Client Updated');
@@ -109,12 +119,14 @@ class ClientController extends Controller
             }
         }else{
             $data = request()->validate([
-                'title'=> 'required',
                 'name'=> 'required',
                 'email'=> 'required|email',
                 'phone_number'=> 'required',
-                'category'=> 'required',
-                'status'=> '',
+                'website'=> 'required|url',
+                'address'=> 'required',
+                'company'=> 'required',
+                'contract_description'=> 'required',
+                'date_signed'=> 'required'
             ]);
             
             try{
