@@ -14,7 +14,7 @@
     <div class="w-full lg:w-2/3 mx-auto leading-snug items-center">
         <div class="w-full px-6 py-24">
             <div>
-                <img class="mx-auto w-48" src="{{ $blog->photo }}" alt="{{ $blog->title }}">
+                <img class="mx-auto h-32" src="{{ $blog->photo }}" alt="{{ $blog->title }}">
             </div>
             <div class="text-3xl mb-8">
                 <span class="border-b-4 border-green-600">{{ $blog->title }}</span>
@@ -23,7 +23,16 @@
                 {!!  html_entity_decode($blog->content) !!}
             </p>
             <p class="my-6">
-                <b>By {{ \App\Models\Admin::where(['id' => $blog->author])->first()->name }}</b><br>
+                <div class="flex my-4 items-center justify-between">
+                    <div class="flex items-center">
+                        <img class="w-10 h-10" src="{{ \App\Models\Admin::where(['id' => $blog->author])->first()->photo ?? asset('/images/logo.png') }}" alt="{{ \App\Models\Admin::where(['id' => $blog->author])->first()->name }}"> 
+                        &nbsp;&nbsp;
+                        <span>{{ \App\Models\Admin::where(['id' => $blog->author])->first()->name }}</span>
+                    </div>
+                    <div>
+                        {{ $blog->created_at->diffForhumans() }}
+                    </div>
+                </div>
                 <span>View: {{ $blog->views }}</span>
             </p>
             <p>
