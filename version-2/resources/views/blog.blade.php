@@ -15,10 +15,10 @@
         <div class="page-title">
             Team Piccolo Blog 
         </div>
-        <div class="lg:grid grid-cols-3 gap-8 lg:mx-24">
+        <div class="lg:grid grid-cols-3 gap-16 lg:mx-24">
             <div class="col-span-2">
             @foreach($blogs as $blog)
-                <div class="lg:w-2/3 shadow-lg p-10 m-4">
+                <div class="w-full shadow-lg p-10 m-4">
                     <h3 class="paragraph-title">{{ $blog->title }}</h3>
                     <img style="width:180px; height:180px;" class="my-4 mx-auto" src="{{ $blog->photo }}" alt="{{ $blog->title }}">
                     <p class="paragraph">
@@ -29,9 +29,9 @@
                 </div>
             @endforeach
             </div>
-            <div class="col-span-1 border-t-2 lg:border-t-0">
+            <div class="col-span-1 border-t-2 lg:border-t-0 my-auto">
                 @foreach($staffs as $staff)
-                <div class="lg:w-3/4 lg:ml-auto shadow-lg p-6 m-6">
+                <div class="w-full lg:ml-auto shadow-lg p-6 m-6">
                     <img style="width:180px; height:180px;" class="my-4 mx-auto" src="{{ $staff->photo }}" alt="{{ $staff->name }}">
                     <h3 class="paragraph-title text-center">{{ $staff->name }}</h3>
                     <h3 class="text-center text-green-500">{{ $staff->title }}</h3>
