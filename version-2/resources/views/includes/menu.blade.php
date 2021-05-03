@@ -95,10 +95,10 @@
         </li>
         <div id="clientMenu" class="users-caret-menu hidden">
             <li class="py-3 flex border-b">
-                <a href="{{ route('client.create') }}">Add Clients</a>
+                <a href="{{ route('client.create') }}">Add Client</a>
             </li>
             <li class="py-3 flex">
-                <a href="{{ route('client.index') }}">All Client</a>
+                <a href="{{ route('client.index') }}">All Clients</a>
             </li>
         </div>
 

@@ -19,7 +19,7 @@ class CreateClientsTable extends Migration
             $table->string('email');
             $table->string('phone_number');
             $table->string('address');
-            $table->string('website');
+            $table->string('website')->nullable();
             $table->string('company');
             $table->string('photo');
             $table->text('contract_description');

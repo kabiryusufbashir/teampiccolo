@@ -10,12 +10,13 @@ class ClientController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:Client');
+        $this->middleware('auth:admin');
     }
 
     public function index()
     {
         $clients = Client::orderby('id','desc')->paginate(9);
+        dd('hit');
         return view('dashboard.client.index', ['clients'=>$clients]);
     }
 
