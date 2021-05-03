@@ -109,4 +109,21 @@ class DashboardController extends Controller
         $students = User::orderby('id','desc')->paginate(9);
         return view('dashboard.student.index', ['students'=>$students]);
     }
+
+    public function studentShow($id){
+        $student = User::findOrFail($id);
+        return view('dashboard.student.show', ['student'=>$student]);
+    }
+
+    public function studentDestroy($id)
+    {
+        $student = User::findOrFail($id);
+        
+        try{
+            $student->delete();
+            return back()->with('success', 'Student Deleted');
+        }catch(Exception $e){
+            return back()->with('error', 'Please try again... '.$e);
+        }
+    }
 }
