@@ -66,7 +66,8 @@ class StaffController extends Controller
     public function edit($id)
     {
         $staff = Admin::findOrFail($id);
-        $staffStatus = $admin->status;
+        $staffStatus = $staff->status;
+        $staffCategory = $staff->category;
         
         if($staffStatus === "1"){
             $staffStatus = 'Active';
@@ -74,7 +75,13 @@ class StaffController extends Controller
             $staffStatus = 'De-Active';
         }
 
-        return view('dashboard.staff.edit', ['staff'=>$staff, 'staffStatus'=>$staffStatus]);
+        if($staffCategory === "1"){
+            $staffCategory = 'Super User';
+        }else{
+            $staffCategory = 'Regular User';
+        }
+
+        return view('dashboard.staff.edit', ['staff'=>$staff, 'staffStatus'=>$staffStatus, 'staffCategory'=>$staffCategory]);
     }
     
     public function update(Request $request, $id)
@@ -104,7 +111,7 @@ class StaffController extends Controller
                     ]);
                     
                 $request->photo->move(public_path('images/staffs'), $imageName);
-                return redirect()->route('staff.index')->with('success', 'admin Updated');
+                return redirect()->route('staff.index')->with('success', 'Staff Updated');
             }catch(Exception $e){
                 return back()->with('error', 'Please try again... '.$e);
             }
@@ -120,7 +127,7 @@ class StaffController extends Controller
             
             try{
                 $staff = Admin::where('id', $id)->update($data);
-                return redirect()->route('staff.index')->with('success', 'admin Updated');
+                return redirect()->route('staff.index')->with('success', 'Staff Updated');
             }catch(Exception $e){
                 return back()->with('error', 'Please try again... '.$e);
             }

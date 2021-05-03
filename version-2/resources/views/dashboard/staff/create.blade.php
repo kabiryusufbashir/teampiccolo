@@ -29,7 +29,7 @@
                         <form class="bg-white shadow-lg p-4" action="{{ route('staff.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div>
-                                <h2 class="text-2xl text-center py-4 font-medium border-b-4 uppercase">Add staff</h2>
+                                <h2 class="text-2xl text-center py-4 font-medium border-b-4 uppercase">Add Staff</h2>
                             </div>
                             <div class="my-2">
                                 <input type="text" name="title" value="{{old('title')}}" placeholder="C.E.O Team Piccolo" class="input-box @error('title') border-red-500 @enderror">
@@ -56,7 +56,7 @@
                                 @enderror
                             </div>
                             <div class="my-2">
-                                <select name="category" class="input-box @error('phone_number') border-red-500 @enderror">
+                                <select name="category" class="input-box @error('category') border-red-500 @enderror">
                                     <option value=""></option>
                                     <option value="1">Super User</option>
                                     <option value="2">Regular</option>
