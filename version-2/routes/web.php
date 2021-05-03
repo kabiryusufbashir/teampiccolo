@@ -129,5 +129,5 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
     Route::post('/client', [ClientController::class, 'store'])->name('client.store')->middleware('auth:admin');
     Route::get('/client/{client}', [ClientController::class, 'show'])->name('client.show')->middleware('auth:admin');
     Route::get('/client/{client}/edit', [ClientController::class, 'edit'])->name('client.edit')->middleware('auth:admin');
-    Route::patch('/staff/{client}/update', [ClientController::class, 'update'])->name('client.update')->middleware('auth:admin');
+    Route::patch('/client/{client}/update', [ClientController::class, 'update'])->name('client.update')->middleware('auth:admin');
     Route::delete('/client/{client}', [ClientController::class, 'destroy'])->name('client.delete')->middleware('auth:admin');
