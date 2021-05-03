@@ -50,7 +50,7 @@
                                 @enderror
                             </div>
                             <div class="my-2">
-                                <input type="url" name="website" value="{{old('website')}}" placeholder="Website" class="input-box @error('website') border-red-500 @enderror">
+                                <input type="text" name="website" value="{{old('website')}}" placeholder="Website" class="input-box @error('website') border-red-500 @enderror">
                                 @error('website')
                                     {{$message}}
                                 @enderror
