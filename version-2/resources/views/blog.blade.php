@@ -19,7 +19,7 @@
             <div class="col-span-2">
             @foreach($blogs as $blog)
                 <a href="{{ route('blog.read', $blog->id) }}">
-                    <div class="w-full shadow p-10 m-4 hover:shadow-lg">
+                    <div class="shadow p-10 m-4 hover:shadow-lg">
                         <img class="h-42 my-4 mx-auto" src="{{ $blog->photo }}" alt="{{ $blog->title }}">
                         <h3 class="paragraph-title">{{ $blog->title }}</h3>
                         <p class="paragraph">
@@ -43,7 +43,7 @@
             </div>
             <div class="col-span-1 border-t-2 lg:border-t-0 my-auto">
                 @foreach($staffs as $staff)
-                <div class="w-full lg:ml-auto shadow-lg p-6 m-6">
+                <div class="lg:ml-auto shadow-lg p-6 m-6">
                     <img style="width:180px; height:180px;" class="my-4 mx-auto" src="{{ $staff->photo }}" alt="{{ $staff->name }}">
                     <h3 class="paragraph-title text-center">{{ $staff->name }}</h3>
                     <h3 class="text-center text-green-500">{{ $staff->title }}</h3>

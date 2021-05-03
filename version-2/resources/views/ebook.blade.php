@@ -29,8 +29,8 @@
             </div>
             <div class="col-span-1 border-t-2 lg:border-t-0">
                 @foreach($staffs as $staff)
-                <div class="w-full lg:ml-auto shadow-lg p-6 m-6">
-                    <img style="width:180px; height:180px;" class="my-4 mx-auto" src="{{ $staff->photo }}" alt="{{ $staff->name }}">
+                <div class="lg:ml-auto shadow-lg p-6 m-6">
+                    <img class="h-36 my-4 mx-auto" src="{{ $staff->photo }}" alt="{{ $staff->name }}">
                     <h3 class="paragraph-title text-center">{{ $staff->name }}</h3>
                     <h3 class="text-center text-green-500">{{ $staff->title }}</h3>
                 </div>

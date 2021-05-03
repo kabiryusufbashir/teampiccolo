@@ -39,7 +39,7 @@
                 <div class="flex justify-end">
                     <a href="{{ url()->previous() }}">
                         <button class="create-btn" style="width:120%; height:120%;">
-                            <img class="w-6" src="{{ asset('images/back-arrow.png') }}" alt="">
+                            <img class="w-6 text-white" src="{{ asset('images/back-arrow.png') }}" alt="">
                             &nbsp;&nbsp;
                             Back
                         </button>

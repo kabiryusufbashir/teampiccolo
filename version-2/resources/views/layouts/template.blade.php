@@ -226,15 +226,15 @@
                         <span class="text-xl">Subscribe to our newsletter</span>
                         <form action="{{ route('news-letter') }}" class="text-black flex items-center" method="POST">
                             @csrf
-                            <input class="px-5 border border-gray-300 h-12 rounded-tl-lg rounded-bl-lg my-2 text-lg focus:outline-none w-full" type="email" name="emails" id="newsLetter" placeholder="Subscribe to Our Newsletter">
-                            <button class="bg-green-900 py-2 px-4 text-white rounded-tr-lg rounded-br-lg uppercase h-12 focus:outline-none" type="submit">Subscribe</button>
+                            <input class="px-5 border border-gray-300 h-14 rounded-tl-lg rounded-bl-lg my-2 text-lg focus:outline-none w-full" type="email" name="emails" id="newsLetter" placeholder="Subscribe to Our Newsletter">
+                            <button class="bg-green-500 py-2 px-4 text-white rounded-tr-lg rounded-br-lg uppercase h-14 focus:outline-none" type="submit">Subscribe</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="py-4 text-center text-green-600">
-            Copyright &copy; 2021 Team Piccolo All rights reserved
+        <div class="w-full py-4 text-center text-green-600 text-sm">
+            Copyright &copy; 2021 Team Piccolo All Rights Reserved
         </div>
         <script src="{{ asset('js/main.js') }}"></script>
     </body>

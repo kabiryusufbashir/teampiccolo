@@ -57,8 +57,15 @@
                                 <div class="my-2 p-2 mx-3 border-t">
                                     Date Signed: {{ \Carbon\Carbon::parse($client->date_signed)->format('d M Y') }}
                                 </div>
-                                <div class="my-2 p-2 mx-3 border-l border-t">
+                                <div class="my-2 p-2 mx-3 border- border-t border-b">
                                     Account Created: {{ $client->created_at->diffForHumans() }}
+                                </div>
+                                <div class="mx-3">
+                                    <form action="#">
+                                        <button class="view-btn">
+                                            <span> Send Email</span>
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         @else
