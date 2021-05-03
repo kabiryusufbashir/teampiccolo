@@ -114,3 +114,10 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
     Route::get('/staff/{staff}/edit', [StaffController::class, 'edit'])->name('staff.edit')->middleware('auth:admin');
     Route::patch('/staff/{staff}/update', [StaffController::class, 'update'])->name('staff.update')->middleware('auth:admin');
     Route::delete('/staff/{staff}', [StaffController::class, 'destroy'])->name('staff.delete')->middleware('auth:admin');
+
+    //Student
+    Route::get('/all-student', [DashboardController::class, 'allStudent'])->name('student.all.index')->middleware('auth:admin');
+    Route::get('/all-student/{student}', [DashboardController::class, 'studentShow'])->name('student.all.show')->middleware('auth:admin');
+    Route::get('/all-student/{student}/edit', [DashboardController::class, 'studentEdit'])->name('student.all.edit')->middleware('auth:admin');
+    Route::patch('/all-student/{student}/update', [DashboardController::class, 'studentUpdate'])->name('student.all.update')->middleware('auth:admin');
+    Route::delete('/all-student/{student}', [DashboardController::class, 'studentDestroy'])->name('student.all.delete')->middleware('auth:admin');

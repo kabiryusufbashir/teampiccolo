@@ -109,3 +109,21 @@ staffCaret.addEventListener('click', ()=>{
     }
 });
 
+// Student caret 
+const studentCaret = document.querySelector("#studentCaret");
+const studentMenu = document.querySelector("#studentMenu");
+const studentPointer = document.querySelector("#studentPointer");
+
+studentCaret.addEventListener('click', ()=>{
+    if(studentMenu.classList.contains('hidden')){
+        studentMenu.classList.remove('hidden');
+        studentPointer.classList.add('transform');
+        studentPointer.classList.add('rotate-90');
+        studentCaret.classList.add('transition');
+    }else{
+        studentMenu.classList.add('hidden');
+        studentPointer.classList.remove('transform');
+        studentPointer.classList.remove('roate-90');
+    }
+});
+
