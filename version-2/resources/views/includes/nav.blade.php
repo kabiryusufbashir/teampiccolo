@@ -1,4 +1,4 @@
-<div class="bg-gray-600">
+<div class="bg-green-600">
     <div class="md:flex md:justify-between md:grid md:grid-cols-4 py-3">
         <!-- system details -->
         <div class="mx-3 flex items-center justify-between col-span-1">

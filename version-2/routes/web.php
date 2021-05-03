@@ -14,6 +14,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\EbookController;
 use App\Http\Controllers\StaffController;
+use App\Http\Controllers\ClientController;
 
 /*
 |--------------------------------------------------------------------------
@@ -121,3 +122,12 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
     Route::get('/all-student/{student}/edit', [DashboardController::class, 'studentEdit'])->name('student.all.edit')->middleware('auth:admin');
     Route::patch('/all-student/{student}/update', [DashboardController::class, 'studentUpdate'])->name('student.all.update')->middleware('auth:admin');
     Route::delete('/all-student/{student}', [DashboardController::class, 'studentDestroy'])->name('student.all.delete')->middleware('auth:admin');
+
+    //Client
+    Route::get('/client', [ClientController::class, 'index'])->name('client.index')->middleware('auth:admin');
+    Route::get('/client/create', [ClientController::class, 'create'])->name('client.create')->middleware('auth:admin');
+    Route::post('/client', [ClientController::class, 'store'])->name('client.store')->middleware('auth:admin');
+    Route::get('/client/{client}', [ClientController::class, 'show'])->name('client.show')->middleware('auth:admin');
+    Route::get('/client/{client}/edit', [ClientController::class, 'edit'])->name('client.edit')->middleware('auth:admin');
+    Route::patch('/staff/{client}/update', [ClientController::class, 'update'])->name('client.update')->middleware('auth:admin');
+    Route::delete('/client/{client}', [ClientController::class, 'destroy'])->name('client.delete')->middleware('auth:admin');

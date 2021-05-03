@@ -71,7 +71,7 @@
             <div class="pb-4 shadow">
                 <svg id="close" class="ml-auto mr-6 w-10 h-10 cursor-pointer" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
             </div>
-            <div class="list-none p-4 text-2xl border-t bg-gray-100">
+            <div class="list-none p-4 text-xl border-t bg-gray-100">
                 <li class="p-4">
                     <a href="{{ route('home') }}" class="flex items-center">
                         <span>
@@ -182,7 +182,7 @@
                         </div>
                     </div>
                     <div class="col-span-1">
-                        <span class="text-2xl">Navigation links</span>
+                        <span class="text-xl">Navigation links</span>
                         <nav class="list-none text-white mt-4">
                             <li>
                                 <a class="flex items-center py-2 text-lg" href="{{ route('home') }}">
@@ -223,7 +223,7 @@
                         </nav>
                     </div>
                     <div class="col-span-2 my-auto">
-                        <span class="text-2xl">Subscribe to our newsletter</span>
+                        <span class="text-xl">Subscribe to our newsletter</span>
                         <form action="{{ route('news-letter') }}" class="text-black flex items-center" method="POST">
                             @csrf
                             <input class="px-5 border border-gray-300 h-12 rounded-tl-lg rounded-bl-lg my-2 text-lg focus:outline-none w-full" type="email" name="emails" id="newsLetter" placeholder="Subscribe to Our Newsletter">
