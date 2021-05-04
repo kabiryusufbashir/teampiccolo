@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+
+use App\Mail\SendMailClient;
 
 use App\Models\Client;
+use App\Models\Clientsendmail;
 
 class ClientController extends Controller
 {
@@ -150,9 +154,33 @@ class ClientController extends Controller
         }
     }
 
-    public function sendMail($id){
+    public function composeMail($id){
         $client = Client::findOrFail($id);
         
         return view('dashboard.client.sendmail', ['client'=>$client]);
+    }
+
+    public function sendMail(Request $request){
+        $data = request()->validate([
+            'client_id'=> 'required',
+            'message'=> 'required'
+        ]);
+
+        try{
+            Clientsendmail::create($data);
+            try{
+                $sendmail = Clientsendmail::latest('id')->first();
+                Mail::to($sendmail->client->email)
+                    ->cc('kabiryusufbashir@gmail.com')
+                    ->bcc('info@teampiccolo.com')
+                    ->send(new SendMailClient($sendmail));
+                return back()->with('success','Message Sent successfully');    
+    
+            }catch(Exception $e){
+                return back()->with('error', $e->getMessage());    
+            }
+        }catch(Exception $e){
+            return back()->with('error', $e->getMessage());    
+        }
     }
 }

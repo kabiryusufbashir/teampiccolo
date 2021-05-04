@@ -31,6 +31,11 @@
                                 <div class="my-6 mx-3 text-3xl font-medium">
                                     <img class="w-32 h-32 md:w-48 md:h-48 mx-auto" src=" {{ $client->photo }}" alt=" {{ $client->name }} logo">
                                 </div>
+                                <div class="mx-3">
+                                    <button class="view-btn ml-auto">
+                                        <span><a href="{{ route('client.compose.mail', $client->id) }}"> Send Email</a></span>
+                                    </button>
+                                </div>
                                 <div class="my-2 p-2 mx-3 border-b  border-r">
                                     Client's Name: {{ $client->name }}
                                 </div>
@@ -59,11 +64,6 @@
                                 </div>
                                 <div class="my-2 p-2 mx-3 border- border-t border-b">
                                     Account Created: {{ $client->created_at->diffForHumans() }}
-                                </div>
-                                <div class="mx-3">
-                                    <button class="view-btn">
-                                        <span><a href="{{ route('client.send.mail', $client->id) }}"> Send Email</a></span>
-                                    </button>
                                 </div>
                             </div>
                         @else

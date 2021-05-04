@@ -34,11 +34,12 @@
                                 <div class="my-2 p-2 mx-3 border-b  border-r text-lg">
                                     You will be compose message to <b>{{ $client->name }}</b> of <b>{{ $client->company }}</b>
                                 </div>
-                                <form action="{{ route('client.store') }}" method="POST" enctype="multipart/form-data">
+                                <form action="{{ route('client.send.mail') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="my-2">
-                                    <textarea id="content" name="send_mail" class="px-5 w-full border border-gray-400 h-24 rounded-lg my-2 text-lg focus:outline-none @error('send_mail') border-red-500 @enderror" placeholder="Compose Message"></textarea>
-                                        @error('send_mail')
+                                    <input style="display:none;" type="text" name="client_id" value="{{ $client->id }}">
+                                    <textarea id="content" name="message" class="px-5 w-full border border-gray-400 h-24 rounded-lg my-2 text-lg focus:outline-none @error('message') border-red-500 @enderror" placeholder="Compose Message"></textarea>
+                                        @error('message')
                                             {{$message}}
                                         @enderror
                                     </div>

@@ -131,4 +131,5 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
     Route::get('/client/{client}/edit', [ClientController::class, 'edit'])->name('client.edit')->middleware('auth:admin');
     Route::patch('/client/{client}/update', [ClientController::class, 'update'])->name('client.update')->middleware('auth:admin');
     Route::delete('/client/{client}', [ClientController::class, 'destroy'])->name('client.delete')->middleware('auth:admin');
-    Route::get('/client-send-mail/{client}', [ClientController::class, 'sendMail'])->name('client.send.mail')->middleware('auth:admin');
+    Route::get('/client-compose-mail/{client}', [ClientController::class, 'composeMail'])->name('client.compose.mail')->middleware('auth:admin');
+    Route::post('/client-send-mail', [ClientController::class, 'sendMail'])->name('client.send.mail')->middleware('auth:admin');
