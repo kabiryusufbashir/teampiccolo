@@ -145,3 +145,21 @@ clientCaret.addEventListener('click', ()=>{
     }
 });
 
+// Record caret 
+const recordsCaret = document.querySelector("#recordsCaret");
+const recordsMenu = document.querySelector("#recordsMenu");
+const recordsPointer = document.querySelector("#recordsPointer");
+
+recordsCaret.addEventListener('click', ()=>{
+    if(recordsMenu.classList.contains('hidden')){
+        recordsMenu.classList.remove('hidden');
+        recordsPointer.classList.add('transform');
+        recordsPointer.classList.add('rotate-90');
+        recordsCaret.classList.add('transition');
+    }else{
+        recordsMenu.classList.add('hidden');
+        recordsPointer.classList.remove('transform');
+        recordsPointer.classList.remove('roate-90');
+    }
+});
+

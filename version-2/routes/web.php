@@ -15,6 +15,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\EbookController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\RecordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -133,3 +134,12 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
     Route::delete('/client/{client}', [ClientController::class, 'destroy'])->name('client.delete')->middleware('auth:admin');
     Route::get('/client-compose-mail/{client}', [ClientController::class, 'composeMail'])->name('client.compose.mail')->middleware('auth:admin');
     Route::post('/client-send-mail', [ClientController::class, 'sendMail'])->name('client.send.mail')->middleware('auth:admin');
+
+    //Financial Records
+    Route::get('/record', [RecordController::class, 'index'])->name('record.index')->middleware('auth:admin');
+    Route::get('/record/create', [RecordController::class, 'create'])->name('record.create')->middleware('auth:admin');
+    Route::post('/record', [RecordController::class, 'store'])->name('record.store')->middleware('auth:admin');
+    Route::get('/record/{record}', [RecordController::class, 'show'])->name('record.show')->middleware('auth:admin');
+    Route::get('/record/{record}/edit', [RecordController::class, 'edit'])->name('record.edit')->middleware('auth:admin');
+    Route::patch('/record/{record}/update', [RecordController::class, 'update'])->name('record.update')->middleware('auth:admin');
+    Route::delete('/record/{record}', [RecordController::class, 'destroy'])->name('record.delete')->middleware('auth:admin');
