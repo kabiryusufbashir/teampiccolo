@@ -31,7 +31,7 @@ class SendMailClient extends Mailable
                     ->with([
                         'content' => $this->clientsendmail->message,
                     ])
-                    ->subject('Team Piccolo Message')
+                    ->subject('Message from Team Piccolo')
                     ->view('emails.sendclientmail');
     }
 }
