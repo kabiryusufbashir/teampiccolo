@@ -61,11 +61,9 @@
                                     Account Created: {{ $client->created_at->diffForHumans() }}
                                 </div>
                                 <div class="mx-3">
-                                    <form action="#">
-                                        <button class="view-btn">
-                                            <span> Send Email</span>
-                                        </button>
-                                    </form>
+                                    <button class="view-btn">
+                                        <span><a href="{{ route('client.send.mail', $client->id) }}"> Send Email</a></span>
+                                    </button>
                                 </div>
                             </div>
                         @else

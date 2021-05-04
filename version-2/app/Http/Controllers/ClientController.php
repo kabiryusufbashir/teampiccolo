@@ -149,4 +149,10 @@ class ClientController extends Controller
             return back()->with('error', 'Please try again... '.$e);
         }
     }
+
+    public function sendMail($id){
+        $client = Client::findOrFail($id);
+        
+        return view('dashboard.client.sendmail', ['client'=>$client]);
+    }
 }
