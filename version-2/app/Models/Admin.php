@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 use App\Models\Blog;
+use App\Models\Record;
 
 class Admin extends Authenticatable
 {
@@ -44,4 +45,9 @@ class Admin extends Authenticatable
     public function blog(){
         return $this->hasMany(Blog::class);
     }
+
+    public function records(){
+        return $this->hasMany(Record::class);
+    }
+
 }
