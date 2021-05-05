@@ -16,111 +16,70 @@ class NewsletterController extends Controller
 
     public function index()
     {
-        $blogs = Blog::orderby('id','desc')->paginate(9);
-        return view('dashboard.blog.index', ['blogs'=>$blogs]);
+        $weeklyletters = Weeklyletter::orderby('id','desc')->paginate(9);
+        return view('dashboard.weeklyletter.index', ['weeklyletters'=>$weeklyletters]);
     }
 
     public function create()
     {
-        return view('dashboard.blog.create');
+        return view('dashboard.weeklyletter.create');
     }
 
     public function store(Request $request)
     {
         $data = request()->validate([
             'title'=> 'required',
-            'author'=> 'required',
-            'photo'=> 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'content'=> 'required',
+            'status'=> 'required',
+            'author'=> 'required',
         ]);
 
-        $imageName = '/images/blogs/'.time().'.'.$request->photo->extension();  
-        
         try{
-            Blog::create(
-                [
-                'title'=>$request->title,
-                'author'=>$request->author,
-                'photo'=>$imageName,
-                'content'=>$request->content,
-                ]);
-                
-                $request->photo->move(public_path('images/blogs'), $imageName);
-                
-                return redirect()->route('blog.index');
-            }catch(Exception $e){
-                return redirect('/')->with('error', $e->getMessage());    
-            }
+            Weeklyletter::create($data);
+            return redirect()->route('weeklyletter.index');
+        }catch(Exception $e){
+            return redirect('/')->with('error', $e->getMessage());    
+        }
     }
 
     public function show($id){
-        $blog = Blog::findOrFail($id);
-        return view('dashboard.blog.show', ['blog'=>$blog]);
+        $weeklyletter = Weeklyletter::findOrFail($id);
+        return view('dashboard.weeklyletter.show', ['weeklyletter'=>$weeklyletter]);
     }
     
     public function edit($id)
     {
-        $blog = Blog::findOrFail($id);
-        $blogStatus = $blog->status;
-        
-        if($blogStatus === "1"){
-            $blogStatus = 'Active';
-        }else{
-            $blogStatus = 'De-Active';
-        }
-
-        return view('dashboard.blog.edit', ['blog'=>$blog, 'blogStatus'=>$blogStatus]);
+        $weeklyletter = Weeklyletter::findOrFail($id);
+        return view('dashboard.weeklyletter.edit', ['weeklyletter'=>$weeklyletter]);
     }
     
     public function update(Request $request, $id)
     {
-        if($request->photo !== null){
-
-            $imageName = '/images/blogs/'.time().'.'.$request->photo->extension();  
-            
-            $data = request()->validate([
-                'title'=> 'required',
-                'content'=> 'required',
-                'status'=> '',
-                'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            ]);
-            
-            try{
-                $blog = Blog::where('id', $id)->update([
-                    'title'=> $request->title,
-                    'content'=> $request->content,
-                    'status'=> $request->status,
-                    'photo'=> $imageName
-                    ]);
-                    
-                $request->photo->move(public_path('images/blogs'), $imageName);
-                return redirect()->route('blog.index')->with('success', 'Blog Updated');
-            }catch(Exception $e){
-                return back()->with('error', 'Please try again... '.$e);
-            }
-        }else{
-            $data = request()->validate([
-                'title'=> 'required',
-                'status'=> '',
-                'content'=> 'required',
-            ]);
-            
-            try{
-                $blog = Blog::where('id', $id)->update($data);
-                return redirect()->route('blog.index')->with('success', 'Blog Updated');
-            }catch(Exception $e){
-                return back()->with('error', 'Please try again... '.$e);
-            }
+        $data = request()->validate([
+            'title'=> 'required',
+            'content'=> 'required',
+            'status'=> 'required',
+        ]);
+        
+        try{
+            $weeklyletter = Weeklyletter::where('id', $id)->update([
+                'title'=> $request->title,
+                'content'=> $request->content,
+                'status'=> $request->status,
+                ]);
+            return redirect()->route('weeklyletter.index')->with('success', 'Weekly letter Updated');
+        }catch(Exception $e){
+            return back()->with('error', 'Please try again... '.$e);
         }
     }
 
     public function destroy($id)
     {
-        $blog = Blog::findOrFail($id);
+        $weeklyletter = Weeklyletter::findOrFail($id);
         
         try{
-            $blog->delete();
-            return back()->with('success', 'Blog deleted');
+            $weeklyletter->delete();
+            return back()->with('success', 'Weekly letter Deleted');
         }catch(Exception $e){
             return back()->with('error', 'Please try again... '.$e);
         }

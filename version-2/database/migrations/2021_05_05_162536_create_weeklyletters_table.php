@@ -17,6 +17,7 @@ class CreateWeeklylettersTable extends Migration
             $table->id();
             $table->string('title');
             $table->text('content');
+            $table->string('status');
             $table->unsignedBigInteger('author_id');
             $table->timestamps();
 
