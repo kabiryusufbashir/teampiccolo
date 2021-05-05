@@ -15,6 +15,7 @@ class RecordController extends Controller
 
     public function index()
     {
+        dd('hit');
         $records = Record::orderby('id','desc')->paginate(9);
         return view('dashboard.record.index', ['records'=>$records]);
     }
