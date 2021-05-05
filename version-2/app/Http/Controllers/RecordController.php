@@ -49,6 +49,16 @@ class RecordController extends Controller
         $record = Record::findOrFail($id);
         return view('dashboard.record.show', ['record'=>$record]);
     }
+
+    public function showDebit($debit){
+        $records = Record::where('transaction_type',$debit)->paginate(9);
+        return view('dashboard.record.showdebit', ['records'=>$records]);
+    }
+
+    public function showCredit($credit){
+        $records = Record::where('transaction_type',$credit)->paginate(9);
+        return view('dashboard.record.showcredit', ['records'=>$records]);
+    }
     
     public function edit($id)
     {

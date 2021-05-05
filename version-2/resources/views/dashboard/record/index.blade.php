@@ -29,19 +29,19 @@
             </div>
             <div class="md:grid md:grid-cols-2 md:gap-8 md:mx-10 md:my-16">
                 <div class="card">
-                    <div class="font-medium text-3xl py-12">
+                    <div class="font-medium text-3xl py-12 bg-green-600 text-white text-left px-4">
                         Debit <br>
                         <span class="font-normal text-xl">Total: {{ $debit->count() }}</span><br>
                         <span class="font-normal text-xl">Sum: N{{ $debit->sum('amount') }}</span><br>
-                        <span class="font-normal text-xl"><a class="text-blue-600 underline" href="{{ route('record.debit', 'debit') }}">Check Transaction</a></span>
+                        <span class="font-normal text-xl"><a class="text-white-600 hover:text-gray-600 underline" href="{{ route('record.debit', 'debit') }}">Check Transaction</a></span>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="font-medium text-3xl py-12">
+                    <div class="font-medium text-3xl py-12 bg-green-600 text-white text-left px-4">
                         Credit <br>
                         <span class="font-normal text-xl">Total: {{ $credit->count() }}</span><br>
                         <span class="font-normal text-xl">Sum: N{{ $credit->sum('amount') }}</span><br>
-                        <span class="font-normal text-xl"><a class="text-blue-600 underline" href="{{ route('record.credit', 'credit') }}">Check Transaction</a></span>
+                        <span class="font-normal text-xl"><a class="text-white-600 hover:text-gray-600 underline" href="{{ route('record.credit', 'credit') }}">Check Transaction</a></span>
                     </div>
                 </div>
             </div>
