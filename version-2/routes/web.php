@@ -140,6 +140,8 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
     Route::get('/record/create', [RecordController::class, 'create'])->name('record.create')->middleware('auth:admin');
     Route::post('/record', [RecordController::class, 'store'])->name('record.store')->middleware('auth:admin');
     Route::get('/record/{record}', [RecordController::class, 'show'])->name('record.show')->middleware('auth:admin');
+    Route::get('/record/debit/{record}', [RecordController::class, 'showDebit'])->name('record.debit')->middleware('auth:admin');
+    Route::get('/record/credit/{record}', [RecordController::class, 'showCredit'])->name('record.credit')->middleware('auth:admin');
     Route::get('/record/{record}/edit', [RecordController::class, 'edit'])->name('record.edit')->middleware('auth:admin');
     Route::patch('/record/{record}/update', [RecordController::class, 'update'])->name('record.update')->middleware('auth:admin');
     Route::delete('/record/{record}', [RecordController::class, 'destroy'])->name('record.delete')->middleware('auth:admin');

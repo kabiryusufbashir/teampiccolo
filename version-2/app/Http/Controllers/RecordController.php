@@ -15,8 +15,11 @@ class RecordController extends Controller
 
     public function index()
     {
-        $records = Record::orderby('id','desc')->paginate(9);
-        return view('dashboard.record.index', ['records'=>$records]);
+        // $records = Record::orderby('id','desc')->paginate(9);
+        // return view('dashboard.record.index', ['records'=>$records]);
+        $debit = Record::where('transaction_type','debit')->get();
+        $credit = Record::where('transaction_type','credit')->get();
+        return view('dashboard.record.index', ['debit'=>$debit, 'credit'=>$credit]);
     }
 
     public function create()
