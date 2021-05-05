@@ -29,18 +29,22 @@
             </div>
             <div class="md:grid md:grid-cols-2 md:gap-8 md:mx-10 md:my-16">
                 <div class="card">
-                    <div class="font-medium text-3xl py-12 bg-green-600 text-white text-left px-4">
-                        Debit <br>
-                        <span class="font-normal text-xl">Total: {{ $debit->count() }}</span><br>
-                        <span class="font-normal text-xl">Sum: N{{ $debit->sum('amount') }}</span><br>
-                        <span class="font-normal text-xl"><a class="text-white-600 hover:text-gray-600 underline" href="{{ route('record.debit', 'debit') }}">Check Transaction</a></span>
+                    <div class="font-medium text-3xl py-8 bg-green-600 text-white text-center px-4">
+                        Debit 
+                        <span class="text-xl font-normal bg-red-500 rounded-full px-3 relative -top-3 -left-3 w-auto text-center text-white">{{ $debit->count() }}</span>
+                        <br>
+                        <span class="font-normal text-xl">Total: N{{ $debit->sum('amount') }}</span><br>
+                        <img class="w-24 mt-4 mx-auto" src="{{ asset('images/debit.png') }}" alt="Debit photo">
+                        <b class="font-normal text-xl"><a class="text-white-600 hover:text-gray-600 underline" href="{{ route('record.debit', 'debit') }}">Check Transaction</a></span>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="font-medium text-3xl py-12 bg-green-600 text-white text-left px-4">
-                        Credit <br>
-                        <span class="font-normal text-xl">Total: {{ $credit->count() }}</span><br>
-                        <span class="font-normal text-xl">Sum: N{{ $credit->sum('amount') }}</span><br>
+                    <div class="font-medium text-3xl py-8 bg-green-600 text-white text-center px-4">
+                        Credit 
+                        <span class="text-xl font-normal bg-red-500 rounded-full px-3 relative -top-3 -left-3 w-auto text-center text-white">{{ $credit->count() }}</span>
+                        <br>
+                        <span class="font-normal text-xl">Total: N{{ $credit->sum('amount') }}</span><br>
+                        <img class="w-24 mt-4 mx-auto" src="{{ asset('images/credit.png') }}" alt="Credit photo">
                         <span class="font-normal text-xl"><a class="text-white-600 hover:text-gray-600 underline" href="{{ route('record.credit', 'credit') }}">Check Transaction</a></span>
                     </div>
                 </div>
