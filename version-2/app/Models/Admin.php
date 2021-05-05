@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 
 use App\Models\Blog;
 use App\Models\Record;
+use App\Models\Weeklyletter;
 
 class Admin extends Authenticatable
 {
@@ -48,6 +49,10 @@ class Admin extends Authenticatable
 
     public function records(){
         return $this->hasMany(Record::class);
+    }
+
+    public function weeklyletters(){
+        return $this->hasMany(weeklyletter::class);
     }
 
 }
