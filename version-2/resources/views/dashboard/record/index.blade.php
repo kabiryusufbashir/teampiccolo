@@ -33,7 +33,7 @@
                         Debit 
                         <span class="text-xl font-normal bg-red-500 rounded-full px-3 relative -top-3 -left-3 w-auto text-center text-white">{{ $debit->count() }}</span>
                         <br>
-                        <span class="font-normal text-xl">Total: N{{ $debit->sum('amount') }}</span><br>
+                        <span class="font-bold text-2xl">Total: N{{ $debit->sum('amount') }}</span><br>
                         <img class="w-24 mt-4 mx-auto" src="{{ asset('images/debit.png') }}" alt="Debit photo">
                         <b class="font-normal text-xl"><a class="text-white-600 hover:text-gray-600 underline" href="{{ route('record.debit', 'debit') }}">Check Transaction</a></span>
                     </div>
@@ -43,7 +43,7 @@
                         Credit 
                         <span class="text-xl font-normal bg-red-500 rounded-full px-3 relative -top-3 -left-3 w-auto text-center text-white">{{ $credit->count() }}</span>
                         <br>
-                        <span class="font-normal text-xl">Total: N{{ $credit->sum('amount') }}</span><br>
+                        <span class="font-bold text-2xl">Total: N{{ $credit->sum('amount') }}</span><br>
                         <img class="w-24 mt-4 mx-auto" src="{{ asset('images/credit.png') }}" alt="Credit photo">
                         <span class="font-normal text-xl"><a class="text-white-600 hover:text-gray-600 underline" href="{{ route('record.credit', 'credit') }}">Check Transaction</a></span>
                     </div>

@@ -118,12 +118,12 @@
         </div>
 
         <!-- NewsLetter -->
-        <li id="clientCaret" class="py-3 flex border-b border-t cursor-pointer">
+        <li id="newsletterCaret" class="py-3 flex border-b border-t cursor-pointer">
             <img class="w-7 mr-4" src="{{ asset('images/newsletter.png') }}" alt="Newsletter">
             <a href="#">NewsLetter</a>
-            <svg id="clientPointer" class="users-caret" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd"></path><path fill-rule="evenodd" d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+            <svg id="newsletterPointer" class="users-caret" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd"></path><path fill-rule="evenodd" d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
         </li>
-        <div id="clientMenu" class="users-caret-menu hidden">
+        <div id="newsletterMenu" class="users-caret-menu hidden">
             <li class="py-3 flex border-b">
                 <a href="#">Add NewsLetter</a>
             </li>
@@ -133,7 +133,7 @@
         </div>
 
         <!-- Logout  -->
-        <li id="clientCaret" class="py-3 flex border-b cursor-pointer">
+        <li class="py-3 flex border-b border-t cursor-pointer">
             <form action="{{ route('logout') }}" method="POST">
                 @csrf 
                 <button class="flex focus:outline-none focus:bg-gray-100 focus:text-gray-900" type="submit" name="logout">

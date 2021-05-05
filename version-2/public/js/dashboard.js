@@ -163,3 +163,21 @@ recordsCaret.addEventListener('click', ()=>{
     }
 });
 
+// Newsletter caret 
+const newsletterCaret = document.querySelector("#newsletterCaret");
+const newsletterMenu = document.querySelector("#newsletterMenu");
+const newsletterPointer = document.querySelector("#newsletterPointer");
+
+newsletterCaret.addEventListener('click', ()=>{
+    if(newsletterMenu.classList.contains('hidden')){
+        newsletterMenu.classList.remove('hidden');
+        newsletterPointer.classList.add('transform');
+        newsletterPointer.classList.add('rotate-90');
+        newsletterCaret.classList.add('transition');
+    }else{
+        newsletterMenu.classList.add('hidden');
+        newsletterPointer.classList.remove('transform');
+        newsletterPointer.classList.remove('roate-90');
+    }
+});
+

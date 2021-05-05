@@ -7,12 +7,15 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 
+
 use App\Models\Admin;
 use App\Models\Contact;
 use App\Models\Blog;
 use App\Models\Ebook;
+use App\Models\Newsletter;
 
 use App\Mail\ContactMail;
+use App\Mail\NewsLetterMail;
 
 class AdminController extends Controller
 {
@@ -100,5 +103,28 @@ class AdminController extends Controller
         $staffs = Admin::orderby('name', 'asc')->get();
         $ebooks = Ebook::orderby('id', 'desc')->paginate(10);
         return view('ebook', ['ebooks'=>$ebooks, 'staffs'=>$staffs]); 
+    }
+
+    public function subscribeToNewLetter(Request $request){
+        $data = request()->validate([
+            'emails'=> ['required', 'email'],
+        ]);
+
+        try{
+            Newsletter::create($data);
+            try{
+                $sendmail = Newsletter::latest('id')->first();
+                Mail::to($sendmail->emails)
+                    ->cc('kabiryusufbashir@gmail.com')
+                    ->bcc('info@teampiccolo.com')
+                    ->send(new NewsLetterMail($sendmail));
+                return redirect('/')->with('success','Thanks for subscribing to our newsletter');    
+    
+            }catch(Exception $e){
+                return redirect('/')->with('error', $e->getMessage());    
+            }
+        }catch(Exception $e){
+            return redirect('/')->with('error', $e->getMessage());    
+        }
     }
 }

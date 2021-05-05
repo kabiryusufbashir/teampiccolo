@@ -6,7 +6,6 @@ use Illuminate\Auth\Middleware\Authenticate;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\EnrollController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\VideoController;
@@ -16,6 +15,7 @@ use App\Http\Controllers\EbookController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\RecordController;
+use App\Http\Controllers\NewsletterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +35,7 @@ Route::get('/e-book', [AdminController::class, 'ebook'])->name('ebook');
 Route::get('/blog-post/{blog}', [AdminController::class, 'readBlog'])->name('blog.read');
 Route::get('/about-us', function () { return view('about'); })->name('about');
 Route::get('/contact', function () { return view('contact'); })->name('contact');
-Route::post('/subcribe-newsletter', [NewsletterController::class, 'store'])->name('news-letter');
+Route::post('/subcribe-newsletter', [AdminController::class, 'subscribeToNewLetter'])->name('news-letter');
 Route::post('/contact', [AdminController::class, 'contact'])->name('contact');
 
 //Set Up
@@ -145,3 +145,12 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
     Route::get('/record/{record}/edit', [RecordController::class, 'edit'])->name('record.edit')->middleware('auth:admin');
     Route::patch('/record/{record}/update', [RecordController::class, 'update'])->name('record.update')->middleware('auth:admin');
     Route::delete('/record/{record}', [RecordController::class, 'destroy'])->name('record.delete')->middleware('auth:admin');
+
+    //Newsletter
+    Route::get('/newsletter', [NewsletterController::class, 'index'])->name('newsletter.index')->middleware('auth:admin');
+    Route::get('/newsletter/create', [NewsletterController::class, 'create'])->name('newsletter.create')->middleware('auth:admin');
+    Route::post('/newsletter', [NewsletterController::class, 'store'])->name('newsletter.store')->middleware('auth:admin');
+    Route::get('/newsletter/{newsletter}', [NewsletterController::class, 'show'])->name('newsletter.show')->middleware('auth:admin');
+    Route::get('/newsletter/{newsletter}/edit', [NewsletterController::class, 'edit'])->name('newsletter.edit')->middleware('auth:admin');
+    Route::patch('/newsletter/{newsletter}/update', [NewsletterController::class, 'update'])->name('newsletter.update')->middleware('auth:admin');
+    Route::delete('/newsletter/{newsletter}', [NewsletterController::class, 'destroy'])->name('newsletter.delete')->middleware('auth:admin');
