@@ -146,11 +146,11 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
     Route::patch('/record/{record}/update', [RecordController::class, 'update'])->name('record.update')->middleware('auth:admin');
     Route::delete('/record/{record}', [RecordController::class, 'destroy'])->name('record.delete')->middleware('auth:admin');
 
-    //Newsletter
-    Route::get('/newsletter', [NewsletterController::class, 'index'])->name('newsletter.index')->middleware('auth:admin');
-    Route::get('/newsletter/create', [NewsletterController::class, 'create'])->name('newsletter.create')->middleware('auth:admin');
-    Route::post('/newsletter', [NewsletterController::class, 'store'])->name('newsletter.store')->middleware('auth:admin');
-    Route::get('/newsletter/{newsletter}', [NewsletterController::class, 'show'])->name('newsletter.show')->middleware('auth:admin');
-    Route::get('/newsletter/{newsletter}/edit', [NewsletterController::class, 'edit'])->name('newsletter.edit')->middleware('auth:admin');
-    Route::patch('/newsletter/{newsletter}/update', [NewsletterController::class, 'update'])->name('newsletter.update')->middleware('auth:admin');
-    Route::delete('/newsletter/{newsletter}', [NewsletterController::class, 'destroy'])->name('newsletter.delete')->middleware('auth:admin');
+    //Weeklyletter
+    Route::get('/weeklyletter', [NewsletterController::class, 'index'])->name('weeklyletter.index')->middleware('auth:admin');
+    Route::get('/weeklyletter/create', [NewsletterController::class, 'create'])->name('weeklyletter.create')->middleware('auth:admin');
+    Route::post('/weeklyletter', [NewsletterController::class, 'store'])->name('weeklyletter.store')->middleware('auth:admin');
+    Route::get('/weeklyletter/{weeklysletter}', [NewsletterController::class, 'show'])->name('weeklyletter.show')->middleware('auth:admin');
+    Route::get('/weeklyletter/{weeklyletter}/edit', [NewsletterController::class, 'edit'])->name('weeklyletter.edit')->middleware('auth:admin');
+    Route::patch('/weeklyletter/{weeklyletter}/update', [NewsletterController::class, 'update'])->name('weeklyletter.update')->middleware('auth:admin');
+    Route::delete('/weeklyletter/{weeklyletter}', [NewsletterController::class, 'destroy'])->name('weeklyletter.delete')->middleware('auth:admin');

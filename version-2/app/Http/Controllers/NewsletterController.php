@@ -31,7 +31,7 @@ class NewsletterController extends Controller
             'title'=> 'required',
             'content'=> 'required',
             'status'=> 'required',
-            'author'=> 'required',
+            'author_id'=> 'required',
         ]);
 
         try{
