@@ -12,7 +12,7 @@ class Record extends Model
     use HasFactory;
 
     protected $fillable = [
-        'transaction_type', 'amount', 'transaction_details', 'date_of_transaction'
+        'transaction_type', 'amount', 'transaction_details', 'date_of_transaction', 'admin_id'
     ];
 
     public function admin(){
