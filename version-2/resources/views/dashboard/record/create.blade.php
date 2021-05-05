@@ -36,8 +36,8 @@
                                 <span class="input-title">Transaction Type</span>
                                 <select name="transaction_type" value="{{old('transaction_type')}}" class="input-box @error('transaction_type') border-red-500 @enderror">
                                     <option value=""></option>
-                                    <option value="debit">Debit</option>
-                                    <option value="credit">Credit</option>
+                                    <option value="Debit">Debit</option>
+                                    <option value="Credit">Credit</option>
                                 </select>
                                 @error('transaction_type')
                                     {{$message}}
