@@ -18,7 +18,7 @@ class CreateRecordsTable extends Migration
             $table->string('transaction_type');
             $table->string('amount');
             $table->text('transaction_details');
-            $table->string('date_of_transcation');
+            $table->string('date_of_transaction');
             $table->unsignedBigInteger('admin_id');
             $table->timestamps();
 

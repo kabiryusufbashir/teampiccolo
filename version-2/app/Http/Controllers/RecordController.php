@@ -31,7 +31,7 @@ class RecordController extends Controller
             'transaction_type'=> 'required',
             'amount'=> 'required',
             'transaction_details'=> 'required',
-            'transaction_date'=> 'required',
+            'date_of_transaction'=> 'required',
             'admin_id'=> 'required'
         ]);
 
@@ -60,7 +60,7 @@ class RecordController extends Controller
             'transaction_type'=> 'required',
             'amount'=> 'required',
             'transaction_details'=> 'required',
-            'transaction_date'=> 'required',
+            'date_of_transaction'=> 'required',
             'admin_id'=> 'required'
         ]);
         

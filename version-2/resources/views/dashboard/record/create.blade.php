@@ -6,7 +6,7 @@
     <!-- Nav  -->
     @include('includes.nav')
 
-    <!-- #menu  -->
+    <!-- Menu  -->
     <div class="md:grid md:grid-cols-5">
         <!-- Nav link  -->
         @include('includes.menu')
@@ -52,15 +52,15 @@
                             </div>
                             <div class="my-2">
                                 <span class="input-title">Transaction Details</span>
-                                <textarea id="content" name="transaction_details" class="px-5 w-full border border-gray-400 h-24 rounded-lg my-2 text-lg focus:outline-none @error('transaction_details') border-red-500 @enderror" placeholder="Transaction Details"></textarea>
+                                <textarea id="content" name="transaction_details" class="px-5 w-full border border-gray-400 h-24 rounded-lg my-2 text-lg focus:outline-none @error('transaction_details') border-red-500 @enderror" placeholder="Transaction Details">{{old('transaction_details')}}</textarea>
                                 @error('transaction_details')
                                     {{$message}}
                                 @enderror
                             </div>
                             <div class="my-2">
                                 <span class="input-title">Transaction Date</span>
-                                <input type="datetime" name="transaction_date" value="{{old('transaction_date')}}" placeholder="Transaction Date" class="input-box @error('transaction_date') border-red-500 @enderror">
-                                @error('transaction_date')
+                                <input type="datetime-local" name="date_of_transaction" value="{{old('date_of_transaction')}}" placeholder="Transaction Date" class="input-box @error('transaction_date') border-red-500 @enderror">
+                                @error('date_of_transaction')
                                     {{$message}}
                                 @enderror
                             </div>
