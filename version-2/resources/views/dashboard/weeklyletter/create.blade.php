@@ -50,8 +50,8 @@
                                 <span class="input-title">Status</span>
                                 <select name="status" value="{{old('status')}}" class="input-box @error('status') border-red-500 @enderror">
                                     <option value=""></option>
-                                    <option value="publish">Publish</option>
-                                    <option value="draft">Save as Draft</option>
+                                    <option value="Publish">Publish</option>
+                                    <option value="Save as Draft">Save as Draft</option>
                                 </select>
                                 @error('status')
                                     {{$message}}
