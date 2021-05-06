@@ -46,6 +46,12 @@ class NewsletterController extends Controller
         $weeklyletter = Weeklyletter::findOrFail($id);
         return view('dashboard.weeklyletter.show', ['weeklyletter'=>$weeklyletter]);
     }
+
+    public function send(Request $request){
+        $data = request()->validate([
+            'letter_id'=> 'required',
+        ]);
+    }
     
     public function edit($id)
     {

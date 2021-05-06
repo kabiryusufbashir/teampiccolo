@@ -150,6 +150,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
     Route::get('/weeklyletter', [NewsletterController::class, 'index'])->name('weeklyletter.index')->middleware('auth:admin');
     Route::get('/weeklyletter/create', [NewsletterController::class, 'create'])->name('weeklyletter.create')->middleware('auth:admin');
     Route::post('/weeklyletter', [NewsletterController::class, 'store'])->name('weeklyletter.store')->middleware('auth:admin');
+    Route::post('/weeklyletter-send', [NewsletterController::class, 'send'])->name('weeklyletter.send')->middleware('auth:admin');
     Route::get('/weeklyletter/{weeklysletter}', [NewsletterController::class, 'show'])->name('weeklyletter.show')->middleware('auth:admin');
     Route::get('/weeklyletter/{weeklyletter}/edit', [NewsletterController::class, 'edit'])->name('weeklyletter.edit')->middleware('auth:admin');
     Route::patch('/weeklyletter/{weeklyletter}/update', [NewsletterController::class, 'update'])->name('weeklyletter.update')->middleware('auth:admin');
