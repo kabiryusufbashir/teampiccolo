@@ -48,6 +48,7 @@ class NewsletterController extends Controller
     }
 
     public function send(Request $request){
+        dd('hit');
         $data = request()->validate([
             'letter_id'=> 'required',
         ]);
