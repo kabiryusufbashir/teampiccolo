@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
+use App\Mail\SendLetterSubscribers;
+
 use App\Models\Weeklyletter;
+use App\Models\Newsletter;
 
 class NewsletterController extends Controller
 {
@@ -48,10 +51,29 @@ class NewsletterController extends Controller
     }
 
     public function send(Request $request){
-        dd('hit');
         $data = request()->validate([
             'letter_id'=> 'required',
         ]);
+
+        try{
+            try{
+                $weeklyletter = Weeklyletter::where('id', $request->letter_id)->first();
+                $subscribers = Newsletter::select('emails')->get();
+                    foreach([$subscribers] as $subscriber){
+                        Mail::to($subscriber)
+                        ->cc('kabiryusufbashir@gmail.com')
+                        ->bcc('info@teampiccolo.com')
+                        ->send(new SendLetterSubscribers($weeklyletter));
+                    }
+                
+                return back()->with('success','New Letter Sent successfully');    
+    
+            }catch(Exception $e){
+                return back()->with('error', $e->getMessage());    
+            }
+        }catch(Exception $e){
+            return back()->with('error', $e->getMessage());    
+        }
     }
     
     public function edit($id)
