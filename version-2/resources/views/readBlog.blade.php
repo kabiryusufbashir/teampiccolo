@@ -12,12 +12,12 @@
 @section('header')
 <div class="relative z-0 w-full">
     <div class="w-full lg:w-2/3 mx-auto leading-snug items-center">
-        <div class="w-full px-6 py-24">
+        <div class="px-8 py-24 shadow">
             <div>
                 <img class="mx-auto h-32" src="{{ $blog->photo }}" alt="{{ $blog->title }}">
             </div>
             <div class="text-3xl mb-8">
-                <span class="border-b-4 border-green-600">{{ $blog->title }}</span>
+                <span class="border-b-2 border-green-600">{{ $blog->title }}</span>
             </div>
             <p class="paragraph">
                 {!!  html_entity_decode($blog->content) !!}
