@@ -81,3 +81,7 @@
 .input-title{
     @apply text-lg font-medium;
 }
+
+.back-btn{
+    @apply flex justify-end pt-14 md:pt-3;
+}
