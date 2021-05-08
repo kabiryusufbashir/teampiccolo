@@ -101,7 +101,7 @@ class AdminController extends Controller
 
     public function ebook(){
         $ebooks = Ebook::orderby('id', 'desc')->paginate(10);
-        return view('ebook', ['ebooks'=>$ebooks]); 
+        return view('ebook', ['ebooks'=>$ebooks]);  
     }
 
     public function subscribeToNewLetter(Request $request){
