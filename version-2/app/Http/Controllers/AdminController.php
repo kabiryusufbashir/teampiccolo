@@ -23,8 +23,17 @@ class AdminController extends Controller
         return view('welcome');    
     }
 
+    public function contactPage(){
+        return view('contact');    
+    }
+
     public function setup(){
         return view('auth.setup');
+    }
+
+    public function aboutUs(){
+        $staffs = Admin::orderby('name', 'asc')->get();
+        return view('about', ['staffs'=>$staffs]);  
     }
 
     public function create(Request $request)

@@ -34,8 +34,8 @@ Route::get('/blog-post', [AdminController::class, 'blog'])->name('blog');
 Route::get('/e-book', [AdminController::class, 'ebook'])->name('ebook');
 Route::get('/e-book/{ebook}', [AdminController::class, 'ebookDownload'])->name('ebook.download');
 Route::get('/blog-post/{blog}', [AdminController::class, 'readBlog'])->name('blog.read');
-Route::get('/about-us', function () { return view('about'); })->name('about');
-Route::get('/contact', function () { return view('contact'); })->name('contact');
+Route::get('/about-us', [AdminController::class, 'aboutUs'])->name('about');
+Route::get('/contact', [AdminController::class, 'contactPage'])->name('contact');
 Route::post('/subcribe-newsletter', [AdminController::class, 'subscribeToNewLetter'])->name('news-letter');
 Route::post('/contact', [AdminController::class, 'contact'])->name('contact');
 
