@@ -104,6 +104,17 @@ class AdminController extends Controller
         return view('ebook', ['ebooks'=>$ebooks]);  
     }
 
+    public function ebookDownload($id){
+        $ebook = Ebook::findOrFail($id);
+        $downloads = $ebook->download + 1;
+        $updateDownload = Ebook::where('id', $id)->update(['download'=> $downloads]);
+        
+        $ebook = Ebook::findOrFail($id);
+        
+        return view('ebookDownload', ['ebook'=>$ebook]);
+
+    }
+
     public function subscribeToNewLetter(Request $request){
         $data = request()->validate([
             'emails'=> ['required', 'email'],

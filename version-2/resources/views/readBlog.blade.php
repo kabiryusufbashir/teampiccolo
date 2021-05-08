@@ -36,7 +36,7 @@
                 <span>View: {{ $blog->views }}</span>
             </p>
             <p>
-                <div class="flex justify-end">
+                <div class="back-btn">
                     <a href="{{ url()->previous() }}">
                         <button class="create-btn" style="width:120%; height:120%;">
                             <img class="w-6 text-white" src="{{ asset('images/back-arrow.png') }}" alt="">

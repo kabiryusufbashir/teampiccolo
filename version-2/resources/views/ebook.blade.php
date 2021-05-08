@@ -16,13 +16,13 @@
         </div>
         <div class="md:grid md:grid-cols-2 md:gap-4 md:gap-16 md:mx-24">
             @foreach($ebooks as $ebook)
-                <a href="{{ $ebook->path }}">
+                <a href="{{ route('ebook.download', $ebook->id) }}">
                     <div class="stats-card hover:shadow-lg text-green-600 hover:bg-green-600 hover:text-white">
                         <div>
-                            <div class="text-left px-4 text-xl font-medium">Download: {{ $ebook->download }}</div>
                             <div class="text-dark px-4 py-1">
                                 <span>{{ $ebook->name }}</span>
                             </div>    
+                            <div class="text-left px-4 text-sm font-normal">Download: {{ $ebook->download }}</div>
                         </div>
                     </div>
                 </a>
