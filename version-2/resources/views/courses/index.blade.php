@@ -1,21 +1,16 @@
-<html lang="en">
-<head>
-    <title>Courses | Team Piccolo Global Enterprises</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+@extends('layouts.template')
+
+@section('page-meta')
     <meta name="description" content="Web Development Courses">
     <meta name="keywords" content="HTML, CSS, JavaScript, Bootstrap, Enroll, Computer Essentials, Web Development, Mobile Applicaation, Entrepreneur,Information Technology, Kano, Training">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <link href="{{ asset('images/favicon.ico') }}" rel="icon">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
-</head>
-<body>
-@include('layouts.courses-nav')
-    <div class="mx-3 my-6">
+@endsection
+
+@section('page-title')
+    Courses | Team Piccolo Global Enterprises
+@endsection
+
+@section('body-content')
+<div class="mx-3 my-6">
         <div class="text-2xl bg-white text-center border-b shadow py-2">
             @include('layouts.messages')
         </div>
@@ -92,6 +87,4 @@
             </div>
         @endif
     </div>
-    <script src="{{ asset('js/courses.js') }}"></script>
-</body>
-</html>
+@endsection
