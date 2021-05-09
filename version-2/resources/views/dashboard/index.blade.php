@@ -23,7 +23,7 @@
                             <img class="stats-icon bg-blue-400" src="{{ asset('images/client_icon.png') }}" alt="Client Icon">
                         </div>
                         <div>
-                            <div class="stats-value">09</div>
+                            <div class="stats-value">{{ $client->count() }}</div>
                             <div class="bg-blue-400 text-white px-4 py-1 rounded-lg flex items-center">
                                 <span>clients</span>
                                 &nbsp;
