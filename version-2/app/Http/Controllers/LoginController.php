@@ -53,13 +53,29 @@ class LoginController extends Controller
             ->verificationChecks
             ->create($data['verification_code'], array('to' => $data['phone_number']));
         if($verification->valid) {
-            return redirect()->route('change.password')->with(['phone_number' => $data['phone_number']]);
+            $user = User::where('phone_number', $data['phone_number'])->first();
+            if($user !== null){
+                return redirect()->route('change.password')->with(['phone_number' => $data['phone_number']]);
+            }else{
+                return redirect()->route('forgot.password')->with(['error' => 'Phone Number not matched!']);
+            }
         }
         return back()->with(['phone_number' => $data['phone_number'], 'error' => 'Invalid verification code entered!']);
     }
 
     public function changePassword(){
         return view('auth.changepassword');    
+    }
+
+    public function confirmChangePassword(Request $request){
+        $data = $request->validate([
+            'phone_number' => ['required'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+
+        $user = tap(User::where('phone_number', $data['phone_number']))->update(['password' => Hash::make($data['password'])]);
+
+        return redirect()->route('login')->with(['success' => 'Password Changed Successfully']);    
     }
 
     public function login(Request $request){

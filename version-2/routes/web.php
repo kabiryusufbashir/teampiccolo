@@ -50,6 +50,7 @@ Route::post('/check-number', [LoginController::class, 'forgotPasswordCheckNumber
 Route::get('/verify-number', function () { return view('auth.verifyphone'); })->name('verify.phone');
 Route::post('/verify-number', [LoginController::class, 'verifyPhone'])->name('verify.phone');
 Route::get('/change-password', [LoginController::class, 'changePassword'])->name('change.password');
+Route::post('/change-password', [LoginController::class, 'confirmChangePassword'])->name('confirm.change.password');
 Route::post('/login', [LoginController::class, 'login'])->name('sign-in');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 

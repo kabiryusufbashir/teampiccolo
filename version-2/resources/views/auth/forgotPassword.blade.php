@@ -24,7 +24,7 @@
                     @enderror
                 </div>
                 <div class="text-center mt-6">
-                    <button class="btn-submit">Change Password</button>
+                    <button class="btn-submit">Confirm Number</button>
                 </div>
             </form>
         </div>

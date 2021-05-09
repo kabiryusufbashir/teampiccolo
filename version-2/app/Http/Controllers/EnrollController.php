@@ -65,7 +65,7 @@ class EnrollController extends Controller
             $user = tap(User::where('phone_number', $data['phone_number']))->update(['isVerified' => true]);
             /* Authenticate user */
             Auth::login($user->first());
-            return redirect()->route('courses')->with(['message' => 'Phone number verified']);
+            return redirect()->route('courses')->with(['success' => 'Phone number verified']);
         }
         return back()->with(['phone_number' => $data['phone_number'], 'error' => 'Invalid verification code entered!']);
     }
