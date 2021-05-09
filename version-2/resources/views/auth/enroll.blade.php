@@ -55,8 +55,8 @@
                     <button class="btn-submit">Create Account</button>
                 </div>
             </form>
-            <div class="text-left mt-4 font-medium text-lg">
-                Already have an account? <a class="text-blue-600 underline tracking-wider" href="{{ route('login') }}"> Login </a>
+            <div class="text-left mt-4 font-normal text-lg">
+                Already have an account? <a class="text-blue-600 hover:underline tracking-wider" href="{{ route('login') }}"> Login </a>
             </div>
         </div>
     </div>
