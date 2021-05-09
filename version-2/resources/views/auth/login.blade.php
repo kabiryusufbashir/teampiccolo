@@ -34,7 +34,7 @@
             </form>
             <div class="text-left mt-4 font-normal md:flex md:justify-between">
                 <div>Don't have an Account? <a class="text-blue-600" href="{{ route('enroll') }}"> Register </a></div>
-                <div><a class="text-blue-600" href="{{ route('enroll') }}"> Forgot Password? </a></div>
+                <div><a class="text-blue-600" href="{{ route('forgot.password') }}"> Forgot Password? </a></div>
             </div>
         </div>
     </div>
