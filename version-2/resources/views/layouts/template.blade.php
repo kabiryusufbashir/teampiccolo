@@ -240,9 +240,9 @@
                         <img class="w-20 my-4" src="{{ asset('images/logo.png') }}" alt="Team Piccolo Logo">
                         <p class="text-lg">Have an Idea you want to develop? Contact us now for your Best I.C.T Training and Software solutions</p>
                         <div class="flex my-4">
-                            <i class="fab fa-facebook text-4xl"></i>
-                            <i class="fab fa-twitter text-4xl ml-4"></i>
-                            <i class="fab fa-whatsapp text-4xl ml-4"></i>
+                            <a href="https://web.facebook.com/Teampiccolo/" target="_blank"><i class="fab fa-facebook text-4xl"></i></a>
+                            <a href="https://twitter.com/kabiryusufbash/" target="_blank"><i class="fab fa-twitter text-4xl ml-4"></i></a>
+                            <i class="fab fa-whatsapp text-4xl ml-4"></i></a>
                         </div>
                     </div>
                     <div class="col-span-1">
