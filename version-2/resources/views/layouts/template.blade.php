@@ -14,11 +14,11 @@
     </head>
     <body>
         <!-- Navigation Bar -->
-        <div class="z-40 sticky bg-white py-4 shadow lg:px-32 px-4 w-full">
+        <div class="z-40 fixed bg-white py-4 shadow lg:px-32 px-4 w-full">
            <div class="text-center text-2xl text-green-600">@include('layouts.messages')</div>
            <div class="flex justify-between mt-1 lg:grid grid-cols-5 gap-3 items-center">
                <div class="lg:col-span-1">
-                   <a href="{{ route('home') }}" class="text-white flex">
+                   <a href="{{ route('home') }}" class="text-white">
                        <img class="w-12" src="{{ asset('images/logo.png') }}" alt="Team Piccolo Logo">
                    </a>
                </div>
@@ -35,7 +35,7 @@
                @if(Auth::guest())
                <div class="text-xl md:text-lg relative -top-1 flex justify-end items-center lg:col-span-1 text-green-600 mt-2">
                    <a href="{{ route('login') }}" class="text-green-600 flex">
-                       <span>Login</span>&nbsp;&nbsp;
+                       <span>Sign In</span>&nbsp;&nbsp;
                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path></svg>&nbsp;&nbsp;
                        <!-- <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path></svg> -->
                    </a>
@@ -114,11 +114,11 @@
         </div> -->
         <!-- @endif -->
         <!-- Mobile Nav -->
-        <div id="nav" class="z-30 h-screen hidden bg-white text-green-600 pt-3">
+        <div id="nav" class="w-2/3 fixed h-screen z-30 hidden bg-white text-green-600 pt-3">
             <!-- <div class="pb-4 shadow">
                 <svg id="close" class="ml-auto mr-6 w-10 h-10 cursor-pointer" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
             </div> -->
-            <div class="list-none p-4 text-xl border-t bg-white">
+            <div class="list-none p-4 text-xl border-t bg-white pt-20">
                 <li class="p-4">
                     <a href="{{ route('home') }}" class="flex items-center">
                         <span>
@@ -192,7 +192,7 @@
                         </span>
                         &nbsp;&nbsp;
                         <span>
-                            Login
+                            Sign In
                         </span>
                     </a>
                 </li>

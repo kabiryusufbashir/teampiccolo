@@ -12,7 +12,7 @@
 @section('header')
 <div class="relative z-0">
     <img class="object-cover w-full h-screen" src="{{ asset('images/bg_2.jpg') }}" alt="Team Piccolo Header">
-    <div class="lg:grid grid-cols-2 gap-6 w-full flex justify-between px-4 leading-snug absolute top-24 lg:top-48 text-white text-5xl items-center">
+    <div class="lg:grid grid-cols-2 gap-6 w-full flex justify-between px-4 leading-snug absolute top-40 lg:top-48 text-white text-5xl items-center">
         <div id="slogan" class="text-center">
             Have <br>
             An Idea?<br>
