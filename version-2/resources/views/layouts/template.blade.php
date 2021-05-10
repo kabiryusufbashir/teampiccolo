@@ -14,46 +14,47 @@
     </head>
     <body>
         <!-- Navigation Bar -->
-        <div class="z-40  bg-white py-4 shadow lg:px-32 px-4 fixed w-full">
-            <div class="text-center text-2xl text-green-600">@include('layouts.messages')</div>
-            <div class="flex justify-between mt-1 lg:grid grid-cols-5 gap-3 items-center">
-                <div class="lg:col-span-1">
-                    <a href="{{ route('home') }}" class="text-white flex">
-                        <img class="w-12" src="{{ asset('images/logo.png') }}" alt="Team Piccolo Logo">
-                    </a>
-                </div>
-                <div class="lg:col-span-3 hidden lg:block">
-                    <nav class="lg:flex justify-between list-none text-green-600">
-                        <li><a href="{{ route('home') }}">Home</a></li>
-                        <li><a href="{{ route('about') }}">About Us</a></li>
-                        <li><a href="{{ route('courses') }}">Courses</a></li>
-                        <li><a href="{{ route('ebook') }}">E-books</a></li>
-                        <li><a href="{{ route('blog') }}">Blog</a></li>
-                        <li><a href="{{ route('contact') }}">Contact Us</a></li>
-                    </nav>
-                </div>
-                @if(Auth::guest())
-                <div class="flex justify-end items-center lg:col-span-1 text-green-600 mt-2">
-                    <a href="{{ route('enroll') }}" class="text-green-600 flex">
-                        <span>Enroll Now</span>
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path></svg>
-                    </a>
-                </div>
-                @else
-                <div class="md:hidden flex justify-end items-center lg:col-span-1 text-green-600 mt-2">
-                    <a href="{{ route('enroll') }}" class="text-green-600 flex items-center">
-                        <span>{{auth()->user()->name}}</span> &nbsp;&nbsp;&nbsp;
-                        <img class="w-10 h-10 rounded-full" src="{{ auth()->user()->photo ?? asset('images/logo.png') }}" alt="Logo">
-                    </a>
-                </div>
-                @endif
-                <div id="menu" class="lg:hidden cursor-pointer">
-                    <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-                </div>
-            </div>
+        <div class="z-40 sticky bg-white py-4 shadow lg:px-32 px-4 w-full">
+           <div class="text-center text-2xl text-green-600">@include('layouts.messages')</div>
+           <div class="flex justify-between mt-1 lg:grid grid-cols-5 gap-3 items-center">
+               <div class="lg:col-span-1">
+                   <a href="{{ route('home') }}" class="text-white flex">
+                       <img class="w-12" src="{{ asset('images/logo.png') }}" alt="Team Piccolo Logo">
+                   </a>
+               </div>
+               <div class="lg:col-span-3 hidden lg:block">
+                   <nav class="lg:flex justify-between list-none text-green-600">
+                       <li><a href="{{ route('home') }}">Home</a></li>
+                       <li><a href="{{ route('about') }}">About Us</a></li>
+                       <li><a href="{{ route('courses') }}">Courses</a></li>
+                       <li><a href="{{ route('ebook') }}">E-books</a></li>
+                       <li><a href="{{ route('blog') }}">Blog</a></li>
+                       <li><a href="{{ route('contact') }}">Contact Us</a></li>
+                   </nav>
+               </div>
+               @if(Auth::guest())
+               <div class="text-xl md:text-lg relative -top-1 flex justify-end items-center lg:col-span-1 text-green-600 mt-2">
+                   <a href="{{ route('login') }}" class="text-green-600 flex">
+                       <span>Login</span>&nbsp;&nbsp;
+                       <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path></svg>&nbsp;&nbsp;
+                       <!-- <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path></svg> -->
+                   </a>
+               </div>
+               @else
+               <div class="md:hidden flex justify-end items-center lg:col-span-1 text-green-600 mt-2">
+                   <a href="{{ route('enroll') }}" class="text-green-600 flex items-center">
+                       <span>{{auth()->user()->name}}</span> &nbsp;&nbsp;&nbsp;
+                       <img class="w-10 h-10 rounded-full" src="{{ auth()->user()->photo ?? asset('images/logo.png') }}" alt="Logo">
+                   </a>
+               </div>
+               @endif
+               <div id="menu" class="lg:hidden cursor-pointer">
+                   <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+               </div>
+           </div>
         </div>
         <!-- Login Button  -->
-        @if(!Auth::guest())
+        <!-- @if(!Auth::guest())
         <div class="hidden md:block z-50 sticky inset-x-0 top-0 left-0 py-5">
             <div class="absolute top-0 right-0">
                 <div class="flex justify-end items-center md:col-span-1 text-green-600 mt-5 mr-4">
@@ -99,9 +100,9 @@
                     <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
                 </div>
             </div>
-        </div>
-        @else
-        <div class="hidden md:block z-50 sticky inset-x-0 top-0 left-0 py-5">
+        <!-- </div> -->
+        <!-- @else -->
+        <!-- <div class="hidden md:block z-50 sticky inset-x-0 top-0 left-0 py-5">
             <div class="absolute top-0 right-0">
                 <a href="{{ route('login') }}" class="text-white flex">
                     <button class="bg-green-600 p-8 focus:outline-none">
@@ -110,13 +111,13 @@
                     </button>
                 </a>
             </div>
-        </div>
-        @endif
+        </div> -->
+        <!-- @endif -->
         <!-- Mobile Nav -->
-        <div id="nav" class="z-30 hidden h-screen w-full bg-white text-green-600 pt-3 fixed">
-            <div class="pb-4 shadow">
+        <div id="nav" class="z-30 h-screen hidden bg-white text-green-600 pt-3">
+            <!-- <div class="pb-4 shadow">
                 <svg id="close" class="ml-auto mr-6 w-10 h-10 cursor-pointer" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-            </div>
+            </div> -->
             <div class="list-none p-4 text-xl border-t bg-white">
                 <li class="p-4">
                     <a href="{{ route('home') }}" class="flex items-center">
