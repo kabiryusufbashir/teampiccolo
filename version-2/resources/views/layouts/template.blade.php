@@ -54,7 +54,7 @@
            </div>
         </div>
         <!-- Login Button  -->
-        <!-- @if(!Auth::guest())
+        @if(!Auth::guest())
         <div class="hidden md:block z-50 sticky inset-x-0 top-0 left-0 py-5">
             <div class="absolute top-0 right-0">
                 <div class="flex justify-end items-center md:col-span-1 text-green-600 mt-5 mr-4">
@@ -100,26 +100,26 @@
                     <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
                 </div>
             </div>
-        <!-- </div> -->
-        <!-- @else -->
-        <!-- <div class="hidden md:block z-50 sticky inset-x-0 top-0 left-0 py-5">
+        </div>
+        @else
+        <div class="hidden md:block z-50 sticky inset-x-0 top-0 left-0 py-5">
             <div class="absolute top-0 right-0">
                 <a href="{{ route('login') }}" class="text-white flex">
                     <button class="bg-green-600 p-8 focus:outline-none">
                         <img class="w-10 h-10" src="{{ asset('images/login.png') }}" alt="Login Button">
-                        Login
+                        Log In
                     </button>
                 </a>
             </div>
-        </div> -->
-        <!-- @endif -->
+        </div>
+        @endif
         <!-- Mobile Nav -->
         <div id="nav" class="w-2/3 fixed h-screen z-30 hidden bg-white text-green-600 pt-3">
             <!-- <div class="pb-4 shadow">
                 <svg id="close" class="ml-auto mr-6 w-10 h-10 cursor-pointer" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
             </div> -->
-            <div class="list-none p-4 text-xl border-t bg-white pt-20">
-                <li class="p-4">
+            <div class="list-none p-2 text-xl border-t bg-white pt-20">
+                <li class="py-3 px-4">
                     <a href="{{ route('home') }}" class="flex items-center">
                         <span>
                             <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>
@@ -130,7 +130,7 @@
                         </span>
                     </a>
                 </li>
-                <li class="p-4">
+                <li class="py-3 px-4">
                     <a href="{{ route('about') }}" class="flex items-center">
                         <span>
                             <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"></path></svg>        
@@ -141,7 +141,7 @@
                         </span>
                     </a>
                 </li>
-                <li class="p-4">
+                <li class="py-3 px-4">
                     <a href="{{ route('courses') }}" class="flex items-center">
                         <span>
                             <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd"></path><path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"></path></svg>
@@ -152,7 +152,7 @@
                         </span>
                     </a>
                 </li>
-                <li class="p-4">
+                <li class="py-3 px-4">
                     <a href="{{ route('ebook') }}" class="flex items-center">
                         <span>
                             <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>            </span>
@@ -162,7 +162,7 @@
                         </span>
                     </a>
                 </li>
-                <li class="p-4">
+                <li class="py-3 px-4">
                     <a href="{{ route('blog') }}" class="flex items-center">
                         <span>
                             <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z" clip-rule="evenodd"></path></svg>
@@ -173,7 +173,7 @@
                         </span>
                     </a>
                 </li>
-                <li class="p-4">
+                <li class="py-3 px-4">
                     <a href="{{ route('contact') }}" class="flex items-center">
                         <span>
                             <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>    
@@ -185,7 +185,7 @@
                     </a>
                 </li>
                 @if(Auth::guest())
-                <li class="p-4">
+                <li class="py-3 px-4">
                     <a href="{{ route('login') }}" class="flex items-center">
                         <span>
                             <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
@@ -197,7 +197,7 @@
                     </a>
                 </li>
                 @else
-                <li class="p-4">
+                <li class="py-3 px-4">
                     <form action="{{ route('student.profile.edit', auth()->user()->id) }}" >
                         @csrf 
                         <button class="flex focus:outline-none focus:text-gray-900">
@@ -206,7 +206,7 @@
                         </button>
                     </form>
                 </li>
-                <li class="p-4">
+                <li class="py-3 px-4">
                     <form action="{{ route('student.profile.change-password', auth()->user()->id) }}" >
                         @csrf 
                         <button class="flex focus:outline-none focus:text-gray-900">
@@ -215,8 +215,8 @@
                         </button>
                     </form>
                 </li>
-                <li class="p-4">
-                    <form action="{{ route('logout') }}" method="POST">
+                <li class="py-3 px-4">
+                    <form action="{{ route('logout.student') }}" method="POST">
                         @csrf 
                         <button class="flex focus:outline-none focus:text-gray-900">
                             <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
