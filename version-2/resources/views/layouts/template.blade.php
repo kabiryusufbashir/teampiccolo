@@ -235,14 +235,16 @@
         <div class="bg-green-600">
             <div class="md:mx-32 px-4 py-6 text-white">
                 <div class="md:grid grid-cols-5 gap-6 py-4">
-                    <div class="col-span-2">
+                    <div class="col-span-2 md:w-2/3">
                         <span class="text-3xl font-medium border-b-4 border-white">Team Piccolo</span>
                         <img class="w-20 my-4" src="{{ asset('images/logo.png') }}" alt="Team Piccolo Logo">
-                        <p class="text-lg">Have an Idea you want to develop? Contact us now for your Best I.C.T Training and Software solutions</p>
-                        <div class="flex my-4">
+                        <p class="text-lg">Have an Idea you want to develop? <br>Contact us now for your Best I.C.T Training and Software solutions</p>
+                        <div class="flex justify-between my-4">
                             <a href="https://web.facebook.com/Teampiccolo/" target="_blank"><i class="fab fa-facebook text-4xl"></i></a>
-                            <a href="https://twitter.com/kabiryusufbash/" target="_blank"><i class="fab fa-twitter text-4xl ml-4"></i></a>
-                            <i class="fab fa-whatsapp text-4xl ml-4"></i></a>
+                            <a href="https://twitter.com/kabiryusufbash/" target="_blank"><i class="fab fa-twitter text-4xl"></i></a>
+                            <a href="https://github.com/kabiryusufbashir/" target="_blank"><i class="fab fa-github text-4xl"></i></a>
+                            <a href="https://www.youtube.com/channel/UCIRHd1QIP8gfPqcib6pbbiw/" target="_blank"><i class="fab fa-youtube text-4xl"></i></i></a>
+                            <a href="https://wa.link/1i4dc7" target="_blank"><i class="fab fa-whatsapp text-4xl"></i></a>
                         </div>
                     </div>
                     <div class="col-span-1">
