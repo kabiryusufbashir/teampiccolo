@@ -42,7 +42,7 @@ class ClientController extends Controller
             'date_signed'=> 'required'
         ]);
 
-        $imageName = 'images/clients/'.time().'.'.$request->photo->extension();  
+        $imageName = '/images/clients/'.time().'.'.$request->photo->extension();  
         
         try{
             Client::create(
@@ -58,7 +58,7 @@ class ClientController extends Controller
                 'date_signed'=>$request->date_signed
                 ]);
                 
-                $request->photo->move(public_path('images/clients'), $imageName);
+                $request->photo->move('images/clients', $imageName);
                 
                 return redirect()->route('client.index');
             }catch(Exception $e){
@@ -89,7 +89,7 @@ class ClientController extends Controller
     {
         if($request->photo !== null){
 
-            $imageName = 'images/clients/'.time().'.'.$request->photo->extension();  
+            $imageName = '/images/clients/'.time().'.'.$request->photo->extension();  
             
             $data = request()->validate([
                 'name'=> 'required',
@@ -116,7 +116,7 @@ class ClientController extends Controller
                     'date_signed'=> $request->date_signed
                 ]);
                     
-                $request->photo->move(public_path('images/clients'), $imageName);
+                $request->photo->move('images/clients', $imageName);
                 return redirect()->route('client.index')->with('success', 'Client Updated');
             }catch(Exception $e){
                 return back()->with('error', 'Please try again... '.$e);

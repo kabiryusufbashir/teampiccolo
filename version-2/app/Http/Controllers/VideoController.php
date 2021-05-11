@@ -37,7 +37,7 @@ class VideoController extends Controller
             'photo'=> 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             ]);
     
-        $imageName = 'images/videos/'.time().'.'.$request->photo->extension();  
+        $imageName = '/images/videos/'.time().'.'.$request->photo->extension();  
             
 
         try{
@@ -51,7 +51,7 @@ class VideoController extends Controller
                 'photo'=>$imageName
                 ]);
                 
-                $request->photo->move(public_path('images/videos'), $imageName);
+                $request->photo->move('images/videos', $imageName);
         
                 return redirect()->route('video.index');
             }catch(Exception $e){
@@ -79,7 +79,7 @@ class VideoController extends Controller
     {
         if($request->photo !== null){
 
-            $imageName = 'images/videos/'.time().'.'.$request->photo->extension();  
+            $imageName = '/images/videos/'.time().'.'.$request->photo->extension();  
             
             $data = request()->validate([
                 'course_id'=> 'required',
@@ -100,8 +100,10 @@ class VideoController extends Controller
                     'photo'=>$imageName
                 ]);
                     
-                $request->photo->move(public_path('images/videos'), $imageName);
+                $request->photo->move('images/videos', $imageName);
+
                 return redirect()->route('video.index')->with('success', 'Video Updated');
+
             }catch(Exception $e){
                 return back()->with('error', 'Please try again... '.$e);
             }

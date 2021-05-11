@@ -32,7 +32,7 @@ class BlogController extends Controller
             'content'=> 'required',
         ]);
 
-        $imageName = 'images/blogs/'.time().'.'.$request->photo->extension();  
+        $imageName = '/images/blogs/'.time().'.'.$request->photo->extension();  
         
         try{
             Blog::create(
@@ -43,7 +43,7 @@ class BlogController extends Controller
                 'content'=>$request->content,
                 ]);
                 
-                $request->photo->move(public_path('images/blogs'), $imageName);
+                $request->photo->move('images/blogs', $imageName);
                 
                 return redirect()->route('blog.index');
             }catch(Exception $e){
@@ -74,7 +74,7 @@ class BlogController extends Controller
     {
         if($request->photo !== null){
 
-            $imageName = 'images/blogs/'.time().'.'.$request->photo->extension();  
+            $imageName = '/images/blogs/'.time().'.'.$request->photo->extension();  
             
             $data = request()->validate([
                 'title'=> 'required',
@@ -91,7 +91,7 @@ class BlogController extends Controller
                     'photo'=> $imageName
                     ]);
                     
-                $request->photo->move(public_path('images/blogs'), $imageName);
+                $request->photo->move('images/blogs', $imageName);
                 return redirect()->route('blog.index')->with('success', 'Blog Updated');
             }catch(Exception $e){
                 return back()->with('error', 'Please try again... '.$e);

@@ -39,7 +39,7 @@ class DashboardController extends Controller
     {
         if($request->photo !== null){
 
-            $imageName = 'images/admin/'.time().'.'.$request->photo->extension();  
+            $imageName = '/images/admin/'.time().'.'.$request->photo->extension();  
             
             $data = request()->validate([
                 'name'=> 'required',
@@ -54,7 +54,7 @@ class DashboardController extends Controller
                     'photo'=> $imageName
                     ]);
                     
-                $request->photo->move(public_path('images/admin'), $imageName);
+                $request->photo->move('images/admin', $imageName);
                 return redirect()->route('dashboard')->with('success', 'Profile Updated');
             }catch(Exception $e){
                 return back()->with('error', 'Please try again... '.$e);

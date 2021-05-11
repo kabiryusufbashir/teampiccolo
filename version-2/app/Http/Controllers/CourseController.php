@@ -35,7 +35,7 @@ class CourseController extends Controller
             'photo'=> 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        $imageName = 'images/courses/'.time().'.'.$request->photo->extension();  
+        $imageName = '/images/courses/'.time().'.'.$request->photo->extension();  
         
         try{
             Course::create(
@@ -46,7 +46,7 @@ class CourseController extends Controller
                 'photo'=>$imageName
                 ]);
                 
-                $request->photo->move(public_path('images/courses'), $imageName);
+                $request->photo->move('images/courses', $imageName);
                 
                 return redirect()->route('course.index');
             }catch(Exception $e){
@@ -84,7 +84,7 @@ class CourseController extends Controller
     {
         if($request->photo !== null){
 
-            $imageName = 'images/courses/'.time().'.'.$request->photo->extension();  
+            $imageName = '/images/courses/'.time().'.'.$request->photo->extension();  
             
             $data = request()->validate([
                 'name'=> 'required',
@@ -103,7 +103,7 @@ class CourseController extends Controller
                     'photo'=> $imageName
                     ]);
                     
-                $request->photo->move(public_path('images/courses'), $imageName);
+                $request->photo->move('images/courses', $imageName);
                 return redirect()->route('course.index')->with('success', 'Course Updated');
             }catch(Exception $e){
                 return back()->with('error', 'Please try again... '.$e);

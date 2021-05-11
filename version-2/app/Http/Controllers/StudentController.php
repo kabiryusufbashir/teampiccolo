@@ -46,7 +46,7 @@ class StudentController extends Controller
     {
         if($request->photo !== null){
 
-            $imageName = 'images/students/'.time().'.'.$request->photo->extension();  
+            $imageName = '/images/students/'.time().'.'.$request->photo->extension();  
             
             $data = request()->validate([
                 'name'=> 'required',
@@ -61,7 +61,8 @@ class StudentController extends Controller
                     'photo'=> $imageName
                     ]);
                     
-                $request->photo->move(public_path('images/students'), $imageName);
+                $request->photo->move('images/students', $imageName);
+                
                 return redirect()->route('courses')->with('success', 'Profile Updated');
             }catch(Exception $e){
                 return back()->with('error', 'Please try again... '.$e);
