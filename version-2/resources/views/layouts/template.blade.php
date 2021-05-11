@@ -42,10 +42,10 @@
                </div>
                @else
                <div class="md:hidden flex justify-end items-center lg:col-span-1 text-green-600 mt-2">
-                   <a href="{{ route('enroll') }}" class="text-green-600 flex items-center">
+                    <a class="text-green-600 flex items-center">
                        <span>{{auth()->user()->name}}</span> &nbsp;&nbsp;&nbsp;
                        <img class="w-10 h-10 rounded-full" src="{{ auth()->user()->photo ?? asset('images/logo.png') }}" alt="Logo">
-                   </a>
+                    </a>
                </div>
                @endif
                <div id="menu" class="lg:hidden cursor-pointer">
@@ -241,7 +241,7 @@
                         <p class="text-lg">Have an Idea you want to develop? <br>Contact us now for your Best I.C.T Training and Software solutions</p>
                         <div class="flex justify-between my-4">
                             <a href="https://web.facebook.com/Teampiccolo/" target="_blank"><i class="fab fa-facebook text-4xl"></i></a>
-                            <a href="https://twitter.com/kabiryusufbash/" target="_blank"><i class="fab fa-twitter text-4xl"></i></a>
+                            <a href="https://twitter.com/kabiryusufbashi/" target="_blank"><i class="fab fa-twitter text-4xl"></i></a>
                             <a href="https://github.com/kabiryusufbashir/" target="_blank"><i class="fab fa-github text-4xl"></i></a>
                             <a href="https://www.youtube.com/channel/UCIRHd1QIP8gfPqcib6pbbiw/" target="_blank"><i class="fab fa-youtube text-4xl"></i></i></a>
                             <a href="https://wa.link/1i4dc7" target="_blank"><i class="fab fa-whatsapp text-4xl"></i></a>
