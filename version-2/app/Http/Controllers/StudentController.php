@@ -46,7 +46,7 @@ class StudentController extends Controller
     {
         if($request->photo !== null){
 
-            $imageName = '/images/students/'.time().'.'.$request->photo->extension();  
+            $imageName = 'images/students/'.time().'.'.$request->photo->extension();  
             
             $data = request()->validate([
                 'name'=> 'required',

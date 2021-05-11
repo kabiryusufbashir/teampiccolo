@@ -35,7 +35,7 @@ class CourseController extends Controller
             'photo'=> 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        $imageName = '/images/courses/'.time().'.'.$request->photo->extension();  
+        $imageName = 'images/courses/'.time().'.'.$request->photo->extension();  
         
         try{
             Course::create(
@@ -84,7 +84,7 @@ class CourseController extends Controller
     {
         if($request->photo !== null){
 
-            $imageName = '/images/courses/'.time().'.'.$request->photo->extension();  
+            $imageName = 'images/courses/'.time().'.'.$request->photo->extension();  
             
             $data = request()->validate([
                 'name'=> 'required',

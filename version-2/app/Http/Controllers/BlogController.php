@@ -32,7 +32,7 @@ class BlogController extends Controller
             'content'=> 'required',
         ]);
 
-        $imageName = '/images/blogs/'.time().'.'.$request->photo->extension();  
+        $imageName = 'images/blogs/'.time().'.'.$request->photo->extension();  
         
         try{
             Blog::create(
@@ -74,7 +74,7 @@ class BlogController extends Controller
     {
         if($request->photo !== null){
 
-            $imageName = '/images/blogs/'.time().'.'.$request->photo->extension();  
+            $imageName = 'images/blogs/'.time().'.'.$request->photo->extension();  
             
             $data = request()->validate([
                 'title'=> 'required',

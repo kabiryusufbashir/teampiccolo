@@ -39,7 +39,7 @@ class DashboardController extends Controller
     {
         if($request->photo !== null){
 
-            $imageName = '/images/admin/'.time().'.'.$request->photo->extension();  
+            $imageName = 'images/admin/'.time().'.'.$request->photo->extension();  
             
             $data = request()->validate([
                 'name'=> 'required',

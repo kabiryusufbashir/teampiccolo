@@ -37,7 +37,7 @@ class VideoController extends Controller
             'photo'=> 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             ]);
     
-        $imageName = '/images/videos/'.time().'.'.$request->photo->extension();  
+        $imageName = 'images/videos/'.time().'.'.$request->photo->extension();  
             
 
         try{
@@ -79,7 +79,7 @@ class VideoController extends Controller
     {
         if($request->photo !== null){
 
-            $imageName = '/images/videos/'.time().'.'.$request->photo->extension();  
+            $imageName = 'images/videos/'.time().'.'.$request->photo->extension();  
             
             $data = request()->validate([
                 'course_id'=> 'required',

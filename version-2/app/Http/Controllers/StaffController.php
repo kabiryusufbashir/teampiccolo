@@ -36,7 +36,7 @@ class StaffController extends Controller
             'photo'=> 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
-        $imageName = '/images/staffs/'.time().'.'.$request->photo->extension();  
+        $imageName = 'images/staffs/'.time().'.'.$request->photo->extension();  
         
         try{
             Admin::create(
@@ -88,7 +88,7 @@ class StaffController extends Controller
     {
         if($request->photo !== null){
 
-            $imageName = '/images/staffs/'.time().'.'.$request->photo->extension();  
+            $imageName = 'images/staffs/'.time().'.'.$request->photo->extension();  
             
             $data = request()->validate([
                 'title'=> 'required',

@@ -31,7 +31,7 @@ class EbookController extends Controller
             'path'=> 'file|required',
         ]);
 
-        $bookName = '/docs/ebooks/'.time().'.'.$request->path->extension();  
+        $bookName = 'docs/ebooks/'.time().'.'.$request->path->extension();  
         
         try{
             Ebook::create(
@@ -59,7 +59,7 @@ class EbookController extends Controller
     {
         if($request->path !== null){
 
-            $bookName = '/docs/ebooks/'.time().'.'.$request->path->extension();  
+            $bookName = 'docs/ebooks/'.time().'.'.$request->path->extension();  
             
             $data = request()->validate([
                 'name'=> 'required',

@@ -42,7 +42,7 @@ class ClientController extends Controller
             'date_signed'=> 'required'
         ]);
 
-        $imageName = '/images/clients/'.time().'.'.$request->photo->extension();  
+        $imageName = 'images/clients/'.time().'.'.$request->photo->extension();  
         
         try{
             Client::create(
@@ -89,7 +89,7 @@ class ClientController extends Controller
     {
         if($request->photo !== null){
 
-            $imageName = '/images/clients/'.time().'.'.$request->photo->extension();  
+            $imageName = 'images/clients/'.time().'.'.$request->photo->extension();  
             
             $data = request()->validate([
                 'name'=> 'required',
