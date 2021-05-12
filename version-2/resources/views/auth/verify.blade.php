@@ -26,7 +26,10 @@
                 @csrf
                 <div>
                     <div>
+                        <input type="hidden" name="name" value="{{session('name')}}">
+                        <input type="hidden" name="email" value="{{session('email')}}">
                         <input type="hidden" name="phone_number" value="{{session('phone_number')}}">
+                        <input type="hidden" name="password" value="{{session('password')}}">
                         <input placeholder="Please enter the OTP sent to your number" id="verification_code" type="tel" class="input-box @error('verification_code') is-invalid @enderror" name="verification_code" value="{{ old('verification_code') }}" required>
                         @error('verification_code')
                             {{ $message }}

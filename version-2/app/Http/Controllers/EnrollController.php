@@ -35,15 +35,7 @@ class EnrollController extends Controller
             ->verifications
             ->create($data['phone_number'], "sms");
         
-            User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'phone_number' => $data['phone_number'],
-            'password' => Hash::make($data['password']),
-            'category' => 2,
-        ]);
-
-        return redirect()->route('verify')->with(['phone_number' => $data['phone_number']]);
+        return redirect()->route('verify')->with(['name' => $data['name'], 'email' => $data['email'], 'phone_number' => $data['phone_number'], 'password' => $data['password']]);
     
     }
 
@@ -51,7 +43,10 @@ class EnrollController extends Controller
     {
         $data = $request->validate([
             'verification_code' => ['required', 'numeric'],
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'email'],
             'phone_number' => ['required', 'string'],
+            'password' => ['required']
         ]);
         /* Get credentials from .env */
         $token = getenv("TWILIO_AUTH_TOKEN");
@@ -62,10 +57,21 @@ class EnrollController extends Controller
             ->verificationChecks
             ->create($data['verification_code'], array('to' => $data['phone_number']));
         if ($verification->valid) {
-            $user = tap(User::where('phone_number', $data['phone_number']))->update(['isVerified' => true]);
+            
+            User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'phone_number' => $data['phone_number'],
+                'password' => Hash::make($data['password']),
+                'category' => 2
+            ]);
+            
             /* Authenticate user */
+            $user = tap(User::where('phone_number', $data['phone_number']))->update(['isVerified' => true]);
+            
             Auth::login($user->first());
             return redirect()->route('courses')->with(['success' => 'Phone number verified']);
+        
         }
         return back()->with(['phone_number' => $data['phone_number'], 'error' => 'Invalid verification code entered!']);
     }
