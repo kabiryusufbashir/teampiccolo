@@ -48,7 +48,7 @@
                                 @enderror
                             </div>
                             <div class="my-2">
-                                <textarea id="content" name="content" class="px-5 w-full border border-gray-400 h-24 rounded-lg my-2 text-lg focus:outline-none @error('content') border-red-500 @enderror">{{ $blog->content }}</textarea>
+                                <textarea id="content" name="content" class="ckeditor px-5 w-full border border-gray-400 h-24 rounded-lg my-2 text-lg focus:outline-none @error('content') border-red-500 @enderror">{{ $blog->content }}</textarea>
                                 @error('content')
                                     {{$message}}
                                 @enderror
@@ -75,14 +75,22 @@
             </div>
         </div>
     </div>
-    <script src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js"></script>
-    <script>
-        ClassicEditor
-            .create(document.querySelector('#content'))
-            .catch( error => {
-                console.error( error );
-            } );
+    <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+    
+    <script type="text/javascript">
+        const viewFile = document.querySelector('.ckeditor');
+            window.onload = function(){
+                viewFile.ckeditor();
+            }
     </script>
+
+    <script type="text/javascript">
+        CKEDITOR.replace('content', {
+            filebrowserUploadUrl: "{{route('ckeditor.image-upload', ['_token' => csrf_token() ])}}",
+            filebrowserUploadMethod: 'form'
+        });
+    </script>
+
     <script type="text/javascript">
         //Change Photo
         const changePhoto = document.querySelector("#changePhoto");

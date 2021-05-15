@@ -59,14 +59,6 @@
             </div>
         </div>
     </div>
-    <!-- <script src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js"></script> -->
-    <!-- <script>
-        ClassicEditor
-            .create(document.querySelector('#content'))
-            .catch( error => {
-                console.error( error );
-            } );
-    </script> -->
     
     <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
     

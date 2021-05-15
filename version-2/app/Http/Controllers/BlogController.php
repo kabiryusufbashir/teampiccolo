@@ -33,9 +33,9 @@ class BlogController extends Controller
             $request->file('upload')->move('images/blogs', $fileName);
             $CKEditorFuncNum = $request->input('CKEditorFuncNum');
             
-            // $url = '/images/blogs/'.time().'.'.$extension; 
-
-            $url = asset('images/blogs/'.time().'.'.$extension);
+            
+            // $url = asset('images/blogs/'.time().'.'.$extension);
+            $url = '/images/blogs/'.$fileName; 
             
             $msg = 'Image successfully uploaded'; 
             
