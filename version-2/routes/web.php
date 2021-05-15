@@ -100,6 +100,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 
     //Blog
     Route::get('/blog', [BlogController::class, 'index'])->name('blog.index')->middleware('auth:admin');
+    Route::post('ckeditor/upload', [BlogController::class, 'uploadImage'])->name('ckeditor.image-upload');
     Route::get('/blog/create', [BlogController::class, 'create'])->name('blog.create')->middleware('auth:admin');
     Route::post('/blog', [BlogController::class, 'store'])->name('blog.store')->middleware('auth:admin');
     Route::get('/blog/{blog}', [BlogController::class, 'show'])->name('blog.show')->middleware('auth:admin');
