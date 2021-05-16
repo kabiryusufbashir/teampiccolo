@@ -17,7 +17,7 @@
             <!-- System Stats  -->
             <div class="md:grid md:grid-cols-4 md:gap-4 mx-2 my-6">
                 <!-- client  -->
-                <a href="#">
+                <a href="{{ route('client.index') }}">
                     <div class="stats-card">
                         <div>
                             <img class="stats-icon bg-blue-400" src="{{ asset('images/client_icon.png') }}" alt="Client Icon">
@@ -35,7 +35,7 @@
                     </div>
                 </a>
                 <!-- Student  -->
-                <a href="#">
+                <a href="{{ route('student.all.index') }}">
                     <div class="stats-card">
                         <div>
                             <img class="stats-icon bg-yellow-400" src="{{ asset('images/students_icon.png') }}" alt="Student Icon">
@@ -53,7 +53,7 @@
                     </div>
                 </a>
                 <!-- Staff  -->
-                <a href="#">
+                <a href="{{ route('staff.index') }}">
                     <div class="stats-card">
                         <div>
                             <img class="stats-icon bg-green-400" src="{{ asset('images/staff_icon.png') }}" alt="Staff Icon">
