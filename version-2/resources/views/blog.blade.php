@@ -15,6 +15,12 @@
         <div class="page-title">
             Team Piccolo Blog 
         </div>
+        <div class="flex justify-center list-none">
+            <li class="mx-2 text-green-600 hover:underline hover:text-blue-600"><a href="#">Web Development</a></li>
+            <li class="mx-2 text-green-600 hover:underline hover:text-blue-600"><a href="#">Mobile Development</a></li>
+            <li class="mx-2 text-green-600 hover:underline hover:text-blue-600"><a href="#">Computer Application</a></li>
+            <li class="mx-2 text-green-600 hover:underline hover:text-blue-600"><a href="#">IT News</a></li>
+        </div>
         @foreach($blogs as $blog)
             <a href="{{ route('blog.read', $blog->id) }}">
                 <div class="shadow p-10 m-4 hover:shadow-lg md:mx-auto md:w-1/3">
