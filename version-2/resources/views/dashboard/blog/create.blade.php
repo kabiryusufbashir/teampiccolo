@@ -39,6 +39,7 @@
                                 @enderror
                             </div>
                             <div class="my-2">
+                                <span class="input-title">Blog Photo</span>
                                 <input type="file" name="photo" value="{{old('photo')}}" class="input-box border-0 @error('photo') border-red-500 @enderror">
                                 @error('photo')
                                     {{$message}}
@@ -47,6 +48,30 @@
                             <div class="my-2">
                                 <textarea id="content" name="content" class="ckeditor px-5 w-full border border-gray-400 h-24 rounded-lg my-2 text-lg focus:outline-none @error('content') border-red-500 @enderror" placeholder="Description"></textarea>
                                 @error('content')
+                                    {{$message}}
+                                @enderror
+                            </div>
+                            <div class="my-2">
+                                <span class="input-title">Category</span>
+                                <select name="category" value="{{old('category')}}" class="input-box @error('category') border-red-500 @enderror">
+                                    <option value=""></option>
+                                    <option value="Web Development">Web Development</option>
+                                    <option value="Mobile Development">Mobile Development</option>
+                                    <option value="Computer Application">Computer Application</option>
+                                    <option value="IT News">I.T News</option>
+                                </select>
+                                @error('category')
+                                    {{$message}}
+                                @enderror
+                            </div>
+                            <div class="my-2">
+                                <span class="input-title">Status</span>
+                                <select name="status" value="{{old('status')}}" class="input-box @error('status') border-red-500 @enderror">
+                                    <option value=""></option>
+                                    <option value="Publish">Publish</option>
+                                    <option value="Save as Draft">Save as Draft</option>
+                                </select>
+                                @error('status')
                                     {{$message}}
                                 @enderror
                             </div>

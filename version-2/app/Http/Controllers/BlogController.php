@@ -33,8 +33,6 @@ class BlogController extends Controller
             $request->file('upload')->move('images/blogs', $fileName);
             $CKEditorFuncNum = $request->input('CKEditorFuncNum');
             
-            
-            // $url = asset('images/blogs/'.time().'.'.$extension);
             $url = '/images/blogs/'.$fileName; 
             
             $msg = 'Image successfully uploaded'; 
@@ -53,6 +51,8 @@ class BlogController extends Controller
             'author'=> 'required',
             'photo'=> 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'content'=> 'required',
+            'category'=> 'required',
+            'status'=> 'required',
         ]);
 
         $imageName = '/images/blogs/'.time().'.'.$request->photo->extension();  
@@ -64,6 +64,8 @@ class BlogController extends Controller
                 'author'=>$request->author,
                 'photo'=>$imageName,
                 'content'=>$request->content,
+                'category'=>$request->category,
+                'status'=>$request->status
                 ]);
                 
                 $request->photo->move('images/blogs', $imageName);
@@ -84,13 +86,7 @@ class BlogController extends Controller
         $blog = Blog::findOrFail($id);
         $blogStatus = $blog->status;
         
-        if($blogStatus === "1"){
-            $blogStatus = 'Active';
-        }else{
-            $blogStatus = 'De-Active';
-        }
-
-        return view('dashboard.blog.edit', ['blog'=>$blog, 'blogStatus'=>$blogStatus]);
+        return view('dashboard.blog.edit', ['blog'=>$blog]);
     }
     
     public function update(Request $request, $id)
@@ -102,14 +98,16 @@ class BlogController extends Controller
             $data = request()->validate([
                 'title'=> 'required',
                 'content'=> 'required',
-                'status'=> '',
-                'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'category'=> 'required',
+                'status'=> 'required',
+                'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
             ]);
             
             try{
                 $blog = Blog::where('id', $id)->update([
                     'title'=> $request->title,
                     'content'=> $request->content,
+                    'category'=> $request->category,
                     'status'=> $request->status,
                     'photo'=> $imageName
                     ]);
@@ -122,8 +120,9 @@ class BlogController extends Controller
         }else{
             $data = request()->validate([
                 'title'=> 'required',
-                'status'=> '',
+                'status'=> 'required',
                 'content'=> 'required',
+                'category'=> 'required'
             ]);
             
             try{

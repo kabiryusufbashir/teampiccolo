@@ -92,9 +92,8 @@ class AdminController extends Controller
     }
 
     public function blog(){
-        $blogs = Blog::paginate(9);
-        $staffs = Admin::orderby('name', 'asc')->get();
-        return view('blog', ['blogs'=>$blogs, 'staffs'=>$staffs]); 
+        $blogs = Blog::orderby('id', 'desc')->paginate(9);
+        return view('blog', ['blogs'=>$blogs]); 
     }
 
     public function readBlog($id){

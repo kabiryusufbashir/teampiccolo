@@ -54,12 +54,26 @@
                                 @enderror
                             </div>
                             <div class="my-2">
+                                <span class="input-title">Category</span>
+                                <select name="category" value="{{ $blog->category }}" class="input-box @error('category') border-red-500 @enderror">
+                                    <option value=""></option>
+                                    <option value="Web Development">Web Development</option>
+                                    <option value="Mobile Development">Mobile Development</option>
+                                    <option value="Computer Application">Computer Application</option>
+                                    <option value="IT News">I.T News</option>
+                                </select>
+                                @error('category')
+                                    {{$message}}
+                                @enderror
+                            </div>
+                            <div class="my-2">
+                                <span class="input-title">Status</span>
                                 <select name="status" class="input-box">
-                                    <option value="{{ $blog->status }}">{{ $blogStatus }}</option>
-                                    @if($blogStatus === 'Active')
-                                        <option value="0">De-active</option>
+                                    <option value="{{ $blog->status }}">{{ $blog->status }}</option>
+                                    @if($blog->status === 'Publish')
+                                        <option value="Save as Draft">Save as Draft</option>
                                     @else
-                                        <option value="1">Active</option>
+                                        <option value="Publish">Publish</option>
                                     @endif
                                 </select>
                                 @error('status')
