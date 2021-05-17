@@ -15,7 +15,11 @@
         <div class="page-title">
             Team Piccolo Blog 
         </div>
-        <div class="md:flex justify-center list-none mx-2 text-lg">
+        <div class="text-center text-green-600 text-2xl mb-3">
+            Categories
+            <svg class="mx-auto w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 10.293a1 1 0 010 1.414l-6 6a1 1 0 01-1.414 0l-6-6a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l4.293-4.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+        </div>
+        <div class="md:flex justify-center list-none mx-2 text-lg text-center">
             <li class="mx-4 text-green-600 hover:underline"><a href="#">Web Development</a></li>
             <li class="mx-4 text-green-600 hover:underline"><a href="#">Mobile Development</a></li>
             <li class="mx-4 text-green-600 hover:underline"><a href="#">Computer Application</a></li>
