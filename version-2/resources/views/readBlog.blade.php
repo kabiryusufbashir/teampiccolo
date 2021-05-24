@@ -17,7 +17,7 @@
                 <span class="border-b-2 border-green-600">{{ $blog->title }}</span>
             </div>
             <div>
-                <img class="mx-auto h-56 mb-6" src="{{ $blog->photo }}" alt="{{ $blog->title }}">
+                <img class="mx-auto w-full mb-6" src="{{ $blog->photo }}" alt="{{ $blog->title }}">
             </div>
             <p class="paragraph">
                 {!!  html_entity_decode($blog->content) !!}

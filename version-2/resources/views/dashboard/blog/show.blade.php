@@ -33,7 +33,7 @@
                                     <span class="font-normal text-sm">By {{ \App\Models\Admin::where(['id' => $blog->author])->first()->name }}</span>
                                 </div>
                                 <div class="my-6 mx-3 text-3xl font-medium">
-                                    <img class="w-32 h-32 md:w-48 md:h-48 mx-auto" src=" {{ $blog->photo }}" alt=" {{ $blog->name }} logo">
+                                    <img class="w-full md:w-full mx-auto" src=" {{ $blog->photo }}" alt=" {{ $blog->name }} logo">
                                 </div>
                                 <div class="md:my-auto text-lg">
                                     {!! html_entity_decode($blog->content) !!} <br>

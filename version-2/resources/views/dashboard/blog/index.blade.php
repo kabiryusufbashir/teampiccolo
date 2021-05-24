@@ -34,7 +34,7 @@
                             @foreach($blogs as $blog)
                                 <div class="card">
                                     <div>
-                                        <img class="p-2 mx-auto" style="width: 230px; height:230px;" src=" {{ $blog->photo }} " alt="{{ $blog->name }} Image">    
+                                        <img class="p-2 mx-auto w-64" src=" {{ $blog->photo }} " alt="{{ $blog->name }} Image">    
                                     </div>
                                     <div class="font-medium text-xl py-1">
                                         {{ $blog->title }} <br>
