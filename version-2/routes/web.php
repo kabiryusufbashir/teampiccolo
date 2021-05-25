@@ -16,6 +16,7 @@ use App\Http\Controllers\StaffController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\RecordController;
 use App\Http\Controllers\NewsletterController;
+use App\Http\Controllers\FlutterwaveController;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,6 +73,12 @@ Route::post('/logout-student', [StudentController::class, 'logout'])->name('logo
 
 //Dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth:admin');
+
+    //Payment
+    // The route that the button calls to initialize payment
+    Route::post('/pay', [FlutterwaveController::class, 'initialize'])->name('pay');
+    // The callback url after a payment
+    Route::get('/rave/callback', [FlutterwaveController::class, 'callback'])->name('callback');
 
     //Profile
     Route::get('/profile/{profile}/edit', [DashboardController::class, 'edit'])->name('admin.profile.edit')->middleware('auth:admin');

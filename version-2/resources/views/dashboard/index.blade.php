@@ -89,6 +89,21 @@
                     </div>
                 </a>
             </div>
+            <div class="lg:w-3/4 mx-auto">
+                <form id="paymentForm" class="bg-white shadow-lg p-4" action="{{ route('pay') }}" method="POST" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                    
+                    <h3>Buy Movie Tickets N500.00</h3>
+                
+                    <input class="input-box" name="name" placeholder="Name" />
+                    <input class="input-box" name="email" type="email" placeholder="Your Email" />
+                    <input class="input-box" name="phone" type="tel" placeholder="Phone number" />
+
+                    <div class="px-6 py-4 flex justify-end">
+                        <button type="submit" class="btn-submit tracking-wider">Buy</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
     <script src="{{ asset('js/dashboard.js') }}"></script>
