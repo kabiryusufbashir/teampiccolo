@@ -6,7 +6,7 @@
 @endsection
 
 @section('page-title')
-    Blog | Team Piccolo
+    Web Development Blog | Team Piccolo
 @endsection
 
 @section('body-content')
