@@ -33,7 +33,7 @@
                                 <h2 class="text-2xl text-center py-4 font-medium border-b-4 uppercase">Edit Blog</h2>
                             </div>
                             <div class="my-2">
-                                <img class="w-32 h-32 p-2 mx-auto" src=" {{ $blog->photo }} " alt="{{ $blog->title }} Image">    
+                                <img class="w-64 p-2 mx-auto" src=" {{ $blog->photo }} " alt="{{ $blog->title }} Image">    
                             </div>
                             <div id="changePhoto" class="my-2 cursor-pointer text-xl underline text-blue-600">Change Photo</div>
                             <div id="changePhotoField" class="my-2 hidden">
@@ -56,7 +56,7 @@
                             <div class="my-2">
                                 <span class="input-title">Category</span>
                                 <select name="category" value="{{ $blog->category }}" class="input-box @error('category') border-red-500 @enderror">
-                                    <option value=""></option>
+                                    <option value="{{ $blog->category }}">{{ $blog->category }}</option>
                                     <option value="Web Development">Web Development</option>
                                     <option value="Mobile Development">Mobile Development</option>
                                     <option value="Computer Application">Computer Application</option>
