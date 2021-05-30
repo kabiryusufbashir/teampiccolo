@@ -106,6 +106,11 @@ class AdminController extends Controller
         return view('mobileDevelopment', ['blogs'=>$blogs]); 
     }
 
+    public function computerApplication(){
+        $blogs = Blog::where('status', 'publish')->where('category', 'computer application')->orderby('id', 'desc')->paginate(9);
+        return view('mobileDevelopment', ['blogs'=>$blogs]); 
+    }
+
     public function readBlog($id){
         $blog = Blog::findOrFail($id);
         $views = $blog->views + 1;
