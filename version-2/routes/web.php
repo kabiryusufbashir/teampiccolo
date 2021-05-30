@@ -32,6 +32,10 @@ use App\Http\Controllers\FlutterwaveController;
 
 Route::get('/', [AdminController::class, 'index'])->name('home');
 Route::get('/blog-post', [AdminController::class, 'blog'])->name('blog');
+Route::get('/blog-post/web-development', [AdminController::class, 'webDevelopment'])->name('web.development');
+Route::get('/blog-post/mobile-development', [AdminController::class, 'mobileDevelopment'])->name('mobile.development');
+Route::get('/blog-post/computer-application', [AdminController::class, 'computerApplication'])->name('computer.application');
+Route::get('/blog-post/it-news', [AdminController::class, 'itNews'])->name('it.news');
 Route::get('/e-book', [AdminController::class, 'ebook'])->name('ebook');
 Route::get('/e-book/{ebook}', [AdminController::class, 'ebookDownload'])->name('ebook.download');
 Route::get('/blog-post/{blog}', [AdminController::class, 'readBlog'])->name('blog.read');
