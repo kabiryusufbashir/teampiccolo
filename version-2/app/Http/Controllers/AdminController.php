@@ -111,6 +111,11 @@ class AdminController extends Controller
         return view('mobileDevelopment', ['blogs'=>$blogs]); 
     }
 
+    public function itNews(){
+        $blogs = Blog::where('status', 'publish')->where('category', 'i.t news')->orderby('id', 'desc')->paginate(9);
+        return view('itNews', ['blogs'=>$blogs]); 
+    }
+
     public function readBlog($id){
         $blog = Blog::findOrFail($id);
         $views = $blog->views + 1;
