@@ -6,7 +6,7 @@
 @endsection
 
 @section('page-title')
-    Ebook | Team Piccolo Global Enterprises
+    Ebook | Team Piccolo
 @endsection
 
 @section('body-content')

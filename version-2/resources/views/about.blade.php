@@ -6,7 +6,7 @@
 @endsection
 
 @section('page-title')
-    About Us | Team Piccolo Global Enterprises
+    About Us | Team Piccolo
 @endsection
 
 @section('body-content')

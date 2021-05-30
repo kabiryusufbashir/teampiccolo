@@ -6,7 +6,7 @@
 @endsection
 
 @section('page-title')
-    Contact | Team Piccolo Global Enterprises
+    Contact | Team Piccolo
 @endsection
 
 @section('header')
