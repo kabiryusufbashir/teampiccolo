@@ -6,7 +6,7 @@
 @endsection
 
 @section('page-title')
-    {{ $blog->title }} | Team Piccolo Global Enterprises
+    {{ $blog->title }} | Team Piccolo
 @endsection
 
 @section('header')
@@ -14,7 +14,7 @@
     <div class="w-full lg:w-2/3 mx-auto leading-snug items-center">
         <div class="px-8 py-24 shadow">
             <div class="text-3xl mb-8">
-                <span class="border-b-2 border-green-600">{{ $blog->title }}</span>
+                <span class="font-bold border-green-600">{{ $blog->title }}</span>
             </div>
             <div>
                 <img class="mx-auto w-full mb-6" src="{{ $blog->photo }}" alt="{{ $blog->title }}">

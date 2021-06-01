@@ -112,7 +112,7 @@ class AdminController extends Controller
     }
 
     public function itNews(){
-        $blogs = Blog::where('status', 'publish')->where('category', 'i.t news')->orderby('id', 'desc')->paginate(9);
+        $blogs = Blog::where('status', 'publish')->where('category', 'IT News')->orderby('id', 'desc')->paginate(9);
         return view('itNews', ['blogs'=>$blogs]); 
     }
 
