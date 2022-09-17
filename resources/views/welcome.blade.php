@@ -16,7 +16,7 @@
         <div id="slogan" class="text-center">
             Have <br>
             An Idea?<br>
-            Talk to Us Now
+            Talk to Us Now!
             <img class="w-32 mx-auto slogan-logo" src="{{ asset('images/thinking.png') }}" alt="Thinking">
         </div>
         <div id="slogan" class="hidden lg:block text-center">
