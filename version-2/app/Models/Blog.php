@@ -17,6 +17,5 @@ class Blog extends Model
 
     public function author(){
         return $this->belongsTo(Admin::class);
-    }
-    
+    }    
 }
