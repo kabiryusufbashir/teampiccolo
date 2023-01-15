@@ -30,7 +30,7 @@
             <li class="mx-4 text-green-600 hover:underline"><a href="{{ route('it.news') }}">IT News</a></li>
         </div>
         @foreach($blogs as $blog)
-            <a href="{{ route('blog.read', $blog->id) }}">
+            <a href="{{ route('blog.read', $blog->slug) }}">
                 <div class="shadow p-10 m-4 hover:shadow-lg md:mx-auto md:w-1/3">
                     <img class="h-42 my-4 mx-auto" src="{{ $blog->photo }}" alt="{{ $blog->title }}">
                     <h3 class="paragraph-title">{{ $blog->title }}</h3>

@@ -116,12 +116,12 @@ class AdminController extends Controller
         return view('itNews', ['blogs'=>$blogs]); 
     }
 
-    public function readBlog($id){
-        $blog = Blog::findOrFail($id);
+    public function readBlog($slug){
+        $blog = Blog::where('slug', $slug)->first();
         $views = $blog->views + 1;
-        $updateView = Blog::where('id', $id)->update(['views'=> $views]);
+        $updateView = Blog::where('slug', $slug)->update(['views'=> $views]);
         
-        $blog = Blog::findOrFail($id);
+        $blog = Blog::where('slug', $slug)->first();
         
         return view('readBlog', ['blog'=>$blog]);
 
