@@ -1,0 +1,52 @@
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins/Poppins-Regular.ttf");
+}
+
+body{
+    font-family: "Poppins";
+}
+
+[data-component="slideshow"] .slide {
+    display: none;
+}
+
+[data-component="slideshow"] .slide.active {
+    display: block;
+}
+
+#slogan{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.slogan-logo{
+    animation: logo 5s ease forwards;
+}
+
+@keyframes logo{
+    0%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(90deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+#nav{
+    animation: show 2s ease forwards;
+}
+
+@keyframes show{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+    }
+}
