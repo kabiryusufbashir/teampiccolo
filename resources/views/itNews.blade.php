@@ -16,7 +16,7 @@
 @section('body-content')
     <!-- Blog  -->
     <div class="page-title">
-            Team Piccolo Blog 
+        Team Piccolo Blog 
     </div>
     <div class="text-center text-green-600 text-2xl mb-3">
         Categories
@@ -29,29 +29,32 @@
         <li class="mx-4 text-green-600 hover:underline"><a href="{{ route('it.news') }}">IT News</a></li>
     </div>
     @if($blogs->count())
-        @foreach($blogs as $blog)
-            <a href="{{ route('blog.read', $blog->id) }}">
-                <div class="shadow p-10 m-4 hover:shadow-lg md:mx-auto md:w-1/3">
-                    <img class="h-42 my-4 mx-auto" src="{{ $blog->photo }}" alt="{{ $blog->title }}">
-                    <h3 class="paragraph-title">{{ $blog->title }}</h3>
-                    <p class="paragraph">
-                        {!! html_entity_decode(Str::limit($blog->content, 150, '...')) !!}<br>
-                        <div class="flex my-4 items-center justify-between">
-                            <div class="flex items-center">
-                                <img class="w-10 h-10" src="{{ \App\Models\Admin::where(['id' => $blog->author])->first()->photo ?? asset('/images/logo.png') }}" alt="{{ \App\Models\Admin::where(['id' => $blog->author])->first()->name }}"> 
-                                &nbsp;&nbsp;
-                                <span>{{ \App\Models\Admin::where(['id' => $blog->author])->first()->name }}</span>
-                            </div>
-                            <div>
-                                {{ $blog->created_at->diffForhumans() }}
-                            </div>
+        <div class="md:grid grid-cols-2 gap-4 lg:mx-32 px-4 py-6">
+            @foreach($blogs as $blog)
+                <div class="shadow p-10 m-4 hover:shadow-lg">
+                    <a href="{{ route('blog.read', $blog->slug) }}">
+                        <img class="h-42 my-4 mx-auto" src="{{ $blog->photo }}" alt="{{ $blog->title }}">
+                        <h3 class="paragraph-title">{{ $blog->title }}</h3>
+                        <div class="my-2">
+                            {{ $blog->caption }}
                         </div>
-                        <span>Read: {{ $blog->views }}</span>
-                    </p>
+                        <p class="paragraph">
+                            <div class="flex my-4 items-center justify-between">
+                                <div class="flex items-center">
+                                    <img class="w-10 h-10" src="{{ \App\Models\Admin::where(['id' => $blog->author])->first()->photo ?? asset('/images/logo.png') }}" alt="{{ \App\Models\Admin::where(['id' => $blog->author])->first()->name }}"> 
+                                    &nbsp;&nbsp;
+                                    <span>{{ \App\Models\Admin::where(['id' => $blog->author])->first()->name }}</span>
+                                </div>
+                                <div>
+                                    {{ $blog->created_at->diffForhumans() }}
+                                </div>
+                            </div>
+                            <span>{{ $blog->views }} Read</span>
+                        </p>
+                    </a>
                 </div>
-            </a>
-            
-        @endforeach
+            @endforeach
+        </div>
     @else
         <div class="text-center text-green-600 text-4xl my-7 font-bold">
             No Blog Post found!

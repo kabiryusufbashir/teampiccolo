@@ -1,7 +1,7 @@
 @extends('layouts.template')
 
 @section('page-meta')
-<meta name="description" content="{{ $blog->content }}">
+<meta name="description" content="{{ $blog->caption }}">
 <meta name="keywords" content="About, Piccolo, Team, Enroll, Computer Essentials, Web Development, Mobile Applicaation, Entrepreneur,Information Technology, Kano, Training">
 @endsection
 
